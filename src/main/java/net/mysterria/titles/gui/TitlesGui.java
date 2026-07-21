@@ -147,11 +147,23 @@ public class TitlesGui {
         }
         lore.add(Component.empty());
         lore.add(unlockHint(title));
+        if (title.progressRequired() > 0) {
+            lore.add(progressLine(title));
+        }
 
         return PaperItemBuilder.from(settings.getLockedMaterial())
                 .name(title.display().decoration(TextDecoration.ITALIC, false))
                 .lore(lore)
                 .asGuiItem();
+    }
+
+    private Component progressLine(Title title) {
+        PlayerTitleData data = plugin.getPlayerDataManager().getCached(player.getUniqueId());
+        int have = data != null ? data.getProgress(title.id()) : 0;
+        int required = title.progressRequired();
+        return Component.text("Progress: ", NamedTextColor.GRAY)
+                .append(Component.text(have + "/" + required, NamedTextColor.AQUA))
+                .decoration(TextDecoration.ITALIC, false);
     }
 
     private int clearButtonSlot() {
@@ -198,7 +210,7 @@ public class TitlesGui {
         return switch (title.unlockMethod()) {
             case PERMISSION -> Component.text("Requires permission", NamedTextColor.RED).decoration(TextDecoration.ITALIC, false);
             case COMMAND -> Component.text("Granted by staff", NamedTextColor.RED).decoration(TextDecoration.ITALIC, false);
-            case AUTO -> Component.text("Locked", NamedTextColor.RED).decoration(TextDecoration.ITALIC, false);
+            case AUTO -> Component.text("Automatically granted based on in-game progress", NamedTextColor.RED).decoration(TextDecoration.ITALIC, false);
         };
     }
 

@@ -13,7 +13,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -23,7 +25,8 @@ import java.util.logging.Logger;
 
 public class JsonPlayerDataStore implements PlayerDataStore {
 
-    private record PlayerDataRecord(String uuid, String activeTitle, Set<String> unlocked, long lastModified) {
+    private record PlayerDataRecord(String uuid, String activeTitle, Set<String> unlocked,
+                                     Map<String, Integer> progress, long lastModified) {
     }
 
     private final Path dataFolder;
@@ -61,7 +64,8 @@ public class JsonPlayerDataStore implements PlayerDataStore {
                 return new PlayerTitleData(uuid);
             }
             Set<String> unlocked = record.unlocked() != null ? new HashSet<>(record.unlocked()) : new HashSet<>();
-            return new PlayerTitleData(uuid, unlocked, record.activeTitle());
+            Map<String, Integer> progress = record.progress() != null ? new HashMap<>(record.progress()) : new HashMap<>();
+            return new PlayerTitleData(uuid, unlocked, record.activeTitle(), progress);
         } catch (IOException | JsonSyntaxException e) {
             logger.warning("Corrupt player data for " + uuid + ": " + e.getMessage());
             backupCorruptFile(file);
@@ -88,6 +92,7 @@ public class JsonPlayerDataStore implements PlayerDataStore {
                 data.getUuid().toString(),
                 data.getActiveTitle().orElse(null),
                 data.getUnlockedTitles(),
+                data.getProgressSnapshot(),
                 System.currentTimeMillis()
         );
         Path tmp = file.resolveSibling(file.getFileName() + ".tmp");

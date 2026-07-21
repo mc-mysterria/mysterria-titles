@@ -29,6 +29,7 @@ public class SequenceTitleAutoGrantService {
             new SequenceThreshold("deity", 0)
     );
 
+    private static final String BEYONDER_TITLE_ID = "beyonder";
     private static final String UNIQUE_TITLE_ID = "unique";
 
     private final PlayerDataManager playerDataManager;
@@ -48,7 +49,7 @@ public class SequenceTitleAutoGrantService {
         boolean isBeyonder = api.isBeyonder(player);
         int lowestSequence = isBeyonder ? api.getLowestSequence(player) : Integer.MAX_VALUE;
 
-        boolean changed = false;
+        boolean changed = apply(data, BEYONDER_TITLE_ID, isBeyonder);
         for (SequenceThreshold threshold : SEQUENCE_THRESHOLDS) {
             boolean eligible = isBeyonder && lowestSequence <= threshold.maxSequence();
             changed |= apply(data, threshold.titleId(), eligible);

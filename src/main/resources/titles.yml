@@ -17,7 +17,7 @@ titles:
       slot: 11
     unlock:
       method: COMMAND
-      permission: ""
+      permission: "mysterria.titles.title.august_born"
 
   the_generous:
     display: "<gold>The Generous</gold>"
@@ -37,12 +37,13 @@ titles:
       slot: 13
     unlock:
       method: COMMAND
-      permission: ""
+      permission: "mysterria.titles.title.the_generous"
 
   the_loyalist:
     display: "<blue>The Loyalist</blue>"
     description:
       - "<gray>Stood by Mysterria through it all."
+      - "<dark_gray>Automatically granted for claiming every Advent Calendar day."
     render-type: ANIMATED
     nexo-texture: ""
     animation:
@@ -53,16 +54,21 @@ titles:
       type: DEFENSE_BOOST
       value: 0.03
     gui:
-      material: SHIELD
+      material: DIAMOND
       slot: 15
     unlock:
-      method: COMMAND
-      permission: ""
+      method: AUTO
+      permission: "mysterria.titles.title.the_loyalist"
+      # 1 progress point per Advent Calendar day claimed (see /titles admin progress give,
+      # called from AxCalendar's rewards.yml) - reaching 15 auto-unlocks the title. This proves
+      # every single day was claimed, not just the last one.
+      progress-required: 15
 
   beyonder:
     display: "<#7700DD>Beyonder</#7700DD>"
     description:
       - "<gray>Glimpsed something beyond the veil."
+      - "<dark_gray>Automatically granted while you are a Beyonder."
     render-type: ANIMATED
     nexo-texture: ""
     animation:
@@ -76,8 +82,8 @@ titles:
       material: ENDER_EYE
       slot: 20
     unlock:
-      method: COMMAND
-      permission: ""
+      method: AUTO
+      permission: "mysterria.titles.title.beyonder"
 
   demigod:
     display: "<#FF6600>Demigod</#FF6600>"
@@ -97,8 +103,8 @@ titles:
       material: GOLDEN_APPLE
       slot: 22
     unlock:
-      method: COMMAND
-      permission: ""
+      method: AUTO
+      permission: "mysterria.titles.title.demigod"
 
   saint:
     display: "<#33DDEE>Saint</#33DDEE>"
@@ -118,8 +124,8 @@ titles:
       material: WHITE_CANDLE
       slot: 24
     unlock:
-      method: COMMAND
-      permission: ""
+      method: AUTO
+      permission: "mysterria.titles.title.saint"
 
   angel:
     display: "<#99BBEE>Angel</#99BBEE>"
@@ -139,8 +145,8 @@ titles:
       material: FEATHER
       slot: 29
     unlock:
-      method: COMMAND
-      permission: ""
+      method: AUTO
+      permission: "mysterria.titles.title.angel"
 
   archangel:
     display: "<#EECC44>Archangel</#EECC44>"
@@ -160,8 +166,8 @@ titles:
       material: ELYTRA
       slot: 31
     unlock:
-      method: COMMAND
-      permission: ""
+      method: AUTO
+      permission: "mysterria.titles.title.archangel"
 
   deity:
     display: "<#DD2222>Deity</#DD2222>"
@@ -181,8 +187,8 @@ titles:
       material: NETHER_STAR
       slot: 33
     unlock:
-      method: COMMAND
-      permission: ""
+      method: AUTO
+      permission: "mysterria.titles.title.deity"
 
   apex_patron:
     display: "<#22CC66>Apex Patron</#22CC66>"
@@ -202,7 +208,7 @@ titles:
       slot: 38
     unlock:
       method: COMMAND
-      permission: ""
+      permission: "mysterria.titles.title.apex_patron"
 
   unique:
     display: "<#FF55DD>Unique</#FF55DD>"
@@ -222,8 +228,8 @@ titles:
       material: DRAGON_EGG
       slot: 40
     unlock:
-      method: COMMAND
-      permission: ""
+      method: AUTO
+      permission: "mysterria.titles.title.unique"
 
   collectioner:
     display: "<#CC8844>Collectioner</#CC8844>"
@@ -243,4 +249,26 @@ titles:
       slot: 42
     unlock:
       method: COMMAND
-      permission: ""
+      permission: "mysterria.titles.title.collectioner"
+
+# Anniversary event: Collectioner is sold as shards in the festive shop (BrilliantEmporium
+# seasonal shop). Right-clicking while holding >= required-count shards consumes them and
+# unlocks the title above - see CollectionerShardService / CollectionerShardListener.
+collectioner-shard:
+  required-count: 5
+  material: AMETHYST_CLUSTER
+  name: "<#CC8844>Collectioner Shard"
+  lore:
+    - "<gray>A fragment of a complete collection."
+    - "<gray>Gather 5 to claim the Collectioner title."
+    - "<dark_gray>Right-click to redeem once you have enough."
+
+# Anniversary event: currency for the festive shop (BrilliantEmporium seasonal shop). Minted
+# only via `/titles admin token give` (called from the Advent Calendar's reward commands) so
+# every source produces an item identical to the shop's configured payment-item.
+anniversary-token:
+  material: AMETHYST_SHARD
+  name: "<gold><bold>Anniversary Token"
+  lore:
+    - "<gray>Currency for the 1-year anniversary festive shop."
+    - "<dark_gray>22.07.2026 - 05.08.2026"

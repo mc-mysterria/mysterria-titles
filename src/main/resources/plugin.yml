@@ -16,3 +16,39 @@ permissions:
   mysterria.titles.admin:
     description: Allows granting, revoking, force-setting, and reloading titles
     default: op
+  mysterria.titles.title.august_born:
+    description: Marks that a player holds the August Born title
+    default: false
+  mysterria.titles.title.the_generous:
+    description: Marks that a player holds the The Generous title
+    default: false
+  mysterria.titles.title.the_loyalist:
+    description: Marks that a player holds the The Loyalist title
+    default: false
+  mysterria.titles.title.beyonder:
+    description: Marks that a player holds the Beyonder title
+    default: false
+  mysterria.titles.title.demigod:
+    description: Marks that a player holds the Demigod title
+    default: false
+  mysterria.titles.title.saint:
+    description: Marks that a player holds the Saint title
+    default: false
+  mysterria.titles.title.angel:
+    description: Marks that a player holds the Angel title
+    default: false
+  mysterria.titles.title.archangel:
+    description: Marks that a player holds the Archangel title
+    default: false
+  mysterria.titles.title.deity:
+    description: Marks that a player holds the Deity title
+    default: false
+  mysterria.titles.title.apex_patron:
+    description: Marks that a player holds the Apex Patron title
+    default: false
+  mysterria.titles.title.unique:
+    description: Marks that a player holds the Unique title
+    default: false
+  mysterria.titles.title.collectioner:
+    description: Marks that a player holds the Collectioner title
+    default: false

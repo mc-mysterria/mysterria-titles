@@ -20,7 +20,8 @@ public record Title(
         Material guiMaterial,
         int guiSlot,
         UnlockMethod unlockMethod,
-        String permission
+        String permission,
+        int progressRequired
 ) {
 
     /**

@@ -12,14 +12,18 @@ import net.mysterria.titles.domain.buff.service.TitleBonusService;
 import net.mysterria.titles.domain.buff.service.TitleBuffManager;
 import net.mysterria.titles.domain.buff.types.*;
 import net.mysterria.titles.domain.papi.TitlesExpansion;
+import net.mysterria.titles.domain.shard.AnniversaryTokenService;
+import net.mysterria.titles.domain.shard.CollectionerShardService;
 import net.mysterria.titles.domain.storage.model.JsonPlayerDataStore;
 import net.mysterria.titles.domain.storage.service.PlayerDataManager;
 import net.mysterria.titles.domain.title.model.Title;
 import net.mysterria.titles.domain.title.service.SequenceTitleAutoGrantService;
+import net.mysterria.titles.domain.title.service.TitleProgressService;
 import net.mysterria.titles.domain.title.service.TitleRegistry;
 import net.mysterria.titles.integration.CircleOfImaginationHook;
 import net.mysterria.titles.listener.CoiAvailabilityListener;
 import net.mysterria.titles.listener.CoiTitleListener;
+import net.mysterria.titles.listener.CollectionerShardListener;
 import net.mysterria.titles.listener.PlayerLifecycleListener;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -37,6 +41,9 @@ public class MysterriaTitles extends JavaPlugin {
     private TitleBuffManager buffManager;
     private TitlesExpansion titlesExpansion;
     private SequenceTitleAutoGrantService sequenceTitleAutoGrantService;
+    private CollectionerShardService collectionerShardService;
+    private AnniversaryTokenService anniversaryTokenService;
+    private TitleProgressService titleProgressService;
     private boolean coiIntegrationRegistered = false;
 
     @Override
@@ -67,6 +74,11 @@ public class MysterriaTitles extends JavaPlugin {
         buffManager.enableAll();
 
         Bukkit.getPluginManager().registerEvents(new PlayerLifecycleListener(this), this);
+
+        collectionerShardService = new CollectionerShardService(this);
+        Bukkit.getPluginManager().registerEvents(new CollectionerShardListener(this, collectionerShardService), this);
+        anniversaryTokenService = new AnniversaryTokenService(this);
+        titleProgressService = new TitleProgressService(this);
 
         sequenceTitleAutoGrantService = new SequenceTitleAutoGrantService(playerDataManager);
         Bukkit.getPluginManager().registerEvents(new CoiAvailabilityListener(this), this);
@@ -114,6 +126,8 @@ public class MysterriaTitles extends JavaPlugin {
     public void reload() {
         configManager.load();
         titleRegistry.load(configManager.getTitlesConfig());
+        collectionerShardService.load();
+        anniversaryTokenService.load();
         registerCoiIntegration(); // retries in case COI came up after us and PluginEnableEvent was missed somehow
         buffManager.validateAgainstRegistry(titleRegistry);
     }

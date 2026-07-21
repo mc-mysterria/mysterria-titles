@@ -123,6 +123,7 @@ public class TitleRegistry {
         ConfigurationSection unlockSection = section.getConfigurationSection("unlock");
         UnlockMethod unlockMethod = UnlockMethod.COMMAND;
         String permission = "";
+        int progressRequired = 0;
         if (unlockSection != null) {
             String methodRaw = unlockSection.getString("method", "COMMAND");
             try {
@@ -131,6 +132,7 @@ public class TitleRegistry {
                 throw new IllegalArgumentException("invalid unlock.method '" + methodRaw + "'");
             }
             permission = unlockSection.getString("permission", "");
+            progressRequired = unlockSection.getInt("progress-required", 0);
         }
         if (unlockMethod == UnlockMethod.PERMISSION && permission.isEmpty()) {
             throw new IllegalArgumentException("unlock.method PERMISSION requires a non-empty permission");
@@ -138,7 +140,7 @@ public class TitleRegistry {
 
         return new Title(id, display, description, renderType, nexoTexture,
                 animationFrameBase, animationFrameCount, animationFrameDurationMs,
-                bonus, guiMaterial, guiSlot, unlockMethod, permission);
+                bonus, guiMaterial, guiSlot, unlockMethod, permission, progressRequired);
     }
 
     public Optional<Title> get(String id) {
@@ -158,11 +160,12 @@ public class TitleRegistry {
     }
 
     /**
-     * Effective unlock per §7.1: stored unlocked ∪ {PERMISSION titles held} ∪ {AUTO titles}.
+     * Effective unlock per §7.1: stored unlocked ∪ {PERMISSION titles held}. COMMAND and AUTO
+     * both rely purely on the stored set - AUTO only differs in the locked-item lore hint shown
+     * while a player hasn't met its (externally-granted) condition yet.
      */
     public boolean isEffectivelyUnlocked(Player player, Set<String> storedUnlocked, Title title) {
         if (storedUnlocked.contains(title.id())) return true;
-        if (title.unlockMethod() == UnlockMethod.AUTO) return true;
         if (title.unlockMethod() == UnlockMethod.PERMISSION) {
             return !title.permission().isEmpty() && player.hasPermission(title.permission());
         }
