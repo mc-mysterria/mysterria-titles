@@ -10,7 +10,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.logging.Logger;
 
-public final class TitleBuffManager {
+public class TitleBuffManager {
 
     private final Logger logger;
     private final Map<String, TitleBuff> buffs = new LinkedHashMap<>();
@@ -24,6 +24,17 @@ public final class TitleBuffManager {
             throw new IllegalArgumentException("Duplicate buff id: " + buff.id());
         }
         buffs.put(buff.id(), buff);
+    }
+
+    /**
+     * Adds and immediately enables a single buff, without touching any buff already enabled
+     * via {@link #enableAll()}. Used for buffs registered after startup (e.g. once a soft
+     * dependency becomes available) so re-running enableAll() doesn't double-register
+     * already-active listeners.
+     */
+    public void registerAndEnable(TitleBuff buff) {
+        register(buff);
+        buff.register();
     }
 
     public Optional<TitleBuff> get(String id) {

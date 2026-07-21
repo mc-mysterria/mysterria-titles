@@ -1,5 +1,6 @@
 package net.mysterria.titles.domain.buff.types;
 
+import dev.ua.ikeepcalm.coi.api.event.MadnessGainEvent;
 import net.mysterria.titles.MysterriaTitles;
 import net.mysterria.titles.domain.buff.model.TitleBuff;
 import org.bukkit.Bukkit;
@@ -7,13 +8,16 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerExpChangeEvent;
 
-public class ExpBoostBuff extends TitleBuff implements Listener {
+/**
+ * Circle of Imagination only - see MagicDamageBoostBuff for why registration must be guarded
+ * behind CircleOfImaginationHook#isPresent().
+ */
+public class MadnessReductionBuff extends TitleBuff implements Listener {
 
-    public static final String ID = "EXP_BOOST";
+    public static final String ID = "MADNESS_REDUCTION";
 
-    public ExpBoostBuff(MysterriaTitles plugin) {
+    public MadnessReductionBuff(MysterriaTitles plugin) {
         super(plugin);
     }
 
@@ -33,10 +37,10 @@ public class ExpBoostBuff extends TitleBuff implements Listener {
     }
 
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
-    public void onExpChange(PlayerExpChangeEvent event) {
+    public void onMadnessGain(MadnessGainEvent event) {
         double multiplier = multiplierFor(event.getPlayer().getUniqueId());
         if (multiplier != 1.0) {
-            event.setAmount((int) Math.round(event.getAmount() * multiplier));
+            event.setAmount(event.getAmount() / multiplier);
         }
     }
 }

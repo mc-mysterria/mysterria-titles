@@ -3,17 +3,18 @@ package net.mysterria.titles.domain.buff.types;
 import net.mysterria.titles.MysterriaTitles;
 import net.mysterria.titles.domain.buff.model.TitleBuff;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerExpChangeEvent;
+import org.bukkit.event.entity.EntityRegainHealthEvent;
 
-public class ExpBoostBuff extends TitleBuff implements Listener {
+public class HealingBoostBuff extends TitleBuff implements Listener {
 
-    public static final String ID = "EXP_BOOST";
+    public static final String ID = "HEALING_BOOST";
 
-    public ExpBoostBuff(MysterriaTitles plugin) {
+    public HealingBoostBuff(MysterriaTitles plugin) {
         super(plugin);
     }
 
@@ -33,10 +34,12 @@ public class ExpBoostBuff extends TitleBuff implements Listener {
     }
 
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
-    public void onExpChange(PlayerExpChangeEvent event) {
-        double multiplier = multiplierFor(event.getPlayer().getUniqueId());
+    public void onRegen(EntityRegainHealthEvent event) {
+        if (!(event.getEntity() instanceof Player player)) return;
+
+        double multiplier = multiplierFor(player.getUniqueId());
         if (multiplier != 1.0) {
-            event.setAmount((int) Math.round(event.getAmount() * multiplier));
+            event.setAmount(event.getAmount() * multiplier);
         }
     }
 }

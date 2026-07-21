@@ -7,7 +7,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 
-public final class PlayerTitleData {
+public class PlayerTitleData {
 
     @Getter
     private final UUID uuid;
@@ -54,6 +54,13 @@ public final class PlayerTitleData {
         if (!unlockedTitles.contains(titleId)) return false;
         this.activeTitle = titleId;
         this.dirty = true;
+        return true;
+    }
+
+    public boolean clearActiveTitle() {
+        if (activeTitle == null) return false;
+        activeTitle = null;
+        dirty = true;
         return true;
     }
 

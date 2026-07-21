@@ -22,7 +22,7 @@ import java.util.Set;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-public final class TitleRegistry {
+public class TitleRegistry {
 
     private final Logger logger;
     private final Map<String, Title> titles = new LinkedHashMap<>();

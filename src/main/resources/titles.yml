@@ -8,10 +8,10 @@ titles:
     animation:
       frame-base: august_born_tag
       frame-count: 18
-      frame-duration-ms: 50
+      frame-duration-ms: 150
     bonus:
       type: EXP_BOOST
-      value: 0.0 # TODO: set real bonus value
+      value: 0.03
     gui:
       material: SUNFLOWER
       slot: 11
@@ -28,10 +28,10 @@ titles:
     animation:
       frame-base: the_generous_tag
       frame-count: 18
-      frame-duration-ms: 50
+      frame-duration-ms: 150
     bonus:
-      type: EXP_BOOST
-      value: 0.0 # TODO: set real bonus value
+      type: SATURATION_BOOST
+      value: 0.03
     gui:
       material: HONEYCOMB
       slot: 13
@@ -48,10 +48,10 @@ titles:
     animation:
       frame-base: the_loyalist_tag
       frame-count: 18
-      frame-duration-ms: 50
+      frame-duration-ms: 150
     bonus:
-      type: EXP_BOOST
-      value: 0.0 # TODO: set real bonus value
+      type: DEFENSE_BOOST
+      value: 0.03
     gui:
       material: SHIELD
       slot: 15
@@ -68,10 +68,10 @@ titles:
     animation:
       frame-base: beyonder_tag
       frame-count: 18
-      frame-duration-ms: 50
+      frame-duration-ms: 150
     bonus:
-      type: EXP_BOOST
-      value: 0.0 # TODO: set real bonus value
+      type: MAGIC_DAMAGE_BOOST
+      value: 0.02
     gui:
       material: ENDER_EYE
       slot: 20
@@ -83,15 +83,16 @@ titles:
     display: "<#FF6600>Demigod</#FF6600>"
     description:
       - "<gray>Not quite mortal, not quite divine."
+      - "<dark_gray>Automatically granted at Sequence 4 or higher."
     render-type: ANIMATED
     nexo-texture: ""
     animation:
       frame-base: demigod_tag
       frame-count: 18
-      frame-duration-ms: 50
+      frame-duration-ms: 150
     bonus:
-      type: EXP_BOOST
-      value: 0.0 # TODO: set real bonus value
+      type: MAGIC_DEFENSE_BOOST
+      value: 0.03
     gui:
       material: GOLDEN_APPLE
       slot: 22
@@ -103,15 +104,16 @@ titles:
     display: "<#33DDEE>Saint</#33DDEE>"
     description:
       - "<gray>Devotion made manifest."
+      - "<dark_gray>Automatically granted at Sequence 3 or higher."
     render-type: ANIMATED
     nexo-texture: ""
     animation:
       frame-base: saint_tag
       frame-count: 18
-      frame-duration-ms: 50
+      frame-duration-ms: 150
     bonus:
-      type: EXP_BOOST
-      value: 0.0 # TODO: set real bonus value
+      type: MADNESS_REDUCTION
+      value: 0.03
     gui:
       material: WHITE_CANDLE
       slot: 24
@@ -123,15 +125,16 @@ titles:
     display: "<#99BBEE>Angel</#99BBEE>"
     description:
       - "<gray>Touched by wings unseen."
+      - "<dark_gray>Automatically granted at Sequence 2 or higher."
     render-type: ANIMATED
     nexo-texture: ""
     animation:
       frame-base: angel_tag
       frame-count: 18
-      frame-duration-ms: 50
+      frame-duration-ms: 150
     bonus:
-      type: EXP_BOOST
-      value: 0.0 # TODO: set real bonus value
+      type: HEALING_BOOST
+      value: 0.03
     gui:
       material: FEATHER
       slot: 29
@@ -143,15 +146,16 @@ titles:
     display: "<#EECC44>Archangel</#EECC44>"
     description:
       - "<gray>First among the heavenly host."
+      - "<dark_gray>Automatically granted at Sequence 1 or higher."
     render-type: ANIMATED
     nexo-texture: ""
     animation:
       frame-base: archangel_tag
       frame-count: 18
-      frame-duration-ms: 50
+      frame-duration-ms: 150
     bonus:
-      type: EXP_BOOST
-      value: 0.0 # TODO: set real bonus value
+      type: MAGIC_DAMAGE_BOOST
+      value: 0.04
     gui:
       material: ELYTRA
       slot: 31
@@ -163,15 +167,16 @@ titles:
     display: "<#DD2222>Deity</#DD2222>"
     description:
       - "<gray>Worshipped, not merely admired."
+      - "<dark_gray>Automatically granted at Sequence 0."
     render-type: ANIMATED
     nexo-texture: ""
     animation:
       frame-base: deity_tag
       frame-count: 18
-      frame-duration-ms: 50
+      frame-duration-ms: 150
     bonus:
-      type: EXP_BOOST
-      value: 0.0 # TODO: set real bonus value
+      type: MAGIC_DEFENSE_BOOST
+      value: 0.05
     gui:
       material: NETHER_STAR
       slot: 33
@@ -188,10 +193,10 @@ titles:
     animation:
       frame-base: apex_patron_tag
       frame-count: 18
-      frame-duration-ms: 50
+      frame-duration-ms: 150
     bonus:
-      type: EXP_BOOST
-      value: 0.0 # TODO: set real bonus value
+      type: DAMAGE_BOOST
+      value: 0.04
     gui:
       material: EMERALD_BLOCK
       slot: 38
@@ -203,15 +208,16 @@ titles:
     display: "<#FF55DD>Unique</#FF55DD>"
     description:
       - "<gray>There is no other quite like you."
+      - "<dark_gray>Automatically granted while your uniqueness trait is active."
     render-type: ANIMATED
     nexo-texture: ""
     animation:
       frame-base: unique_tag
       frame-count: 18
-      frame-duration-ms: 50
+      frame-duration-ms: 150
     bonus:
-      type: EXP_BOOST
-      value: 0.0 # TODO: set real bonus value
+      type: FISHING_LUCK_BOOST
+      value: 0.03
     gui:
       material: DRAGON_EGG
       slot: 40
@@ -228,10 +234,10 @@ titles:
     animation:
       frame-base: collectioner_tag
       frame-count: 18
-      frame-duration-ms: 50
+      frame-duration-ms: 150
     bonus:
-      type: EXP_BOOST
-      value: 0.0 # TODO: set real bonus value
+      type: MOB_LOOT_BOOST
+      value: 0.04
     gui:
       material: CHEST
       slot: 42

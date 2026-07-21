@@ -7,7 +7,7 @@ api-version: '26.1.2'
 load: STARTUP
 
 depend: [PlaceholderAPI]
-softdepend: [TAB, Nexo, UnlimitedNameTags]
+softdepend: [TAB, Nexo, UnlimitedNameTags, CircleOfImagination]
 
 permissions:
   mysterria.titles.use:

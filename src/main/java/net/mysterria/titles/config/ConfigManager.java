@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 
-public final class ConfigManager {
+public class ConfigManager {
 
     private final JavaPlugin plugin;
     private final PluginSettings settings = new PluginSettings();

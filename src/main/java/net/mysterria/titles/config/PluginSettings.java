@@ -3,7 +3,7 @@ package net.mysterria.titles.config;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 
-public final class PluginSettings {
+public class PluginSettings {
 
     private long autosaveIntervalSeconds;
     private boolean flushOnQuit;

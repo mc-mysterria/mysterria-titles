@@ -11,6 +11,7 @@ import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.mysterria.titles.MysterriaTitles;
 import net.mysterria.titles.config.PluginSettings;
+import net.mysterria.titles.domain.buff.model.BonusDisplay;
 import net.mysterria.titles.integration.UnlimitedNameTagsHook;
 import net.mysterria.titles.domain.title.model.PlayerTitleData;
 import net.mysterria.titles.domain.title.model.Title;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public final class TitlesGui {
+public class TitlesGui {
 
     private final MysterriaTitles plugin;
     private final Player player;
@@ -73,6 +74,8 @@ public final class TitlesGui {
 
             staticGui.setItem(slot, buildTitleItem(title, unlocked, title.id().equals(active)));
         }
+
+        staticGui.setItem(clearButtonSlot(), clearButtonItem());
     }
 
     private void buildPaginated(PaginatedGui paginatedGui) {
@@ -90,6 +93,8 @@ public final class TitlesGui {
         paginatedGui.setItem(bottomRowStart + 5, PaperItemBuilder.from(Material.ARROW)
                 .name(Component.text("Next Page", NamedTextColor.YELLOW).decoration(TextDecoration.ITALIC, false))
                 .asGuiItem(event -> paginatedGui.next()));
+
+        paginatedGui.setItem(bottomRowStart + 4, clearButtonItem());
 
         Set<String> stored = storedUnlocked();
         String active = activeTitleId();
@@ -149,6 +154,33 @@ public final class TitlesGui {
                 .asGuiItem();
     }
 
+    private int clearButtonSlot() {
+        return (settings.getGuiRows() - 1) * 9 + 4;
+    }
+
+    private GuiItem clearButtonItem() {
+        boolean hasActive = activeTitleId() != null;
+        List<Component> lore = new ArrayList<>();
+        lore.add(Component.text(hasActive ? "Removes your active title." : "No title is currently active.", NamedTextColor.GRAY)
+                .decoration(TextDecoration.ITALIC, false));
+
+        return PaperItemBuilder.from(Material.BARRIER)
+                .name(Component.text("Clear Title", NamedTextColor.RED).decoration(TextDecoration.ITALIC, false))
+                .lore(lore)
+                .asGuiItem(event -> unequip());
+    }
+
+    private void unequip() {
+        PlayerTitleData data = plugin.getPlayerDataManager().getCached(player.getUniqueId());
+        if (data == null) return;
+
+        if (data.clearActiveTitle()) {
+            player.sendMessage(Component.text("Active title cleared.", NamedTextColor.YELLOW));
+            UnlimitedNameTagsHook.refresh(player.getUniqueId());
+            refresh();
+        }
+    }
+
     private GuiItem filler() {
         return PaperItemBuilder.from(settings.getFillerMaterial())
                 .name(Component.empty())
@@ -156,8 +188,9 @@ public final class TitlesGui {
     }
 
     private Component bonusLine(Title title) {
-        int percent = (int) Math.round(title.bonus().value() * 100);
-        return Component.text("+" + percent + "% " + title.bonus().type(), NamedTextColor.AQUA)
+        BonusDisplay display = BonusDisplay.of(title.bonus().type());
+        int percent = display.percent(title.bonus().value());
+        return Component.text(display.sign() + percent + "% " + display.label(), NamedTextColor.AQUA)
                 .decoration(TextDecoration.ITALIC, false);
     }
 

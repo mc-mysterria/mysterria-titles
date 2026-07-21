@@ -8,7 +8,7 @@ import net.mysterria.titles.domain.storage.service.PlayerDataManager;
 import java.util.Optional;
 import java.util.UUID;
 
-public final class TitleBonusService {
+public class TitleBonusService {
 
     private final PlayerDataManager playerDataManager;
     private final TitleRegistry titleRegistry;

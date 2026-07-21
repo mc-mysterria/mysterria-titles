@@ -5,7 +5,7 @@ import org.bukkit.Bukkit;
 
 import java.util.UUID;
 
-public final class UnlimitedNameTagsHook {
+public class UnlimitedNameTagsHook {
 
     private UnlimitedNameTagsHook() {
     }

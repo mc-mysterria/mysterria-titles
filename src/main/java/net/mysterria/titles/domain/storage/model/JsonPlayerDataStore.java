@@ -21,7 +21,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.logging.Logger;
 
-public final class JsonPlayerDataStore implements PlayerDataStore {
+public class JsonPlayerDataStore implements PlayerDataStore {
 
     private record PlayerDataRecord(String uuid, String activeTitle, Set<String> unlocked, long lastModified) {
     }

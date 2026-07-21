@@ -6,7 +6,7 @@ import net.mysterria.titles.domain.title.model.PlayerTitleData;
 import net.mysterria.titles.domain.title.model.Title;
 import org.bukkit.OfflinePlayer;
 
-public final class TitlesExpansion extends PlaceholderExpansion {
+public class TitlesExpansion extends PlaceholderExpansion {
 
     private final MysterriaTitles plugin;
 

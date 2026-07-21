@@ -11,7 +11,7 @@ import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 
-public final class PlayerDataManager {
+public class PlayerDataManager {
 
     private final Plugin plugin;
     private final PlayerDataStore store;
