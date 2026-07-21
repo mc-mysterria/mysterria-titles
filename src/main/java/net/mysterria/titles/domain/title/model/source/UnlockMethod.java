@@ -1,4 +1,4 @@
-package net.mysterria.titles.model;
+package net.mysterria.titles.domain.title.model.source;
 
 public enum UnlockMethod {
     PERMISSION,

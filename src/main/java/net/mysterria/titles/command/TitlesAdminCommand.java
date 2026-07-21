@@ -9,8 +9,8 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.mysterria.titles.MysterriaTitles;
 import net.mysterria.titles.integration.UnlimitedNameTagsHook;
-import net.mysterria.titles.model.PlayerTitleData;
-import net.mysterria.titles.model.Title;
+import net.mysterria.titles.domain.title.model.PlayerTitleData;
+import net.mysterria.titles.domain.title.model.Title;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 

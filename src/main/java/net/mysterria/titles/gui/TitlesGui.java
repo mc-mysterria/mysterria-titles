@@ -12,9 +12,9 @@ import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.mysterria.titles.MysterriaTitles;
 import net.mysterria.titles.config.PluginSettings;
 import net.mysterria.titles.integration.UnlimitedNameTagsHook;
-import net.mysterria.titles.model.PlayerTitleData;
-import net.mysterria.titles.model.Title;
-import net.mysterria.titles.registry.TitleRegistry;
+import net.mysterria.titles.domain.title.model.PlayerTitleData;
+import net.mysterria.titles.domain.title.model.Title;
+import net.mysterria.titles.domain.title.service.TitleRegistry;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 

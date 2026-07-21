@@ -1,6 +1,6 @@
-package net.mysterria.titles.storage;
+package net.mysterria.titles.domain.storage.model;
 
-import net.mysterria.titles.model.PlayerTitleData;
+import net.mysterria.titles.domain.title.model.PlayerTitleData;
 
 import java.util.Collection;
 import java.util.UUID;

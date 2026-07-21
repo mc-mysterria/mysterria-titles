@@ -6,8 +6,8 @@ import dev.rollczi.litecommands.argument.resolver.ArgumentResolver;
 import dev.rollczi.litecommands.invocation.Invocation;
 import dev.rollczi.litecommands.suggestion.SuggestionContext;
 import dev.rollczi.litecommands.suggestion.SuggestionResult;
-import net.mysterria.titles.model.Title;
-import net.mysterria.titles.registry.TitleRegistry;
+import net.mysterria.titles.domain.title.model.Title;
+import net.mysterria.titles.domain.title.service.TitleRegistry;
 import org.bukkit.command.CommandSender;
 
 public class TitleArgument extends ArgumentResolver<CommandSender, Title> {

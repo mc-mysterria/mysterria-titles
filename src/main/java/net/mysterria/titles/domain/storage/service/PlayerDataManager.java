@@ -1,6 +1,7 @@
-package net.mysterria.titles.storage;
+package net.mysterria.titles.domain.storage.service;
 
-import net.mysterria.titles.model.PlayerTitleData;
+import net.mysterria.titles.domain.storage.model.PlayerDataStore;
+import net.mysterria.titles.domain.title.model.PlayerTitleData;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 

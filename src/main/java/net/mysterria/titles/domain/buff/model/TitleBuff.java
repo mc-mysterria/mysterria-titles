@@ -1,7 +1,7 @@
-package net.mysterria.titles.buff;
+package net.mysterria.titles.domain.buff.model;
 
 import net.mysterria.titles.MysterriaTitles;
-import net.mysterria.titles.service.TitleBonusService;
+import net.mysterria.titles.domain.buff.service.TitleBonusService;
 
 import java.util.UUID;
 

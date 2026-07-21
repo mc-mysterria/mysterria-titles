@@ -1,9 +1,9 @@
-package net.mysterria.titles.storage;
+package net.mysterria.titles.domain.storage.model;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
-import net.mysterria.titles.model.PlayerTitleData;
+import net.mysterria.titles.domain.title.model.PlayerTitleData;
 
 import java.io.IOException;
 import java.io.Reader;

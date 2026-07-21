@@ -1,11 +1,11 @@
-package net.mysterria.titles.registry;
+package net.mysterria.titles.domain.title.service;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-import net.mysterria.titles.model.RenderType;
-import net.mysterria.titles.model.Title;
-import net.mysterria.titles.model.TitleBonus;
-import net.mysterria.titles.model.UnlockMethod;
+import net.mysterria.titles.domain.title.model.source.RenderType;
+import net.mysterria.titles.domain.title.model.Title;
+import net.mysterria.titles.domain.title.model.TitleBonus;
+import net.mysterria.titles.domain.title.model.source.UnlockMethod;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;

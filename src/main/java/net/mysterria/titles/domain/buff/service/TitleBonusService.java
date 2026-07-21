@@ -1,9 +1,9 @@
-package net.mysterria.titles.service;
+package net.mysterria.titles.domain.buff.service;
 
-import net.mysterria.titles.model.PlayerTitleData;
-import net.mysterria.titles.model.Title;
-import net.mysterria.titles.registry.TitleRegistry;
-import net.mysterria.titles.storage.PlayerDataManager;
+import net.mysterria.titles.domain.title.model.PlayerTitleData;
+import net.mysterria.titles.domain.title.model.Title;
+import net.mysterria.titles.domain.title.service.TitleRegistry;
+import net.mysterria.titles.domain.storage.service.PlayerDataManager;
 
 import java.util.Optional;
 import java.util.UUID;

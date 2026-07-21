@@ -1,6 +1,8 @@
-package net.mysterria.titles.model;
+package net.mysterria.titles.domain.title.model;
 
 import net.kyori.adventure.text.Component;
+import net.mysterria.titles.domain.title.model.source.RenderType;
+import net.mysterria.titles.domain.title.model.source.UnlockMethod;
 import org.bukkit.Material;
 
 import java.util.List;

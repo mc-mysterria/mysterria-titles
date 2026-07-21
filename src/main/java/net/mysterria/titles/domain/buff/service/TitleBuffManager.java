@@ -1,7 +1,8 @@
-package net.mysterria.titles.buff;
+package net.mysterria.titles.domain.buff.service;
 
-import net.mysterria.titles.model.Title;
-import net.mysterria.titles.registry.TitleRegistry;
+import net.mysterria.titles.domain.buff.model.TitleBuff;
+import net.mysterria.titles.domain.title.model.Title;
+import net.mysterria.titles.domain.title.service.TitleRegistry;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

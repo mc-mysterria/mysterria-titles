@@ -1,4 +1,6 @@
-package net.mysterria.titles.model;
+package net.mysterria.titles.domain.title.model;
+
+import lombok.Getter;
 
 import java.util.HashSet;
 import java.util.Optional;
@@ -7,6 +9,7 @@ import java.util.UUID;
 
 public final class PlayerTitleData {
 
+    @Getter
     private final UUID uuid;
     private final Set<String> unlockedTitles;
     private String activeTitle;
@@ -20,10 +23,6 @@ public final class PlayerTitleData {
         this.uuid = uuid;
         this.unlockedTitles = new HashSet<>(unlockedTitles);
         this.activeTitle = activeTitle;
-    }
-
-    public UUID getUuid() {
-        return uuid;
     }
 
     public boolean unlock(String titleId) {

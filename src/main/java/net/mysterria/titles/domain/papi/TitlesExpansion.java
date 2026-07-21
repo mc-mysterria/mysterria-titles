@@ -1,9 +1,9 @@
-package net.mysterria.titles.placeholder;
+package net.mysterria.titles.domain.papi;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import net.mysterria.titles.MysterriaTitles;
-import net.mysterria.titles.model.PlayerTitleData;
-import net.mysterria.titles.model.Title;
+import net.mysterria.titles.domain.title.model.PlayerTitleData;
+import net.mysterria.titles.domain.title.model.Title;
 import org.bukkit.OfflinePlayer;
 
 public final class TitlesExpansion extends PlaceholderExpansion {

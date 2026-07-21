@@ -1,7 +1,7 @@
-package net.mysterria.titles.buff.impl;
+package net.mysterria.titles.domain.buff.types;
 
 import net.mysterria.titles.MysterriaTitles;
-import net.mysterria.titles.buff.TitleBuff;
+import net.mysterria.titles.domain.buff.model.TitleBuff;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
