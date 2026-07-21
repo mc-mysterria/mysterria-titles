@@ -1,0 +1,18 @@
+name: MysterriaTitles
+version: '${version}'
+author: ikeepcalm
+
+main: net.mysterria.titles.MysterriaTitles
+api-version: '26.1.2'
+load: STARTUP
+
+depend: [PlaceholderAPI]
+softdepend: [TAB, Nexo, UnlimitedNameTags]
+
+permissions:
+  mysterria.titles.use:
+    description: Allows opening the /titles selection GUI
+    default: true
+  mysterria.titles.admin:
+    description: Allows granting, revoking, force-setting, and reloading titles
+    default: op

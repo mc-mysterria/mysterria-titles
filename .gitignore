@@ -1,0 +1,7 @@
+.claude
+.gradle
+.idea
+/api
+/examples
+/run
+/build

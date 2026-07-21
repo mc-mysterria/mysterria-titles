@@ -1,0 +1,13 @@
+storage:
+  type: JSON_PER_PLAYER
+  autosave-interval-seconds: 300
+  flush-on-quit: true
+
+gui:
+  title: "<gradient:#7b2ff7:#f107a3>Titles</gradient>"
+  rows: 6
+  filler-material: GRAY_STAINED_GLASS_PANE
+  locked-material: BARRIER
+  show-locked: true
+
+debug: false

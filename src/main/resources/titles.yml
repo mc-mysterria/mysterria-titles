@@ -1,0 +1,240 @@
+titles:
+  august_born:
+    display: "<light_purple>August Born</light_purple>"
+    description:
+      - "<gray>Marked by the month the anniversary began."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: august_born_tag
+      frame-count: 18
+      frame-duration-ms: 50
+    bonus:
+      type: EXP_BOOST
+      value: 0.0 # TODO: set real bonus value
+    gui:
+      material: SUNFLOWER
+      slot: 11
+    unlock:
+      method: COMMAND
+      permission: ""
+
+  the_generous:
+    display: "<gold>The Generous</gold>"
+    description:
+      - "<gray>Given freely, remembered fondly."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: the_generous_tag
+      frame-count: 18
+      frame-duration-ms: 50
+    bonus:
+      type: EXP_BOOST
+      value: 0.0 # TODO: set real bonus value
+    gui:
+      material: HONEYCOMB
+      slot: 13
+    unlock:
+      method: COMMAND
+      permission: ""
+
+  the_loyalist:
+    display: "<blue>The Loyalist</blue>"
+    description:
+      - "<gray>Stood by Mysterria through it all."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: the_loyalist_tag
+      frame-count: 18
+      frame-duration-ms: 50
+    bonus:
+      type: EXP_BOOST
+      value: 0.0 # TODO: set real bonus value
+    gui:
+      material: SHIELD
+      slot: 15
+    unlock:
+      method: COMMAND
+      permission: ""
+
+  beyonder:
+    display: "<#7700DD>Beyonder</#7700DD>"
+    description:
+      - "<gray>Glimpsed something beyond the veil."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: beyonder_tag
+      frame-count: 18
+      frame-duration-ms: 50
+    bonus:
+      type: EXP_BOOST
+      value: 0.0 # TODO: set real bonus value
+    gui:
+      material: ENDER_EYE
+      slot: 20
+    unlock:
+      method: COMMAND
+      permission: ""
+
+  demigod:
+    display: "<#FF6600>Demigod</#FF6600>"
+    description:
+      - "<gray>Not quite mortal, not quite divine."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: demigod_tag
+      frame-count: 18
+      frame-duration-ms: 50
+    bonus:
+      type: EXP_BOOST
+      value: 0.0 # TODO: set real bonus value
+    gui:
+      material: GOLDEN_APPLE
+      slot: 22
+    unlock:
+      method: COMMAND
+      permission: ""
+
+  saint:
+    display: "<#33DDEE>Saint</#33DDEE>"
+    description:
+      - "<gray>Devotion made manifest."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: saint_tag
+      frame-count: 18
+      frame-duration-ms: 50
+    bonus:
+      type: EXP_BOOST
+      value: 0.0 # TODO: set real bonus value
+    gui:
+      material: WHITE_CANDLE
+      slot: 24
+    unlock:
+      method: COMMAND
+      permission: ""
+
+  angel:
+    display: "<#99BBEE>Angel</#99BBEE>"
+    description:
+      - "<gray>Touched by wings unseen."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: angel_tag
+      frame-count: 18
+      frame-duration-ms: 50
+    bonus:
+      type: EXP_BOOST
+      value: 0.0 # TODO: set real bonus value
+    gui:
+      material: FEATHER
+      slot: 29
+    unlock:
+      method: COMMAND
+      permission: ""
+
+  archangel:
+    display: "<#EECC44>Archangel</#EECC44>"
+    description:
+      - "<gray>First among the heavenly host."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: archangel_tag
+      frame-count: 18
+      frame-duration-ms: 50
+    bonus:
+      type: EXP_BOOST
+      value: 0.0 # TODO: set real bonus value
+    gui:
+      material: ELYTRA
+      slot: 31
+    unlock:
+      method: COMMAND
+      permission: ""
+
+  deity:
+    display: "<#DD2222>Deity</#DD2222>"
+    description:
+      - "<gray>Worshipped, not merely admired."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: deity_tag
+      frame-count: 18
+      frame-duration-ms: 50
+    bonus:
+      type: EXP_BOOST
+      value: 0.0 # TODO: set real bonus value
+    gui:
+      material: NETHER_STAR
+      slot: 33
+    unlock:
+      method: COMMAND
+      permission: ""
+
+  apex_patron:
+    display: "<#22CC66>Apex Patron</#22CC66>"
+    description:
+      - "<gray>Mysterria's staunchest supporter."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: apex_patron_tag
+      frame-count: 18
+      frame-duration-ms: 50
+    bonus:
+      type: EXP_BOOST
+      value: 0.0 # TODO: set real bonus value
+    gui:
+      material: EMERALD_BLOCK
+      slot: 38
+    unlock:
+      method: COMMAND
+      permission: ""
+
+  unique:
+    display: "<#FF55DD>Unique</#FF55DD>"
+    description:
+      - "<gray>There is no other quite like you."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: unique_tag
+      frame-count: 18
+      frame-duration-ms: 50
+    bonus:
+      type: EXP_BOOST
+      value: 0.0 # TODO: set real bonus value
+    gui:
+      material: DRAGON_EGG
+      slot: 40
+    unlock:
+      method: COMMAND
+      permission: ""
+
+  collectioner:
+    display: "<#CC8844>Collectioner</#CC8844>"
+    description:
+      - "<gray>Every rarity, accounted for."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: collectioner_tag
+      frame-count: 18
+      frame-duration-ms: 50
+    bonus:
+      type: EXP_BOOST
+      value: 0.0 # TODO: set real bonus value
+    gui:
+      material: CHEST
+      slot: 42
+    unlock:
+      method: COMMAND
+      permission: ""
