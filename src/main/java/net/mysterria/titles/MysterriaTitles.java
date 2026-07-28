@@ -22,6 +22,7 @@ import net.mysterria.titles.domain.title.service.TitleProgressService;
 import net.mysterria.titles.domain.title.service.TitleRegistry;
 import net.mysterria.titles.domain.title.service.TitleTestModeService;
 import net.mysterria.titles.integration.CircleOfImaginationHook;
+import net.mysterria.titles.listener.BuffRegistryValidationListener;
 import net.mysterria.titles.listener.CoiAvailabilityListener;
 import net.mysterria.titles.listener.CoiTitleListener;
 import net.mysterria.titles.listener.CollectionerShardListener;
@@ -88,7 +89,10 @@ public class MysterriaTitles extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new CoiAvailabilityListener(this), this);
         registerCoiIntegration(); // covers the case COI is already enabled by this point
 
-        buffManager.validateAgainstRegistry(titleRegistry);
+        // Deferred to ServerLoadEvent rather than run here: COI (a paper-plugin.yml plugin)
+        // always finishes enabling after us, so validating synchronously at this point would
+        // always misreport its buffs as missing even though they get wired up moments later.
+        Bukkit.getPluginManager().registerEvents(new BuffRegistryValidationListener(this), this);
 
         LiteBukkitFactory.builder("titles", this)
                 .argument(Title.class, new TitleArgument(titleRegistry))
@@ -150,7 +154,7 @@ public class MysterriaTitles extends JavaPlugin {
         buffManager.registerAndEnable(new MagicDamageBoostBuff(this));
         buffManager.registerAndEnable(new MagicDefenseBoostBuff(this));
         buffManager.registerAndEnable(new MadnessReductionBuff(this));
-        buffManager.validateAgainstRegistry(titleRegistry);
+        getLogger().info("Circle of Imagination detected - magic-related title bonuses (MAGIC_DAMAGE_BOOST, MAGIC_DEFENSE_BOOST, MADNESS_REDUCTION) are now active.");
 
         Bukkit.getPluginManager().registerEvents(new CoiTitleListener(sequenceTitleAutoGrantService), this);
         startSequenceTitleRecheckTask();

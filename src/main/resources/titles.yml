@@ -3,12 +3,8 @@ titles:
     display: "<#A64CFF>August Born</#A64CFF>"
     description:
       - "<gray>Marked by the month the anniversary began."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: august_born_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_august_born%"
     bonus:
       type: EXP_BOOST
       value: 0.03
@@ -23,12 +19,8 @@ titles:
     display: "<#FFAE0D>The Generous</#FFAE0D>"
     description:
       - "<gray>Given freely, remembered fondly."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: the_generous_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_the_generous%"
     bonus:
       type: SATURATION_BOOST
       value: 0.03
@@ -44,12 +36,8 @@ titles:
     description:
       - "<gray>Stood by Mysterria through it all."
       - "<dark_gray>Automatically granted for claiming every Advent Calendar day."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: the_loyalist_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_the_loyalist%"
     bonus:
       type: DEFENSE_BOOST
       value: 0.03
@@ -69,12 +57,8 @@ titles:
     description:
       - "<gray>Glimpsed something beyond the veil."
       - "<dark_gray>Automatically granted while you are a Beyonder."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: beyonder_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_beyonder%"
     bonus:
       type: MAGIC_DAMAGE_BOOST
       value: 0.02
@@ -90,12 +74,8 @@ titles:
     description:
       - "<gray>Not quite mortal, not quite divine."
       - "<dark_gray>Automatically granted at Sequence 4 or higher."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: demigod_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_demigod%"
     bonus:
       type: MAGIC_DEFENSE_BOOST
       value: 0.03
@@ -111,12 +91,8 @@ titles:
     description:
       - "<gray>Devotion made manifest."
       - "<dark_gray>Automatically granted at Sequence 3 or higher."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: saint_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_saint%"
     bonus:
       type: MADNESS_REDUCTION
       value: 0.03
@@ -132,12 +108,8 @@ titles:
     description:
       - "<gray>Touched by wings unseen."
       - "<dark_gray>Automatically granted at Sequence 2 or higher."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: angel_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_angel%"
     bonus:
       type: HEALING_BOOST
       value: 0.03
@@ -153,12 +125,8 @@ titles:
     description:
       - "<gray>First among the heavenly host."
       - "<dark_gray>Automatically granted at Sequence 1 or higher."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: archangel_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_archangel%"
     bonus:
       type: MAGIC_DAMAGE_BOOST
       value: 0.04
@@ -174,12 +142,8 @@ titles:
     description:
       - "<gray>Worshipped, not merely admired."
       - "<dark_gray>Automatically granted at Sequence 0."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: deity_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_deity%"
     bonus:
       type: MAGIC_DEFENSE_BOOST
       value: 0.05
@@ -194,12 +158,8 @@ titles:
     display: "<#1EF273>Apex Patron</#1EF273>"
     description:
       - "<gray>Mysterria's staunchest supporter."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: apex_patron_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_apex_patron%"
     bonus:
       type: DAMAGE_BOOST
       value: 0.04
@@ -215,12 +175,8 @@ titles:
     description:
       - "<gray>There is no other quite like you."
       - "<dark_gray>Automatically granted while your uniqueness trait is active."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: unique_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_unique%"
     bonus:
       type: FISHING_LUCK_BOOST
       value: 0.03
@@ -235,12 +191,8 @@ titles:
     display: "<#F29D49>Collectioner</#F29D49>"
     description:
       - "<gray>Every rarity, accounted for."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: collectioner_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_collectioner%"
     bonus:
       type: MOB_LOOT_BOOST
       value: 0.04
@@ -255,12 +207,8 @@ titles:
     display: "<#FFED5E>Radiant</#FFED5E>"
     description:
       - "<gray>Shines brighter than the rest."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: radiant_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_radiant%"
     bonus:
       type: EXP_BOOST
       value: 0.05
@@ -275,12 +223,8 @@ titles:
     display: "<#69F247>Shepherd</#69F247>"
     description:
       - "<gray>Watches over the flock, always."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: shepherd_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_shepherd%"
     bonus:
       type: HEALING_BOOST
       value: 0.04
@@ -295,12 +239,8 @@ titles:
     display: "<#3373F2>Leader</#3373F2>"
     description:
       - "<gray>Charts the course others follow."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: leader_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_leader%"
     bonus:
       type: DAMAGE_BOOST
       value: 0.04
@@ -315,12 +255,8 @@ titles:
     display: "<#FF8E0D>Developer</#FF8E0D>"
     description:
       - "<gray>Builds the world beneath your feet."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: developer_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_developer%"
     bonus:
       type: DEFENSE_BOOST
       value: 0.04
@@ -335,12 +271,8 @@ titles:
     display: "<#F2B00C>Owner</#F2B00C>"
     description:
       - "<gray>Answers to no one but the server itself."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: owner_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_owner%"
     bonus:
       type: DEFENSE_BOOST
       value: 0.05
@@ -355,12 +287,8 @@ titles:
     display: "<#2BD2F6>Verified</#2BD2F6>"
     description:
       - "<gray>Confirmed, trusted, beyond doubt."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: verified_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_verified%"
     bonus:
       type: EXP_BOOST
       value: 0.02
@@ -376,12 +304,8 @@ titles:
     description:
       - "<gray>A threshold between what is and what could be."
       - "<dark_gray>Automatically granted while you walk the Door pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: door_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_door%"
     bonus:
       type: FALL_DAMAGE_REDUCTION
       value: 0.04
@@ -397,12 +321,8 @@ titles:
     description:
       - "<gray>Burns eternal, blinding all who look too long."
       - "<dark_gray>Automatically granted while you walk the Sun pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: sun_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_sun%"
     bonus:
       type: HEALING_BOOST
       value: 0.04
@@ -418,12 +338,8 @@ titles:
     description:
       - "<gray>Rules through strength, answers to none."
       - "<dark_gray>Automatically granted while you walk the Tyrant pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: tyrant_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_tyrant%"
     bonus:
       type: DAMAGE_BOOST
       value: 0.05
@@ -439,12 +355,8 @@ titles:
     description:
       - "<gray>Walks where wisdom fears to tread."
       - "<dark_gray>Automatically granted while you walk the Fool pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: fool_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_fool%"
     bonus:
       type: FISHING_LUCK_BOOST
       value: 0.04
@@ -460,12 +372,8 @@ titles:
     description:
       - "<gray>Faith made flesh, devotion made power."
       - "<dark_gray>Automatically granted while you walk the Priest pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: priest_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_priest%"
     bonus:
       type: MADNESS_REDUCTION
       value: 0.04
@@ -481,12 +389,8 @@ titles:
     description:
       - "<gray>Beauty and ruin, wound into one."
       - "<dark_gray>Automatically granted while you walk the Demoness pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: demoness_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_demoness%"
     bonus:
       type: MAGIC_DAMAGE_BOOST
       value: 0.04
@@ -502,12 +406,8 @@ titles:
     description:
       - "<gray>A flaw in the pattern that refuses to be fixed."
       - "<dark_gray>Automatically granted while you walk the Error pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: error_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_error%"
     bonus:
       type: DEFENSE_BOOST
       value: 0.03
@@ -523,12 +423,8 @@ titles:
     description:
       - "<gray>Sees what has not yet come to pass."
       - "<dark_gray>Automatically granted while you walk the Visionary pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: visionary_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_visionary%"
     bonus:
       type: POTION_DURATION_BOOST
       value: 0.04
@@ -544,12 +440,8 @@ titles:
     description:
       - "<gray>Fate bends where this path walks."
       - "<dark_gray>Automatically granted while you walk the Fortune pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: fortune_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_fortune%"
     bonus:
       type: MOB_LOOT_BOOST
       value: 0.04
@@ -565,12 +457,8 @@ titles:
     description:
       - "<gray>Suspended between sacrifice and revelation."
       - "<dark_gray>Automatically granted while you walk the Hanged pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: hanged_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_hanged%"
     bonus:
       type: HUNGER_DRAIN_REDUCTION
       value: 0.04
@@ -586,12 +474,8 @@ titles:
     description:
       - "<gray>Where no light dares to follow."
       - "<dark_gray>Automatically granted while you walk the Darkness pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: darkness_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_darkness%"
     bonus:
       type: KNOCKBACK_RESISTANCE_BOOST
       value: 0.04
@@ -607,12 +491,8 @@ titles:
     description:
       - "<gray>The standard by which others are measured."
       - "<dark_gray>Automatically granted while you walk the Paragon pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: paragon_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_paragon%"
     bonus:
       type: DEFENSE_BOOST
       value: 0.04
@@ -628,12 +508,8 @@ titles:
     description:
       - "<gray>Bound to the world beneath the sky."
       - "<dark_gray>Automatically granted while you walk the Sublunary pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: sublunary_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_sublunary%"
     bonus:
       type: SATURATION_BOOST
       value: 0.03
@@ -649,12 +525,8 @@ titles:
     description:
       - "<gray>Distills the impossible into the real."
       - "<dark_gray>Automatically granted while you walk the Condenser pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: condenser_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_condenser%"
     bonus:
       type: MAGIC_DEFENSE_BOOST
       value: 0.03
@@ -670,12 +542,8 @@ titles:
     description:
       - "<gray>A word spoken, and reality obeys."
       - "<dark_gray>Automatically granted while you walk the Edict pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: edict_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_edict%"
     bonus:
       type: DAMAGE_BOOST
       value: 0.03
@@ -691,12 +559,8 @@ titles:
     description:
       - "<gray>Order was only ever a suggestion."
       - "<dark_gray>Automatically granted while you walk the Chaos pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: chaos_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_chaos%"
     bonus:
       type: EXP_BOOST
       value: 0.03
@@ -712,12 +576,8 @@ titles:
     description:
       - "<gray>Truth and madness, indistinguishable in the fog."
       - "<dark_gray>Automatically granted while you walk the Chaosmist pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: chaosmist_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_chaosmist%"
     bonus:
       type: MAGIC_DEFENSE_BOOST
       value: 0.03
@@ -733,12 +593,8 @@ titles:
     description:
       - "<gray>The name that binds a bloodline together."
       - "<dark_gray>Automatically granted while you walk the Patriarch pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: patriarch_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_patriarch%"
     bonus:
       type: DEFENSE_BOOST
       value: 0.04
@@ -754,12 +610,8 @@ titles:
     description:
       - "<gray>The end that walks and speaks."
       - "<dark_gray>Automatically granted while you walk the Death pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: death_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_death%"
     bonus:
       type: DAMAGE_BOOST
       value: 0.05
@@ -775,12 +627,8 @@ titles:
     description:
       - "<gray>Dominion is not claimed, it is inherited."
       - "<dark_gray>Automatically granted while you walk the Emperor pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: emperor_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_emperor%"
     bonus:
       type: MAGIC_DEFENSE_BOOST
       value: 0.04
@@ -796,12 +644,8 @@ titles:
     description:
       - "<gray>Distant, cold, and always watching."
       - "<dark_gray>Automatically granted while you walk the Moon pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: moon_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_moon%"
     bonus:
       type: POTION_DURATION_BOOST
       value: 0.03
@@ -817,12 +661,8 @@ titles:
     description:
       - "<gray>Judgement rendered without hesitation."
       - "<dark_gray>Automatically granted while you walk the Justiciar pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: justiciar_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_justiciar%"
     bonus:
       type: DEFENSE_BOOST
       value: 0.04
@@ -838,12 +678,8 @@ titles:
     description:
       - "<gray>Stare long enough, and it stares back."
       - "<dark_gray>Automatically granted while you walk the Abyss pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: abyss_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_abyss%"
     bonus:
       type: MAGIC_DEFENSE_BOOST
       value: 0.05
@@ -859,12 +695,8 @@ titles:
     description:
       - "<gray>A shadow too large to step out from under."
       - "<dark_gray>Automatically granted while you walk the Giant pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: giant_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_giant%"
     bonus:
       type: KNOCKBACK_RESISTANCE_BOOST
       value: 0.05
@@ -880,12 +712,8 @@ titles:
     description:
       - "<gray>The origin from which all else grew."
       - "<dark_gray>Automatically granted while you walk the Mother pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: mother_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_mother%"
     bonus:
       type: SATURATION_BOOST
       value: 0.04
@@ -901,12 +729,8 @@ titles:
     description:
       - "<gray>Wisdom found only in solitude."
       - "<dark_gray>Automatically granted while you walk the Hermit pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: hermit_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_hermit%"
     bonus:
       type: HUNGER_DRAIN_REDUCTION
       value: 0.05
@@ -922,12 +746,8 @@ titles:
     description:
       - "<gray>Bound, yet never broken."
       - "<dark_gray>Automatically granted while you walk the Chained pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: chained_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_chained%"
     bonus:
       type: KNOCKBACK_RESISTANCE_BOOST
       value: 0.04
@@ -943,12 +763,8 @@ titles:
     description:
       - "<gray>Hunger with no bottom, and no end."
       - "<dark_gray>Automatically granted while you walk the Devouring pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: devouring_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_devouring%"
     bonus:
       type: MOB_LOOT_BOOST
       value: 0.05
@@ -964,12 +780,8 @@ titles:
     description:
       - "<gray>Built to the heavens, felled all the same."
       - "<dark_gray>Automatically granted while you walk the Tower pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: tower_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_tower%"
     bonus:
       type: FALL_DAMAGE_REDUCTION
       value: 0.05
@@ -985,12 +797,8 @@ titles:
     description:
       - "<gray>Outlasts every age it was born into."
       - "<dark_gray>Automatically granted while you walk the Aeon pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: aeon_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_aeon%"
     bonus:
       type: EXP_BOOST
       value: 0.04
@@ -1006,12 +814,8 @@ titles:
     description:
       - "<gray>Entropy given purpose and direction."
       - "<dark_gray>Automatically granted while you walk the Second Law pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: secondlaw_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_secondlaw%"
     bonus:
       type: MAGIC_DAMAGE_BOOST
       value: 0.05
@@ -1027,12 +831,8 @@ titles:
     description:
       - "<gray>Time moves on. This does not."
       - "<dark_gray>Automatically granted while you walk the Everlasting pathway."
-    render-type: ANIMATED
-    nexo-texture: ""
-    animation:
-      frame-base: everlasting_tag
-      frame-count: 18
-      frame-duration-ms: 150
+    render-type: STATIC
+    nexo-texture: "%nexo_everlasting%"
     bonus:
       type: HEALING_BOOST
       value: 0.05
