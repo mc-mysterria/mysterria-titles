@@ -8,6 +8,9 @@ import net.mysterria.titles.integration.UnlimitedNameTagsHook;
 import org.bukkit.entity.Player;
 
 import java.util.List;
+import java.util.Locale;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Auto-unlocks (never force-equips) COI-tied titles based on live Beyonder state, and revokes
@@ -31,6 +34,19 @@ public class SequenceTitleAutoGrantService {
 
     private static final String BEYONDER_TITLE_ID = "beyonder";
     private static final String UNIQUE_TITLE_ID = "unique";
+
+    /**
+     * Title ids that mirror a Circle of Imagination pathway name 1:1 (see titles.yml) - a player
+     * holding that pathway at any sequence auto-unlocks (and loses it again if they drop the
+     * pathway, e.g. via a pathway transfer).
+     */
+    private static final Set<String> PATHWAY_TITLE_IDS = Set.of(
+            "door", "sun", "tyrant", "fool", "priest", "demoness", "error", "visionary",
+            "fortune", "hanged", "darkness", "paragon", "sublunary", "condenser", "edict",
+            "chaos", "chaosmist", "patriarch", "death", "emperor", "moon", "justiciar",
+            "abyss", "giant", "mother", "hermit", "chained", "devouring", "tower", "aeon",
+            "secondlaw", "everlasting"
+    );
 
     private final PlayerDataManager playerDataManager;
 
@@ -57,6 +73,15 @@ public class SequenceTitleAutoGrantService {
 
         boolean uniqueEligible = api.getUniquenessActingMultiplier(player) != 1.0;
         changed |= apply(data, UNIQUE_TITLE_ID, uniqueEligible);
+
+        Set<String> heldPathways = isBeyonder
+                ? api.getPathwayData(player).stream()
+                        .map(pathway -> pathway.name().toLowerCase(Locale.ROOT))
+                        .collect(Collectors.toSet())
+                : Set.of();
+        for (String pathwayId : PATHWAY_TITLE_IDS) {
+            changed |= apply(data, pathwayId, heldPathways.contains(pathwayId));
+        }
 
         if (changed) {
             UnlimitedNameTagsHook.refresh(player.getUniqueId());

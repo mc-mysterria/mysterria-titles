@@ -52,3 +52,117 @@ permissions:
   mysterria.titles.title.collectioner:
     description: Marks that a player holds the Collectioner title
     default: false
+  mysterria.titles.title.radiant:
+    description: Marks that a player holds the Radiant title
+    default: false
+  mysterria.titles.title.shepherd:
+    description: Marks that a player holds the Shepherd title
+    default: false
+  mysterria.titles.title.leader:
+    description: Marks that a player holds the Leader title
+    default: false
+  mysterria.titles.title.developer:
+    description: Marks that a player holds the Developer title
+    default: false
+  mysterria.titles.title.owner:
+    description: Marks that a player holds the Owner title
+    default: false
+  mysterria.titles.title.verified:
+    description: Marks that a player holds the Verified title
+    default: false
+  mysterria.titles.title.door:
+    description: Marks that a player holds the The Door title
+    default: false
+  mysterria.titles.title.sun:
+    description: Marks that a player holds the The Sun title
+    default: false
+  mysterria.titles.title.tyrant:
+    description: Marks that a player holds the The Tyrant title
+    default: false
+  mysterria.titles.title.fool:
+    description: Marks that a player holds the The Fool title
+    default: false
+  mysterria.titles.title.priest:
+    description: Marks that a player holds the The Priest title
+    default: false
+  mysterria.titles.title.demoness:
+    description: Marks that a player holds the The Demoness title
+    default: false
+  mysterria.titles.title.error:
+    description: Marks that a player holds the The Error title
+    default: false
+  mysterria.titles.title.visionary:
+    description: Marks that a player holds the The Visionary title
+    default: false
+  mysterria.titles.title.fortune:
+    description: Marks that a player holds the The Fortune title
+    default: false
+  mysterria.titles.title.hanged:
+    description: Marks that a player holds the The Hanged title
+    default: false
+  mysterria.titles.title.darkness:
+    description: Marks that a player holds the The Darkness title
+    default: false
+  mysterria.titles.title.paragon:
+    description: Marks that a player holds the The Paragon title
+    default: false
+  mysterria.titles.title.sublunary:
+    description: Marks that a player holds the The Sublunary title
+    default: false
+  mysterria.titles.title.condenser:
+    description: Marks that a player holds the The Condenser title
+    default: false
+  mysterria.titles.title.edict:
+    description: Marks that a player holds the The Edict title
+    default: false
+  mysterria.titles.title.chaos:
+    description: Marks that a player holds the The Chaos title
+    default: false
+  mysterria.titles.title.chaosmist:
+    description: Marks that a player holds the The Chaosmist title
+    default: false
+  mysterria.titles.title.patriarch:
+    description: Marks that a player holds the The Patriarch title
+    default: false
+  mysterria.titles.title.death:
+    description: Marks that a player holds the The Death title
+    default: false
+  mysterria.titles.title.emperor:
+    description: Marks that a player holds the The Emperor title
+    default: false
+  mysterria.titles.title.moon:
+    description: Marks that a player holds the The Moon title
+    default: false
+  mysterria.titles.title.justiciar:
+    description: Marks that a player holds the The Justiciar title
+    default: false
+  mysterria.titles.title.abyss:
+    description: Marks that a player holds the The Abyss title
+    default: false
+  mysterria.titles.title.giant:
+    description: Marks that a player holds the The Giant title
+    default: false
+  mysterria.titles.title.mother:
+    description: Marks that a player holds the The Mother title
+    default: false
+  mysterria.titles.title.hermit:
+    description: Marks that a player holds the The Hermit title
+    default: false
+  mysterria.titles.title.chained:
+    description: Marks that a player holds the The Chained title
+    default: false
+  mysterria.titles.title.devouring:
+    description: Marks that a player holds the The Devouring title
+    default: false
+  mysterria.titles.title.tower:
+    description: Marks that a player holds the The Tower title
+    default: false
+  mysterria.titles.title.aeon:
+    description: Marks that a player holds the The Aeon title
+    default: false
+  mysterria.titles.title.secondlaw:
+    description: Marks that a player holds the The Second Law title
+    default: false
+  mysterria.titles.title.everlasting:
+    description: Marks that a player holds the The Everlasting title
+    default: false

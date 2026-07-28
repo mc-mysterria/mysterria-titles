@@ -87,6 +87,158 @@ TITLES = {
         "text": "| COLLECTIONER |",
         "base": "#CC8844",  # bronze
     },
+    "radiant": {
+        "text": "| RADIANT |",
+        "base": "#FFEE66",
+    },
+    "shepherd": {
+        "text": "| SHEPHERD |",
+        "base": "#88CC77",
+    },
+    "leader": {
+        "text": "| LEADER |",
+        "base": "#3366CC",
+    },
+    "developer": {
+        "text": "| DEVELOPER |",
+        "base": "#FF8800",
+    },
+    "owner": {
+        "text": "| OWNER |",
+        "base": "#B8860B",
+    },
+    "verified": {
+        "text": "| VERIFIED |",
+        "base": "#33CCEE",
+    },
+    "door": {
+        "text": "| THE DOOR |",
+        "base": "#DDDDEE",
+    },
+    "sun": {
+        "text": "| THE SUN |",
+        "base": "#FFCC00",
+    },
+    "tyrant": {
+        "text": "| THE TYRANT |",
+        "base": "#990000",
+    },
+    "fool": {
+        "text": "| THE FOOL |",
+        "base": "#AAAAAA",
+    },
+    "priest": {
+        "text": "| THE PRIEST |",
+        "base": "#EEDDAA",
+    },
+    "demoness": {
+        "text": "| THE DEMONESS |",
+        "base": "#660066",
+    },
+    "error": {
+        "text": "| THE ERROR |",
+        "base": "#FF3333",
+    },
+    "visionary": {
+        "text": "| THE VISIONARY |",
+        "base": "#3399FF",
+    },
+    "fortune": {
+        "text": "| THE FORTUNE |",
+        "base": "#33CC33",
+    },
+    "hanged": {
+        "text": "| THE HANGED |",
+        "base": "#663333",
+    },
+    "darkness": {
+        "text": "| THE DARKNESS |",
+        "base": "#222222",
+    },
+    "paragon": {
+        "text": "| THE PARAGON |",
+        "base": "#FFEEAA",
+    },
+    "sublunary": {
+        "text": "| THE SUBLUNARY |",
+        "base": "#CCCCFF",
+    },
+    "condenser": {
+        "text": "| THE CONDENSER |",
+        "base": "#33CCCC",
+    },
+    "edict": {
+        "text": "| THE EDICT |",
+        "base": "#AA8800",
+    },
+    "chaos": {
+        "text": "| THE CHAOS |",
+        "base": "#DD2266",
+    },
+    "chaosmist": {
+        "text": "| THE CHAOSMIST |",
+        "base": "#998899",
+    },
+    "patriarch": {
+        "text": "| THE PATRIARCH |",
+        "base": "#663399",
+    },
+    "death": {
+        "text": "| THE DEATH |",
+        "base": "#111111",
+    },
+    "emperor": {
+        "text": "| THE EMPEROR |",
+        "base": "#AA6600",
+    },
+    "moon": {
+        "text": "| THE MOON |",
+        "base": "#AACCEE",
+    },
+    "justiciar": {
+        "text": "| THE JUSTICIAR |",
+        "base": "#3366AA",
+    },
+    "abyss": {
+        "text": "| THE ABYSS |",
+        "base": "#000033",
+    },
+    "giant": {
+        "text": "| THE GIANT |",
+        "base": "#886644",
+    },
+    "mother": {
+        "text": "| THE MOTHER |",
+        "base": "#FF99AA",
+    },
+    "hermit": {
+        "text": "| THE HERMIT |",
+        "base": "#776655",
+    },
+    "chained": {
+        "text": "| THE CHAINED |",
+        "base": "#555555",
+    },
+    "devouring": {
+        "text": "| THE DEVOURING |",
+        "base": "#661100",
+    },
+    "tower": {
+        "text": "| THE TOWER |",
+        "base": "#778899",
+    },
+    "aeon": {
+        "text": "| THE AEON |",
+        "base": "#FFDD88",
+    },
+    "secondlaw": {
+        "text": "| THE SECOND LAW |",
+        "base": "#6699CC",
+    },
+    "everlasting": {
+        "text": "| THE EVERLASTING |",
+        "base": "#FFFFDD",
+    },
 }
 
 

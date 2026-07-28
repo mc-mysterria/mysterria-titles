@@ -112,6 +112,16 @@ public class TitlesAdminCommand {
         sender.sendMessage(Component.text(target.getName() + "'s progress on '" + title.id() + "' set to " + amount + "/" + title.progressRequired() + ".", NamedTextColor.GREEN));
     }
 
+    @Execute(name = "test")
+    public void toggleTestMode(@Context Player sender) {
+        boolean enabled = plugin.getTitleTestModeService().toggle(sender.getUniqueId());
+        if (enabled) {
+            sender.sendMessage(Component.text("Test mode enabled - every title shows as unlocked in /titles for this session only.", NamedTextColor.GREEN));
+        } else {
+            sender.sendMessage(Component.text("Test mode disabled.", NamedTextColor.YELLOW));
+        }
+    }
+
     @Execute(name = "list")
     public void list(@Context CommandSender sender, @Arg Player target) {
         PlayerTitleData data = requireData(sender, target);

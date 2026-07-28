@@ -24,5 +24,6 @@ public class PlayerLifecycleListener implements Listener {
     public void onQuit(PlayerQuitEvent event) {
         boolean flushOnQuit = plugin.getConfigManager().getSettings().isFlushOnQuit();
         plugin.getPlayerDataManager().unload(event.getPlayer().getUniqueId(), flushOnQuit);
+        plugin.getTitleTestModeService().disable(event.getPlayer().getUniqueId());
     }
 }

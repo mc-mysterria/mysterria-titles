@@ -1,7 +1,6 @@
 package net.mysterria.titles.gui;
 
 import dev.triumphteam.gui.builder.item.PaperItemBuilder;
-import dev.triumphteam.gui.guis.BaseGui;
 import dev.triumphteam.gui.guis.Gui;
 import dev.triumphteam.gui.guis.GuiItem;
 import dev.triumphteam.gui.guis.PaginatedGui;
@@ -29,7 +28,7 @@ public class TitlesGui {
     private final Player player;
     private final PluginSettings settings;
     private final TitleRegistry registry;
-    private final BaseGui gui;
+    private final PaginatedGui gui;
 
     public TitlesGui(MysterriaTitles plugin, Player player) {
         this.plugin = plugin;
@@ -38,44 +37,12 @@ public class TitlesGui {
         this.registry = plugin.getTitleRegistry();
 
         Component title = MiniMessage.miniMessage().deserialize(settings.getGuiTitle());
-        boolean paginated = registry.size() > settings.getGuiRows() * 9;
-
-        if (paginated) {
-            PaginatedGui paginatedGui = Gui.paginated()
-                    .title(title)
-                    .rows(settings.getGuiRows())
-                    .disableAllInteractions()
-                    .create();
-            this.gui = paginatedGui;
-            buildPaginated(paginatedGui);
-        } else {
-            Gui staticGui = Gui.gui()
-                    .title(title)
-                    .rows(settings.getGuiRows())
-                    .disableAllInteractions()
-                    .create();
-            this.gui = staticGui;
-            buildStatic(staticGui);
-        }
-    }
-
-    private void buildStatic(Gui staticGui) {
-        staticGui.getFiller().fill(filler());
-
-        Set<String> stored = storedUnlocked();
-        String active = activeTitleId();
-
-        for (Title title : registry.all()) {
-            int slot = title.guiSlot();
-            if (slot < 0 || slot >= settings.getGuiRows() * 9) continue;
-
-            boolean unlocked = registry.isEffectivelyUnlocked(player, stored, title);
-            if (!unlocked && !settings.isShowLocked()) continue;
-
-            staticGui.setItem(slot, buildTitleItem(title, unlocked, title.id().equals(active)));
-        }
-
-        staticGui.setItem(clearButtonSlot(), clearButtonItem());
+        this.gui = Gui.paginated()
+                .title(title)
+                .rows(settings.getGuiRows())
+                .disableAllInteractions()
+                .create();
+        buildPaginated(gui);
     }
 
     private void buildPaginated(PaginatedGui paginatedGui) {
@@ -98,9 +65,10 @@ public class TitlesGui {
 
         Set<String> stored = storedUnlocked();
         String active = activeTitleId();
+        boolean testMode = plugin.getTitleTestModeService().isEnabled(player.getUniqueId());
 
         for (Title title : registry.all()) {
-            boolean unlocked = registry.isEffectivelyUnlocked(player, stored, title);
+            boolean unlocked = testMode || registry.isEffectivelyUnlocked(player, stored, title);
             if (!unlocked && !settings.isShowLocked()) continue;
 
             paginatedGui.addItem(buildTitleItem(title, unlocked, title.id().equals(active)));
@@ -166,10 +134,6 @@ public class TitlesGui {
                 .decoration(TextDecoration.ITALIC, false);
     }
 
-    private int clearButtonSlot() {
-        return (settings.getGuiRows() - 1) * 9 + 4;
-    }
-
     private GuiItem clearButtonItem() {
         boolean hasActive = activeTitleId() != null;
         List<Component> lore = new ArrayList<>();
@@ -229,14 +193,9 @@ public class TitlesGui {
     }
 
     private void refresh() {
-        if (gui instanceof PaginatedGui paginatedGui) {
-            paginatedGui.clearPageItems();
-            buildPaginated(paginatedGui);
-            paginatedGui.update();
-        } else if (gui instanceof Gui staticGui) {
-            buildStatic(staticGui);
-            staticGui.update();
-        }
+        gui.clearPageItems();
+        buildPaginated(gui);
+        gui.update();
     }
 
     public void open() {

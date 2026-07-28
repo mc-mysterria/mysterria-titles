@@ -20,6 +20,7 @@ import net.mysterria.titles.domain.title.model.Title;
 import net.mysterria.titles.domain.title.service.SequenceTitleAutoGrantService;
 import net.mysterria.titles.domain.title.service.TitleProgressService;
 import net.mysterria.titles.domain.title.service.TitleRegistry;
+import net.mysterria.titles.domain.title.service.TitleTestModeService;
 import net.mysterria.titles.integration.CircleOfImaginationHook;
 import net.mysterria.titles.listener.CoiAvailabilityListener;
 import net.mysterria.titles.listener.CoiTitleListener;
@@ -44,6 +45,7 @@ public class MysterriaTitles extends JavaPlugin {
     private CollectionerShardService collectionerShardService;
     private AnniversaryTokenService anniversaryTokenService;
     private TitleProgressService titleProgressService;
+    private TitleTestModeService titleTestModeService;
     private boolean coiIntegrationRegistered = false;
 
     @Override
@@ -60,6 +62,7 @@ public class MysterriaTitles extends JavaPlugin {
         bonusService = new TitleBonusService(playerDataManager, titleRegistry);
 
         buffManager = new TitleBuffManager(getLogger());
+
         buffManager.register(new ExpBoostBuff(this));
         buffManager.register(new SaturationBoostBuff(this));
         buffManager.register(new DamageBoostBuff(this));
@@ -79,6 +82,7 @@ public class MysterriaTitles extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new CollectionerShardListener(this, collectionerShardService), this);
         anniversaryTokenService = new AnniversaryTokenService(this);
         titleProgressService = new TitleProgressService(this);
+        titleTestModeService = new TitleTestModeService();
 
         sequenceTitleAutoGrantService = new SequenceTitleAutoGrantService(playerDataManager);
         Bukkit.getPluginManager().registerEvents(new CoiAvailabilityListener(this), this);

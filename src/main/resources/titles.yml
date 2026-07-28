@@ -251,6 +251,799 @@ titles:
       method: COMMAND
       permission: "mysterria.titles.title.collectioner"
 
+  radiant:
+    display: "<#FFEE66>Radiant</#FFEE66>"
+    description:
+      - "<gray>Shines brighter than the rest."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: radiant_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: EXP_BOOST
+      value: 0.05
+    gui:
+      material: SEA_LANTERN
+      slot: 0
+    unlock:
+      method: PERMISSION
+      permission: "mysterria.titles.title.radiant"
+
+  shepherd:
+    display: "<#88CC77>Shepherd</#88CC77>"
+    description:
+      - "<gray>Watches over the flock, always."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: shepherd_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: HEALING_BOOST
+      value: 0.04
+    gui:
+      material: BELL
+      slot: 1
+    unlock:
+      method: PERMISSION
+      permission: "mysterria.titles.title.shepherd"
+
+  leader:
+    display: "<#3366CC>Leader</#3366CC>"
+    description:
+      - "<gray>Charts the course others follow."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: leader_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: DAMAGE_BOOST
+      value: 0.04
+    gui:
+      material: BEACON
+      slot: 2
+    unlock:
+      method: PERMISSION
+      permission: "mysterria.titles.title.leader"
+
+  developer:
+    display: "<#FF8800>Developer</#FF8800>"
+    description:
+      - "<gray>Builds the world beneath your feet."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: developer_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: DEFENSE_BOOST
+      value: 0.04
+    gui:
+      material: COMMAND_BLOCK
+      slot: 3
+    unlock:
+      method: PERMISSION
+      permission: "mysterria.titles.title.developer"
+
+  owner:
+    display: "<#B8860B>Owner</#B8860B>"
+    description:
+      - "<gray>Answers to no one but the server itself."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: owner_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: DEFENSE_BOOST
+      value: 0.05
+    gui:
+      material: NETHERITE_BLOCK
+      slot: 4
+    unlock:
+      method: PERMISSION
+      permission: "mysterria.titles.title.owner"
+
+  verified:
+    display: "<#33CCEE>Verified</#33CCEE>"
+    description:
+      - "<gray>Confirmed, trusted, beyond doubt."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: verified_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: EXP_BOOST
+      value: 0.02
+    gui:
+      material: NAME_TAG
+      slot: 5
+    unlock:
+      method: PERMISSION
+      permission: "mysterria.titles.title.verified"
+
+  door:
+    display: "<#DDDDEE>The Door</#DDDDEE>"
+    description:
+      - "<gray>A threshold between what is and what could be."
+      - "<dark_gray>Automatically granted while you walk the Door pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: door_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: FALL_DAMAGE_REDUCTION
+      value: 0.04
+    gui:
+      material: IRON_DOOR
+      slot: 6
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.door"
+
+  sun:
+    display: "<#FFCC00>The Sun</#FFCC00>"
+    description:
+      - "<gray>Burns eternal, blinding all who look too long."
+      - "<dark_gray>Automatically granted while you walk the Sun pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: sun_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: HEALING_BOOST
+      value: 0.04
+    gui:
+      material: GLOWSTONE
+      slot: 7
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.sun"
+
+  tyrant:
+    display: "<#990000>The Tyrant</#990000>"
+    description:
+      - "<gray>Rules through strength, answers to none."
+      - "<dark_gray>Automatically granted while you walk the Tyrant pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: tyrant_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: DAMAGE_BOOST
+      value: 0.05
+    gui:
+      material: NETHERITE_AXE
+      slot: 8
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.tyrant"
+
+  fool:
+    display: "<#AAAAAA>The Fool</#AAAAAA>"
+    description:
+      - "<gray>Walks where wisdom fears to tread."
+      - "<dark_gray>Automatically granted while you walk the Fool pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: fool_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: FISHING_LUCK_BOOST
+      value: 0.04
+    gui:
+      material: RABBIT_FOOT
+      slot: 9
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.fool"
+
+  priest:
+    display: "<#EEDDAA>The Priest</#EEDDAA>"
+    description:
+      - "<gray>Faith made flesh, devotion made power."
+      - "<dark_gray>Automatically granted while you walk the Priest pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: priest_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: MADNESS_REDUCTION
+      value: 0.04
+    gui:
+      material: BOOK
+      slot: 10
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.priest"
+
+  demoness:
+    display: "<#660066>The Demoness</#660066>"
+    description:
+      - "<gray>Beauty and ruin, wound into one."
+      - "<dark_gray>Automatically granted while you walk the Demoness pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: demoness_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: MAGIC_DAMAGE_BOOST
+      value: 0.04
+    gui:
+      material: WITHER_ROSE
+      slot: 12
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.demoness"
+
+  error:
+    display: "<#FF3333>The Error</#FF3333>"
+    description:
+      - "<gray>A flaw in the pattern that refuses to be fixed."
+      - "<dark_gray>Automatically granted while you walk the Error pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: error_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: DEFENSE_BOOST
+      value: 0.03
+    gui:
+      material: STRUCTURE_VOID
+      slot: 14
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.error"
+
+  visionary:
+    display: "<#3399FF>The Visionary</#3399FF>"
+    description:
+      - "<gray>Sees what has not yet come to pass."
+      - "<dark_gray>Automatically granted while you walk the Visionary pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: visionary_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: POTION_DURATION_BOOST
+      value: 0.04
+    gui:
+      material: SPYGLASS
+      slot: 16
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.visionary"
+
+  fortune:
+    display: "<#33CC33>The Fortune</#33CC33>"
+    description:
+      - "<gray>Fate bends where this path walks."
+      - "<dark_gray>Automatically granted while you walk the Fortune pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: fortune_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: MOB_LOOT_BOOST
+      value: 0.04
+    gui:
+      material: EMERALD
+      slot: 17
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.fortune"
+
+  hanged:
+    display: "<#663333>The Hanged</#663333>"
+    description:
+      - "<gray>Suspended between sacrifice and revelation."
+      - "<dark_gray>Automatically granted while you walk the Hanged pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: hanged_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: HUNGER_DRAIN_REDUCTION
+      value: 0.04
+    gui:
+      material: CHAIN
+      slot: 18
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.hanged"
+
+  darkness:
+    display: "<#222222>The Darkness</#222222>"
+    description:
+      - "<gray>Where no light dares to follow."
+      - "<dark_gray>Automatically granted while you walk the Darkness pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: darkness_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: KNOCKBACK_RESISTANCE_BOOST
+      value: 0.04
+    gui:
+      material: COAL_BLOCK
+      slot: 19
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.darkness"
+
+  paragon:
+    display: "<#FFEEAA>The Paragon</#FFEEAA>"
+    description:
+      - "<gray>The standard by which others are measured."
+      - "<dark_gray>Automatically granted while you walk the Paragon pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: paragon_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: DEFENSE_BOOST
+      value: 0.04
+    gui:
+      material: DIAMOND_SWORD
+      slot: 21
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.paragon"
+
+  sublunary:
+    display: "<#CCCCFF>The Sublunary</#CCCCFF>"
+    description:
+      - "<gray>Bound to the world beneath the sky."
+      - "<dark_gray>Automatically granted while you walk the Sublunary pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: sublunary_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: SATURATION_BOOST
+      value: 0.03
+    gui:
+      material: QUARTZ
+      slot: 23
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.sublunary"
+
+  condenser:
+    display: "<#33CCCC>The Condenser</#33CCCC>"
+    description:
+      - "<gray>Distills the impossible into the real."
+      - "<dark_gray>Automatically granted while you walk the Condenser pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: condenser_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: MAGIC_DEFENSE_BOOST
+      value: 0.03
+    gui:
+      material: BREWING_STAND
+      slot: 25
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.condenser"
+
+  edict:
+    display: "<#AA8800>The Edict</#AA8800>"
+    description:
+      - "<gray>A word spoken, and reality obeys."
+      - "<dark_gray>Automatically granted while you walk the Edict pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: edict_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: DAMAGE_BOOST
+      value: 0.03
+    gui:
+      material: WRITTEN_BOOK
+      slot: 26
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.edict"
+
+  chaos:
+    display: "<#DD2266>The Chaos</#DD2266>"
+    description:
+      - "<gray>Order was only ever a suggestion."
+      - "<dark_gray>Automatically granted while you walk the Chaos pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: chaos_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: EXP_BOOST
+      value: 0.03
+    gui:
+      material: TNT
+      slot: 27
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.chaos"
+
+  chaosmist:
+    display: "<#998899>The Chaosmist</#998899>"
+    description:
+      - "<gray>Truth and madness, indistinguishable in the fog."
+      - "<dark_gray>Automatically granted while you walk the Chaosmist pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: chaosmist_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: MAGIC_DEFENSE_BOOST
+      value: 0.03
+    gui:
+      material: GRAY_DYE
+      slot: 28
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.chaosmist"
+
+  patriarch:
+    display: "<#663399>The Patriarch</#663399>"
+    description:
+      - "<gray>The name that binds a bloodline together."
+      - "<dark_gray>Automatically granted while you walk the Patriarch pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: patriarch_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: DEFENSE_BOOST
+      value: 0.04
+    gui:
+      material: TOTEM_OF_UNDYING
+      slot: 30
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.patriarch"
+
+  death:
+    display: "<#111111>The Death</#111111>"
+    description:
+      - "<gray>The end that walks and speaks."
+      - "<dark_gray>Automatically granted while you walk the Death pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: death_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: DAMAGE_BOOST
+      value: 0.05
+    gui:
+      material: WITHER_SKELETON_SKULL
+      slot: 32
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.death"
+
+  emperor:
+    display: "<#AA6600>The Emperor</#AA6600>"
+    description:
+      - "<gray>Dominion is not claimed, it is inherited."
+      - "<dark_gray>Automatically granted while you walk the Emperor pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: emperor_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: MAGIC_DEFENSE_BOOST
+      value: 0.04
+    gui:
+      material: GOLD_BLOCK
+      slot: 34
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.emperor"
+
+  moon:
+    display: "<#AACCEE>The Moon</#AACCEE>"
+    description:
+      - "<gray>Distant, cold, and always watching."
+      - "<dark_gray>Automatically granted while you walk the Moon pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: moon_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: POTION_DURATION_BOOST
+      value: 0.03
+    gui:
+      material: ENDER_PEARL
+      slot: 35
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.moon"
+
+  justiciar:
+    display: "<#3366AA>The Justiciar</#3366AA>"
+    description:
+      - "<gray>Judgement rendered without hesitation."
+      - "<dark_gray>Automatically granted while you walk the Justiciar pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: justiciar_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: DEFENSE_BOOST
+      value: 0.04
+    gui:
+      material: SHIELD
+      slot: 36
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.justiciar"
+
+  abyss:
+    display: "<#000033>The Abyss</#000033>"
+    description:
+      - "<gray>Stare long enough, and it stares back."
+      - "<dark_gray>Automatically granted while you walk the Abyss pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: abyss_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: MAGIC_DEFENSE_BOOST
+      value: 0.05
+    gui:
+      material: HEART_OF_THE_SEA
+      slot: 37
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.abyss"
+
+  giant:
+    display: "<#886644>The Giant</#886644>"
+    description:
+      - "<gray>A shadow too large to step out from under."
+      - "<dark_gray>Automatically granted while you walk the Giant pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: giant_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: KNOCKBACK_RESISTANCE_BOOST
+      value: 0.05
+    gui:
+      material: ANVIL
+      slot: 39
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.giant"
+
+  mother:
+    display: "<#FF99AA>The Mother</#FF99AA>"
+    description:
+      - "<gray>The origin from which all else grew."
+      - "<dark_gray>Automatically granted while you walk the Mother pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: mother_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: SATURATION_BOOST
+      value: 0.04
+    gui:
+      material: CAKE
+      slot: 41
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.mother"
+
+  hermit:
+    display: "<#776655>The Hermit</#776655>"
+    description:
+      - "<gray>Wisdom found only in solitude."
+      - "<dark_gray>Automatically granted while you walk the Hermit pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: hermit_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: HUNGER_DRAIN_REDUCTION
+      value: 0.05
+    gui:
+      material: LANTERN
+      slot: 43
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.hermit"
+
+  chained:
+    display: "<#555555>The Chained</#555555>"
+    description:
+      - "<gray>Bound, yet never broken."
+      - "<dark_gray>Automatically granted while you walk the Chained pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: chained_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: KNOCKBACK_RESISTANCE_BOOST
+      value: 0.04
+    gui:
+      material: IRON_BARS
+      slot: 44
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.chained"
+
+  devouring:
+    display: "<#661100>The Devouring</#661100>"
+    description:
+      - "<gray>Hunger with no bottom, and no end."
+      - "<dark_gray>Automatically granted while you walk the Devouring pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: devouring_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: MOB_LOOT_BOOST
+      value: 0.05
+    gui:
+      material: MAGMA_BLOCK
+      slot: 45
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.devouring"
+
+  tower:
+    display: "<#778899>The Tower</#778899>"
+    description:
+      - "<gray>Built to the heavens, felled all the same."
+      - "<dark_gray>Automatically granted while you walk the Tower pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: tower_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: FALL_DAMAGE_REDUCTION
+      value: 0.05
+    gui:
+      material: LIGHTNING_ROD
+      slot: 46
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.tower"
+
+  aeon:
+    display: "<#FFDD88>The Aeon</#FFDD88>"
+    description:
+      - "<gray>Outlasts every age it was born into."
+      - "<dark_gray>Automatically granted while you walk the Aeon pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: aeon_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: EXP_BOOST
+      value: 0.04
+    gui:
+      material: CLOCK
+      slot: 47
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.aeon"
+
+  secondlaw:
+    display: "<#6699CC>The Second Law</#6699CC>"
+    description:
+      - "<gray>Entropy given purpose and direction."
+      - "<dark_gray>Automatically granted while you walk the Second Law pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: secondlaw_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: MAGIC_DAMAGE_BOOST
+      value: 0.05
+    gui:
+      material: COMPARATOR
+      slot: 48
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.secondlaw"
+
+  everlasting:
+    display: "<#FFFFDD>The Everlasting</#FFFFDD>"
+    description:
+      - "<gray>Time moves on. This does not."
+      - "<dark_gray>Automatically granted while you walk the Everlasting pathway."
+    render-type: ANIMATED
+    nexo-texture: ""
+    animation:
+      frame-base: everlasting_tag
+      frame-count: 18
+      frame-duration-ms: 150
+    bonus:
+      type: HEALING_BOOST
+      value: 0.05
+    gui:
+      material: END_CRYSTAL
+      slot: 50
+    unlock:
+      method: AUTO
+      permission: "mysterria.titles.title.everlasting"
+
+
 # Anniversary event: Collectioner is sold as shards in the festive shop (BrilliantEmporium
 # seasonal shop). Right-clicking while holding >= required-count shards consumes them and
 # unlocks the title above - see CollectionerShardService / CollectionerShardListener.
