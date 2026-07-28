@@ -41,203 +41,203 @@ SWEEP_CYCLES = 2
 TITLES = {
     "august_born": {
         "text": "| AUGUST BORN |",
-        "base": "#AA55FF",  # light_purple
+        "base": "#A64CFF",  # light_purple
     },
     "the_generous": {
         "text": "| THE GENEROUS |",
-        "base": "#FFAA00",  # gold
+        "base": "#FFAE0D",  # gold
     },
     "the_loyalist": {
         "text": "| THE LOYALIST |",
-        "base": "#5555FF",  # blue
+        "base": "#4C4CFF",  # blue
     },
     "beyonder": {
         "text": "| BEYONDER |",
-        "base": "#7700DD",  # void purple
+        "base": "#880CF2",  # void purple
     },
     "demigod": {
         "text": "| DEMIGOD |",
-        "base": "#FF6600",  # fire orange
+        "base": "#FF6E0D",  # fire orange
     },
     "saint": {
         "text": "| SAINT |",
-        "base": "#33DDEE",  # holy cyan
+        "base": "#2BE4F6",  # holy cyan
     },
     "angel": {
         "text": "| ANGEL |",
-        "base": "#99BBEE",  # pale sky blue
+        "base": "#4F92F6",  # pale sky blue
     },
     "archangel": {
         "text": "| ARCHANGEL |",
-        "base": "#EECC44",  # radiant gold
+        "base": "#F6D23E",  # radiant gold
     },
     "deity": {
         "text": "| DEITY |",
-        "base": "#DD2222",  # crimson
+        "base": "#F21B1B",  # crimson
     },
     "apex_patron": {
         "text": "| APEX PATRON |",
-        "base": "#22CC66",  # emerald
+        "base": "#1EF273",  # emerald
     },
     "unique": {
         "text": "| UNIQUE |",
-        "base": "#FF55DD",  # magenta
+        "base": "#FF4CDB",  # magenta
     },
     "collectioner": {
         "text": "| COLLECTIONER |",
-        "base": "#CC8844",  # bronze
+        "base": "#F29D49",  # bronze
     },
     "radiant": {
         "text": "| RADIANT |",
-        "base": "#FFEE66",
+        "base": "#FFED5E",
     },
     "shepherd": {
         "text": "| SHEPHERD |",
-        "base": "#88CC77",
+        "base": "#69F247",
     },
     "leader": {
         "text": "| LEADER |",
-        "base": "#3366CC",
+        "base": "#3373F2",
     },
     "developer": {
         "text": "| DEVELOPER |",
-        "base": "#FF8800",
+        "base": "#FF8E0D",
     },
     "owner": {
         "text": "| OWNER |",
-        "base": "#B8860B",
+        "base": "#F2B00C",
     },
     "verified": {
         "text": "| VERIFIED |",
-        "base": "#33CCEE",
+        "base": "#2BD2F6",
     },
     "door": {
         "text": "| THE DOOR |",
-        "base": "#DDDDEE",
+        "base": "#7272F6",
     },
     "sun": {
         "text": "| THE SUN |",
-        "base": "#FFCC00",
+        "base": "#FFCF0D",
     },
     "tyrant": {
         "text": "| THE TYRANT |",
-        "base": "#990000",
+        "base": "#F20C0C",
     },
     "fool": {
         "text": "| THE FOOL |",
-        "base": "#AAAAAA",
+        "base": "#E8FF4D",
     },
     "priest": {
         "text": "| THE PRIEST |",
-        "base": "#EEDDAA",
+        "base": "#F6CF58",
     },
     "demoness": {
         "text": "| THE DEMONESS |",
-        "base": "#660066",
+        "base": "#F20CF2",
     },
     "error": {
         "text": "| THE ERROR |",
-        "base": "#FF3333",
+        "base": "#FF2929",
     },
     "visionary": {
         "text": "| THE VISIONARY |",
-        "base": "#3399FF",
+        "base": "#2994FF",
     },
     "fortune": {
         "text": "| THE FORTUNE |",
-        "base": "#33CC33",
+        "base": "#33F233",
     },
     "hanged": {
         "text": "| THE HANGED |",
-        "base": "#663333",
+        "base": "#F27373",
     },
     "darkness": {
         "text": "| THE DARKNESS |",
-        "base": "#222222",
+        "base": "#7B2FFF",
     },
     "paragon": {
         "text": "| THE PARAGON |",
-        "base": "#FFEEAA",
+        "base": "#FFDD55",
     },
     "sublunary": {
         "text": "| THE SUBLUNARY |",
-        "base": "#CCCCFF",
+        "base": "#6666FF",
     },
     "condenser": {
         "text": "| THE CONDENSER |",
-        "base": "#33CCCC",
+        "base": "#33F2F2",
     },
     "edict": {
         "text": "| THE EDICT |",
-        "base": "#AA8800",
+        "base": "#F2C40C",
     },
     "chaos": {
         "text": "| THE CHAOS |",
-        "base": "#DD2266",
+        "base": "#F21B69",
     },
     "chaosmist": {
         "text": "| THE CHAOSMIST |",
-        "base": "#998899",
+        "base": "#F26CF2",
     },
     "patriarch": {
         "text": "| THE PATRIARCH |",
-        "base": "#663399",
+        "base": "#9D49F2",
     },
     "death": {
         "text": "| THE DEATH |",
-        "base": "#111111",
+        "base": "#FF2E63",
     },
     "emperor": {
         "text": "| THE EMPEROR |",
-        "base": "#AA6600",
+        "base": "#F2960C",
     },
     "moon": {
         "text": "| THE MOON |",
-        "base": "#AACCEE",
+        "base": "#58A7F6",
     },
     "justiciar": {
         "text": "| THE JUSTICIAR |",
-        "base": "#3366AA",
+        "base": "#408DF2",
     },
     "abyss": {
         "text": "| THE ABYSS |",
-        "base": "#000033",
+        "base": "#0C0CF2",
     },
     "giant": {
         "text": "| THE GIANT |",
-        "base": "#886644",
+        "base": "#F2B373",
     },
     "mother": {
         "text": "| THE MOTHER |",
-        "base": "#FF99AA",
+        "base": "#FF4D6A",
     },
     "hermit": {
         "text": "| THE HERMIT |",
-        "base": "#776655",
+        "base": "#F2A457",
     },
     "chained": {
         "text": "| THE CHAINED |",
-        "base": "#555555",
+        "base": "#C0C0FF",
     },
     "devouring": {
         "text": "| THE DEVOURING |",
-        "base": "#661100",
+        "base": "#F2320C",
     },
     "tower": {
         "text": "| THE TOWER |",
-        "base": "#778899",
+        "base": "#5EA8F2",
     },
     "aeon": {
         "text": "| THE AEON |",
-        "base": "#FFDD88",
+        "base": "#FFDB82",
     },
     "secondlaw": {
         "text": "| THE SECOND LAW |",
-        "base": "#6699CC",
+        "base": "#73B3F2",
     },
     "everlasting": {
         "text": "| THE EVERLASTING |",
-        "base": "#FFFFDD",
+        "base": "#FFFF6E",
     },
 }
 

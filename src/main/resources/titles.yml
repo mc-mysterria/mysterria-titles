@@ -1,6 +1,6 @@
 titles:
   august_born:
-    display: "<light_purple>August Born</light_purple>"
+    display: "<#A64CFF>August Born</#A64CFF>"
     description:
       - "<gray>Marked by the month the anniversary began."
     render-type: ANIMATED
@@ -20,7 +20,7 @@ titles:
       permission: "mysterria.titles.title.august_born"
 
   the_generous:
-    display: "<gold>The Generous</gold>"
+    display: "<#FFAE0D>The Generous</#FFAE0D>"
     description:
       - "<gray>Given freely, remembered fondly."
     render-type: ANIMATED
@@ -40,7 +40,7 @@ titles:
       permission: "mysterria.titles.title.the_generous"
 
   the_loyalist:
-    display: "<blue>The Loyalist</blue>"
+    display: "<#4C4CFF>The Loyalist</#4C4CFF>"
     description:
       - "<gray>Stood by Mysterria through it all."
       - "<dark_gray>Automatically granted for claiming every Advent Calendar day."
@@ -65,7 +65,7 @@ titles:
       progress-required: 15
 
   beyonder:
-    display: "<#7700DD>Beyonder</#7700DD>"
+    display: "<#880CF2>Beyonder</#880CF2>"
     description:
       - "<gray>Glimpsed something beyond the veil."
       - "<dark_gray>Automatically granted while you are a Beyonder."
@@ -86,7 +86,7 @@ titles:
       permission: "mysterria.titles.title.beyonder"
 
   demigod:
-    display: "<#FF6600>Demigod</#FF6600>"
+    display: "<#FF6E0D>Demigod</#FF6E0D>"
     description:
       - "<gray>Not quite mortal, not quite divine."
       - "<dark_gray>Automatically granted at Sequence 4 or higher."
@@ -107,7 +107,7 @@ titles:
       permission: "mysterria.titles.title.demigod"
 
   saint:
-    display: "<#33DDEE>Saint</#33DDEE>"
+    display: "<#2BE4F6>Saint</#2BE4F6>"
     description:
       - "<gray>Devotion made manifest."
       - "<dark_gray>Automatically granted at Sequence 3 or higher."
@@ -128,7 +128,7 @@ titles:
       permission: "mysterria.titles.title.saint"
 
   angel:
-    display: "<#99BBEE>Angel</#99BBEE>"
+    display: "<#4F92F6>Angel</#4F92F6>"
     description:
       - "<gray>Touched by wings unseen."
       - "<dark_gray>Automatically granted at Sequence 2 or higher."
@@ -149,7 +149,7 @@ titles:
       permission: "mysterria.titles.title.angel"
 
   archangel:
-    display: "<#EECC44>Archangel</#EECC44>"
+    display: "<#F6D23E>Archangel</#F6D23E>"
     description:
       - "<gray>First among the heavenly host."
       - "<dark_gray>Automatically granted at Sequence 1 or higher."
@@ -170,7 +170,7 @@ titles:
       permission: "mysterria.titles.title.archangel"
 
   deity:
-    display: "<#DD2222>Deity</#DD2222>"
+    display: "<#F21B1B>Deity</#F21B1B>"
     description:
       - "<gray>Worshipped, not merely admired."
       - "<dark_gray>Automatically granted at Sequence 0."
@@ -191,7 +191,7 @@ titles:
       permission: "mysterria.titles.title.deity"
 
   apex_patron:
-    display: "<#22CC66>Apex Patron</#22CC66>"
+    display: "<#1EF273>Apex Patron</#1EF273>"
     description:
       - "<gray>Mysterria's staunchest supporter."
     render-type: ANIMATED
@@ -211,7 +211,7 @@ titles:
       permission: "mysterria.titles.title.apex_patron"
 
   unique:
-    display: "<#FF55DD>Unique</#FF55DD>"
+    display: "<#FF4CDB>Unique</#FF4CDB>"
     description:
       - "<gray>There is no other quite like you."
       - "<dark_gray>Automatically granted while your uniqueness trait is active."
@@ -232,7 +232,7 @@ titles:
       permission: "mysterria.titles.title.unique"
 
   collectioner:
-    display: "<#CC8844>Collectioner</#CC8844>"
+    display: "<#F29D49>Collectioner</#F29D49>"
     description:
       - "<gray>Every rarity, accounted for."
     render-type: ANIMATED
@@ -252,7 +252,7 @@ titles:
       permission: "mysterria.titles.title.collectioner"
 
   radiant:
-    display: "<#FFEE66>Radiant</#FFEE66>"
+    display: "<#FFED5E>Radiant</#FFED5E>"
     description:
       - "<gray>Shines brighter than the rest."
     render-type: ANIMATED
@@ -272,7 +272,7 @@ titles:
       permission: "mysterria.titles.title.radiant"
 
   shepherd:
-    display: "<#88CC77>Shepherd</#88CC77>"
+    display: "<#69F247>Shepherd</#69F247>"
     description:
       - "<gray>Watches over the flock, always."
     render-type: ANIMATED
@@ -292,7 +292,7 @@ titles:
       permission: "mysterria.titles.title.shepherd"
 
   leader:
-    display: "<#3366CC>Leader</#3366CC>"
+    display: "<#3373F2>Leader</#3373F2>"
     description:
       - "<gray>Charts the course others follow."
     render-type: ANIMATED
@@ -312,7 +312,7 @@ titles:
       permission: "mysterria.titles.title.leader"
 
   developer:
-    display: "<#FF8800>Developer</#FF8800>"
+    display: "<#FF8E0D>Developer</#FF8E0D>"
     description:
       - "<gray>Builds the world beneath your feet."
     render-type: ANIMATED
@@ -332,7 +332,7 @@ titles:
       permission: "mysterria.titles.title.developer"
 
   owner:
-    display: "<#B8860B>Owner</#B8860B>"
+    display: "<#F2B00C>Owner</#F2B00C>"
     description:
       - "<gray>Answers to no one but the server itself."
     render-type: ANIMATED
@@ -352,7 +352,7 @@ titles:
       permission: "mysterria.titles.title.owner"
 
   verified:
-    display: "<#33CCEE>Verified</#33CCEE>"
+    display: "<#2BD2F6>Verified</#2BD2F6>"
     description:
       - "<gray>Confirmed, trusted, beyond doubt."
     render-type: ANIMATED
@@ -372,7 +372,7 @@ titles:
       permission: "mysterria.titles.title.verified"
 
   door:
-    display: "<#DDDDEE>The Door</#DDDDEE>"
+    display: "<#7272F6>The Door</#7272F6>"
     description:
       - "<gray>A threshold between what is and what could be."
       - "<dark_gray>Automatically granted while you walk the Door pathway."
@@ -393,7 +393,7 @@ titles:
       permission: "mysterria.titles.title.door"
 
   sun:
-    display: "<#FFCC00>The Sun</#FFCC00>"
+    display: "<#FFCF0D>The Sun</#FFCF0D>"
     description:
       - "<gray>Burns eternal, blinding all who look too long."
       - "<dark_gray>Automatically granted while you walk the Sun pathway."
@@ -414,7 +414,7 @@ titles:
       permission: "mysterria.titles.title.sun"
 
   tyrant:
-    display: "<#990000>The Tyrant</#990000>"
+    display: "<#F20C0C>The Tyrant</#F20C0C>"
     description:
       - "<gray>Rules through strength, answers to none."
       - "<dark_gray>Automatically granted while you walk the Tyrant pathway."
@@ -435,7 +435,7 @@ titles:
       permission: "mysterria.titles.title.tyrant"
 
   fool:
-    display: "<#AAAAAA>The Fool</#AAAAAA>"
+    display: "<#E8FF4D>The Fool</#E8FF4D>"
     description:
       - "<gray>Walks where wisdom fears to tread."
       - "<dark_gray>Automatically granted while you walk the Fool pathway."
@@ -456,7 +456,7 @@ titles:
       permission: "mysterria.titles.title.fool"
 
   priest:
-    display: "<#EEDDAA>The Priest</#EEDDAA>"
+    display: "<#F6CF58>The Priest</#F6CF58>"
     description:
       - "<gray>Faith made flesh, devotion made power."
       - "<dark_gray>Automatically granted while you walk the Priest pathway."
@@ -477,7 +477,7 @@ titles:
       permission: "mysterria.titles.title.priest"
 
   demoness:
-    display: "<#660066>The Demoness</#660066>"
+    display: "<#F20CF2>The Demoness</#F20CF2>"
     description:
       - "<gray>Beauty and ruin, wound into one."
       - "<dark_gray>Automatically granted while you walk the Demoness pathway."
@@ -498,7 +498,7 @@ titles:
       permission: "mysterria.titles.title.demoness"
 
   error:
-    display: "<#FF3333>The Error</#FF3333>"
+    display: "<#FF2929>The Error</#FF2929>"
     description:
       - "<gray>A flaw in the pattern that refuses to be fixed."
       - "<dark_gray>Automatically granted while you walk the Error pathway."
@@ -519,7 +519,7 @@ titles:
       permission: "mysterria.titles.title.error"
 
   visionary:
-    display: "<#3399FF>The Visionary</#3399FF>"
+    display: "<#2994FF>The Visionary</#2994FF>"
     description:
       - "<gray>Sees what has not yet come to pass."
       - "<dark_gray>Automatically granted while you walk the Visionary pathway."
@@ -540,7 +540,7 @@ titles:
       permission: "mysterria.titles.title.visionary"
 
   fortune:
-    display: "<#33CC33>The Fortune</#33CC33>"
+    display: "<#33F233>The Fortune</#33F233>"
     description:
       - "<gray>Fate bends where this path walks."
       - "<dark_gray>Automatically granted while you walk the Fortune pathway."
@@ -561,7 +561,7 @@ titles:
       permission: "mysterria.titles.title.fortune"
 
   hanged:
-    display: "<#663333>The Hanged</#663333>"
+    display: "<#F27373>The Hanged</#F27373>"
     description:
       - "<gray>Suspended between sacrifice and revelation."
       - "<dark_gray>Automatically granted while you walk the Hanged pathway."
@@ -582,7 +582,7 @@ titles:
       permission: "mysterria.titles.title.hanged"
 
   darkness:
-    display: "<#222222>The Darkness</#222222>"
+    display: "<#7B2FFF>The Darkness</#7B2FFF>"
     description:
       - "<gray>Where no light dares to follow."
       - "<dark_gray>Automatically granted while you walk the Darkness pathway."
@@ -603,7 +603,7 @@ titles:
       permission: "mysterria.titles.title.darkness"
 
   paragon:
-    display: "<#FFEEAA>The Paragon</#FFEEAA>"
+    display: "<#FFDD55>The Paragon</#FFDD55>"
     description:
       - "<gray>The standard by which others are measured."
       - "<dark_gray>Automatically granted while you walk the Paragon pathway."
@@ -624,7 +624,7 @@ titles:
       permission: "mysterria.titles.title.paragon"
 
   sublunary:
-    display: "<#CCCCFF>The Sublunary</#CCCCFF>"
+    display: "<#6666FF>The Sublunary</#6666FF>"
     description:
       - "<gray>Bound to the world beneath the sky."
       - "<dark_gray>Automatically granted while you walk the Sublunary pathway."
@@ -645,7 +645,7 @@ titles:
       permission: "mysterria.titles.title.sublunary"
 
   condenser:
-    display: "<#33CCCC>The Condenser</#33CCCC>"
+    display: "<#33F2F2>The Condenser</#33F2F2>"
     description:
       - "<gray>Distills the impossible into the real."
       - "<dark_gray>Automatically granted while you walk the Condenser pathway."
@@ -666,7 +666,7 @@ titles:
       permission: "mysterria.titles.title.condenser"
 
   edict:
-    display: "<#AA8800>The Edict</#AA8800>"
+    display: "<#F2C40C>The Edict</#F2C40C>"
     description:
       - "<gray>A word spoken, and reality obeys."
       - "<dark_gray>Automatically granted while you walk the Edict pathway."
@@ -687,7 +687,7 @@ titles:
       permission: "mysterria.titles.title.edict"
 
   chaos:
-    display: "<#DD2266>The Chaos</#DD2266>"
+    display: "<#F21B69>The Chaos</#F21B69>"
     description:
       - "<gray>Order was only ever a suggestion."
       - "<dark_gray>Automatically granted while you walk the Chaos pathway."
@@ -708,7 +708,7 @@ titles:
       permission: "mysterria.titles.title.chaos"
 
   chaosmist:
-    display: "<#998899>The Chaosmist</#998899>"
+    display: "<#F26CF2>The Chaosmist</#F26CF2>"
     description:
       - "<gray>Truth and madness, indistinguishable in the fog."
       - "<dark_gray>Automatically granted while you walk the Chaosmist pathway."
@@ -729,7 +729,7 @@ titles:
       permission: "mysterria.titles.title.chaosmist"
 
   patriarch:
-    display: "<#663399>The Patriarch</#663399>"
+    display: "<#9D49F2>The Patriarch</#9D49F2>"
     description:
       - "<gray>The name that binds a bloodline together."
       - "<dark_gray>Automatically granted while you walk the Patriarch pathway."
@@ -750,7 +750,7 @@ titles:
       permission: "mysterria.titles.title.patriarch"
 
   death:
-    display: "<#111111>The Death</#111111>"
+    display: "<#FF2E63>The Death</#FF2E63>"
     description:
       - "<gray>The end that walks and speaks."
       - "<dark_gray>Automatically granted while you walk the Death pathway."
@@ -771,7 +771,7 @@ titles:
       permission: "mysterria.titles.title.death"
 
   emperor:
-    display: "<#AA6600>The Emperor</#AA6600>"
+    display: "<#F2960C>The Emperor</#F2960C>"
     description:
       - "<gray>Dominion is not claimed, it is inherited."
       - "<dark_gray>Automatically granted while you walk the Emperor pathway."
@@ -792,7 +792,7 @@ titles:
       permission: "mysterria.titles.title.emperor"
 
   moon:
-    display: "<#AACCEE>The Moon</#AACCEE>"
+    display: "<#58A7F6>The Moon</#58A7F6>"
     description:
       - "<gray>Distant, cold, and always watching."
       - "<dark_gray>Automatically granted while you walk the Moon pathway."
@@ -813,7 +813,7 @@ titles:
       permission: "mysterria.titles.title.moon"
 
   justiciar:
-    display: "<#3366AA>The Justiciar</#3366AA>"
+    display: "<#408DF2>The Justiciar</#408DF2>"
     description:
       - "<gray>Judgement rendered without hesitation."
       - "<dark_gray>Automatically granted while you walk the Justiciar pathway."
@@ -834,7 +834,7 @@ titles:
       permission: "mysterria.titles.title.justiciar"
 
   abyss:
-    display: "<#000033>The Abyss</#000033>"
+    display: "<#0C0CF2>The Abyss</#0C0CF2>"
     description:
       - "<gray>Stare long enough, and it stares back."
       - "<dark_gray>Automatically granted while you walk the Abyss pathway."
@@ -855,7 +855,7 @@ titles:
       permission: "mysterria.titles.title.abyss"
 
   giant:
-    display: "<#886644>The Giant</#886644>"
+    display: "<#F2B373>The Giant</#F2B373>"
     description:
       - "<gray>A shadow too large to step out from under."
       - "<dark_gray>Automatically granted while you walk the Giant pathway."
@@ -876,7 +876,7 @@ titles:
       permission: "mysterria.titles.title.giant"
 
   mother:
-    display: "<#FF99AA>The Mother</#FF99AA>"
+    display: "<#FF4D6A>The Mother</#FF4D6A>"
     description:
       - "<gray>The origin from which all else grew."
       - "<dark_gray>Automatically granted while you walk the Mother pathway."
@@ -897,7 +897,7 @@ titles:
       permission: "mysterria.titles.title.mother"
 
   hermit:
-    display: "<#776655>The Hermit</#776655>"
+    display: "<#F2A457>The Hermit</#F2A457>"
     description:
       - "<gray>Wisdom found only in solitude."
       - "<dark_gray>Automatically granted while you walk the Hermit pathway."
@@ -918,7 +918,7 @@ titles:
       permission: "mysterria.titles.title.hermit"
 
   chained:
-    display: "<#555555>The Chained</#555555>"
+    display: "<#C0C0FF>The Chained</#C0C0FF>"
     description:
       - "<gray>Bound, yet never broken."
       - "<dark_gray>Automatically granted while you walk the Chained pathway."
@@ -939,7 +939,7 @@ titles:
       permission: "mysterria.titles.title.chained"
 
   devouring:
-    display: "<#661100>The Devouring</#661100>"
+    display: "<#F2320C>The Devouring</#F2320C>"
     description:
       - "<gray>Hunger with no bottom, and no end."
       - "<dark_gray>Automatically granted while you walk the Devouring pathway."
@@ -960,7 +960,7 @@ titles:
       permission: "mysterria.titles.title.devouring"
 
   tower:
-    display: "<#778899>The Tower</#778899>"
+    display: "<#5EA8F2>The Tower</#5EA8F2>"
     description:
       - "<gray>Built to the heavens, felled all the same."
       - "<dark_gray>Automatically granted while you walk the Tower pathway."
@@ -981,7 +981,7 @@ titles:
       permission: "mysterria.titles.title.tower"
 
   aeon:
-    display: "<#FFDD88>The Aeon</#FFDD88>"
+    display: "<#FFDB82>The Aeon</#FFDB82>"
     description:
       - "<gray>Outlasts every age it was born into."
       - "<dark_gray>Automatically granted while you walk the Aeon pathway."
@@ -1002,7 +1002,7 @@ titles:
       permission: "mysterria.titles.title.aeon"
 
   secondlaw:
-    display: "<#6699CC>The Second Law</#6699CC>"
+    display: "<#73B3F2>The Second Law</#73B3F2>"
     description:
       - "<gray>Entropy given purpose and direction."
       - "<dark_gray>Automatically granted while you walk the Second Law pathway."
@@ -1023,7 +1023,7 @@ titles:
       permission: "mysterria.titles.title.secondlaw"
 
   everlasting:
-    display: "<#FFFFDD>The Everlasting</#FFFFDD>"
+    display: "<#FFFF6E>The Everlasting</#FFFF6E>"
     description:
       - "<gray>Time moves on. This does not."
       - "<dark_gray>Automatically granted while you walk the Everlasting pathway."
