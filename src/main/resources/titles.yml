@@ -843,6 +843,70 @@ titles:
       method: AUTO
       permission: "mysterria.titles.title.everlasting"
 
+  the_ragnarok:
+    display: "<#E2B23A>The Ragnarok</#E2B23A>"
+    description:
+      - "<gray>Custom reward granted for winning a Mysterria event."
+    render-type: STATIC
+    nexo-texture: "%nexo_the_ragnarok%"
+    bonus:
+      type: DAMAGE_BOOST
+      value: 0.01
+    gui:
+      material: NETHERITE_AXE
+      slot: 49
+    unlock:
+      method: COMMAND
+      permission: "mysterria.titles.title.the_ragnarok"
+
+  dragoness:
+    display: "<#9B4DFF>Dragoness</#9B4DFF>"
+    description:
+      - "<gray>Custom reward granted for winning a Mysterria event."
+    render-type: STATIC
+    nexo-texture: "%nexo_dragoness%"
+    bonus:
+      type: FALL_DAMAGE_REDUCTION
+      value: 0.05
+    gui:
+      material: PURPUR_BLOCK
+      slot: 51
+    unlock:
+      method: COMMAND
+      permission: "mysterria.titles.title.dragoness"
+
+  stormblessed:
+    display: "<#78BEFF>Stormblessed</#78BEFF>"
+    description:
+      - "<gray>Custom reward granted for winning a Mysterria event."
+    render-type: STATIC
+    nexo-texture: "%nexo_stormblessed%"
+    bonus:
+      type: WATER_BREATHING_BOOST
+      value: 0.25
+    gui:
+      material: TRIDENT
+      slot: 52
+    unlock:
+      method: COMMAND
+      permission: "mysterria.titles.title.stormblessed"
+
+  watcher_of_light_and_darkness:
+    display: "<#FFE640>Watcher of </#FFE640><#B266FF>Light and Darkness</#B266FF>"
+    description:
+      - "<gray>Custom reward granted for winning a Mysterria event."
+    render-type: STATIC
+    nexo-texture: "%nexo_watcher_of_light_and_darkness%"
+    bonus:
+      type: MADNESS_REDUCTION
+      value: 0.01
+    gui:
+      material: SPYGLASS
+      slot: 53
+    unlock:
+      method: COMMAND
+      permission: "mysterria.titles.title.watcher_of_light_and_darkness"
+
 
 # Anniversary event: Collectioner is sold as shards in the festive shop (BrilliantEmporium
 # seasonal shop). Right-clicking while holding >= required-count shards consumes them and

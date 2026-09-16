@@ -24,7 +24,8 @@ public record BonusDisplay(String label, Kind kind) {
             Map.entry("HEALING_BOOST", new BonusDisplay("More Healing Received", Kind.BOOST)),
             Map.entry("MAGIC_DAMAGE_BOOST", new BonusDisplay("More Magic Damage", Kind.BOOST)),
             Map.entry("MAGIC_DEFENSE_BOOST", new BonusDisplay("Less Magic Damage Taken", Kind.REDUCTION)),
-            Map.entry("MADNESS_REDUCTION", new BonusDisplay("Less Madness Gained", Kind.REDUCTION))
+            Map.entry("MADNESS_REDUCTION", new BonusDisplay("Less Madness Gained", Kind.REDUCTION)),
+            Map.entry("WATER_BREATHING_BOOST", new BonusDisplay("Longer Breath Underwater", Kind.BOOST))
     );
 
     public static BonusDisplay of(String buffId) {
