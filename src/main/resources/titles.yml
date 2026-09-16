@@ -867,7 +867,7 @@ titles:
     nexo-texture: "%nexo_dragoness%"
     bonus:
       type: FALL_DAMAGE_REDUCTION
-      value: 0.10
+      value: 0.05
     gui:
       material: PURPUR_BLOCK
       slot: 51
@@ -883,7 +883,7 @@ titles:
     nexo-texture: "%nexo_stormblessed%"
     bonus:
       type: WATER_BREATHING_BOOST
-      value: 0.50
+      value: 0.25
     gui:
       material: TRIDENT
       slot: 52
@@ -899,7 +899,7 @@ titles:
     nexo-texture: "%nexo_watcher_of_light_and_darkness%"
     bonus:
       type: MADNESS_REDUCTION
-      value: 0.02
+      value: 0.01
     gui:
       material: SPYGLASS
       slot: 53
