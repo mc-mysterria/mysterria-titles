@@ -166,3 +166,15 @@ permissions:
   mysterria.titles.title.everlasting:
     description: Marks that a player holds the The Everlasting title
     default: false
+  mysterria.titles.title.the_ragnarok:
+    description: Marks that a player holds the The Ragnarok title
+    default: false
+  mysterria.titles.title.dragoness:
+    description: Marks that a player holds the Dragoness title
+    default: false
+  mysterria.titles.title.stormblessed:
+    description: Marks that a player holds the Stormblessed title
+    default: false
+  mysterria.titles.title.watcher_of_light_and_darkness:
+    description: Marks that a player holds the Watcher of Light and Darkness title
+    default: false
