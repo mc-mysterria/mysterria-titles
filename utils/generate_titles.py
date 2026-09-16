@@ -43,6 +43,10 @@ TITLES = {
         "text": "| AUGUST BORN |",
         "base": "#A64CFF",  # light_purple
     },
+    "dragoness": {
+        "text": "| DRAGONESS |",
+        "base": "#9B4DFF",  # violet, event title
+    },
     "the_generous": {
         "text": "| THE GENEROUS |",
         "base": "#FFAE0D",  # gold
