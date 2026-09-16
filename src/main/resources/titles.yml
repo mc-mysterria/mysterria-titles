@@ -844,7 +844,7 @@ titles:
       permission: "mysterria.titles.title.everlasting"
 
   the_ragnarok:
-    display: "<#E2B23A>The Ragnarok</#E2B23A>"
+    display: "<#F2C744>The Ragnarok</#F2C744>"
     description:
       - "<gray>Custom reward granted for winning a Mysterria event."
     render-type: STATIC
@@ -860,7 +860,7 @@ titles:
       permission: "mysterria.titles.title.the_ragnarok"
 
   dragoness:
-    display: "<#9B4DFF>Dragoness</#9B4DFF>"
+    display: "<#FBFDFF>Dragoness</#FBFDFF>"
     description:
       - "<gray>Custom reward granted for winning a Mysterria event."
     render-type: STATIC
@@ -876,7 +876,7 @@ titles:
       permission: "mysterria.titles.title.dragoness"
 
   stormblessed:
-    display: "<#78BEFF>Stormblessed</#78BEFF>"
+    display: "<#D6EEFF>Stormblessed</#D6EEFF>"
     description:
       - "<gray>Custom reward granted for winning a Mysterria event."
     render-type: STATIC
@@ -892,7 +892,7 @@ titles:
       permission: "mysterria.titles.title.stormblessed"
 
   watcher_of_light_and_darkness:
-    display: "<#FFE640>Watcher of </#FFE640><#B266FF>Light and Darkness</#B266FF>"
+    display: "<#F4F0FF>Watcher of </#F4F0FF><#FFE640>Light</#FFE640><#F4F0FF> and </#F4F0FF><#B266FF>Darkness</#B266FF>"
     description:
       - "<gray>Custom reward granted for winning a Mysterria event."
     render-type: STATIC
