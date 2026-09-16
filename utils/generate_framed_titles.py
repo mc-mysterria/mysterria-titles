@@ -94,6 +94,9 @@ TITLES = {
     "watcher_of_light_and_darkness": dict(
         words=[("| WATCHER OF", WHITE), ("LIGHT", YELLOW), ("AND", WHITE), ("DARKNESS", PURPLE), ("|", WHITE)],
         body=(34, 14, 54), body2=(44, 20, 66), rim=GOLD_RIM, shadow=(20, 6, 30)),
+    "prophet_of_the_fool": dict(
+        words=[("| PROPHET OF THE FOOL |", GOLD_TEXT)],
+        body=(74, 28, 120), body2=(88, 34, 140), rim=GOLD_RIM, shadow=(30, 8, 50)),
 }
 
 if __name__ == "__main__":
