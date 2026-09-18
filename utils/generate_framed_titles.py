@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generator for the framed event titles (The Ragnarok, Stormblessed, Watcher of Light and
+Generator for the framed event titles (The Ragnarok, Welt, Watcher of Light and
 Darkness). Same font, size, frame count and shimmer timing as generate_titles.py, but with a
 checkered body, a 1px rim with corner knobs, coloured lettering with a dark shadow, and a
 fixed 1px gap between glyphs so long words do not drift apart.
@@ -87,10 +87,10 @@ TITLES = {
     "the_ragnarok": dict(
         words=[("| THE RAGNAROK |", GOLD_TEXT)],
         body=(118, 14, 14), body2=(138, 20, 20), rim=GOLD_RIM, shadow=(46, 8, 8)),
-    "stormblessed": dict(
-        words=[("| STORMBLESSED |", (214, 238, 255))],
-        body=(16, 52, 120), body2=(20, 62, 140), rim=(120, 190, 255), shadow=(6, 18, 50),
-        band=(220, 240, 255)),
+    "welt": dict(
+        words=[("| WELT |", (240, 196, 150))],
+        body=(112, 44, 28), body2=(128, 54, 34), rim=(196, 120, 72), shadow=(40, 12, 8),
+        band=(255, 214, 170)),
     "watcher_of_light_and_darkness": dict(
         words=[("| WATCHER OF", WHITE), ("LIGHT", YELLOW), ("AND", WHITE), ("DARKNESS", PURPLE), ("|", WHITE)],
         body=(34, 14, 54), body2=(44, 20, 66), rim=GOLD_RIM, shadow=(20, 6, 30)),

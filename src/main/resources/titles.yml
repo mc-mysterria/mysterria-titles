@@ -875,21 +875,21 @@ titles:
       method: COMMAND
       permission: "mysterria.titles.title.dragoness"
 
-  stormblessed:
-    display: "<#78BEFF>Stormblessed</#78BEFF>"
+  welt:
+    display: "<#F0C496>Welt</#F0C496>"
     description:
       - "<gray>Custom reward granted for winning a Mysterria event."
     render-type: STATIC
-    nexo-texture: "%nexo_stormblessed%"
+    nexo-texture: "%nexo_welt%"
     bonus:
       type: WATER_BREATHING_BOOST
       value: 0.25
     gui:
-      material: TRIDENT
+      material: BRICK
       slot: 52
     unlock:
       method: COMMAND
-      permission: "mysterria.titles.title.stormblessed"
+      permission: "mysterria.titles.title.welt"
 
   watcher_of_light_and_darkness:
     display: "<#FFE640>Watcher of </#FFE640><#B266FF>Light and Darkness</#B266FF>"
