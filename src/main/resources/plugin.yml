@@ -178,3 +178,6 @@ permissions:
   mysterria.titles.title.watcher_of_light_and_darkness:
     description: Marks that a player holds the Watcher of Light and Darkness title
     default: false
+  mysterria.titles.title.prophet_of_the_fool:
+    description: Marks that a player holds the Prophet of the Fool title
+    default: false
