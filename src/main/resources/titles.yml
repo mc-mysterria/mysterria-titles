@@ -882,8 +882,8 @@ titles:
     render-type: STATIC
     nexo-texture: "%nexo_welt%"
     bonus:
-      type: WATER_BREATHING_BOOST
-      value: 0.25
+      type: DURABILITY_WEAR_REDUCTION
+      value: 0.3333
     gui:
       material: BRICK
       slot: 52
