@@ -76,6 +76,7 @@ public class MysterriaTitles extends JavaPlugin {
         buffManager.register(new KnockbackResistanceBoostBuff(this));
         buffManager.register(new HealingBoostBuff(this));
         buffManager.register(new WaterBreathingBoostBuff(this));
+        buffManager.register(new DurabilityWearReductionBuff(this));
         buffManager.enableAll();
 
         Bukkit.getPluginManager().registerEvents(new PlayerLifecycleListener(this), this);
