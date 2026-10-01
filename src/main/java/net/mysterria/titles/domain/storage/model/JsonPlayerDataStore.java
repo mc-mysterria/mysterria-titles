@@ -21,6 +21,7 @@ import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 public class JsonPlayerDataStore implements PlayerDataStore {
@@ -29,10 +30,14 @@ public class JsonPlayerDataStore implements PlayerDataStore {
                                      Map<String, Integer> progress, long lastModified) {
     }
 
+    private static final long SHUTDOWN_TIMEOUT_SECONDS = 10;
+
     private final Path dataFolder;
     private final Logger logger;
     private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
-    private final ExecutorService executor = Executors.newFixedThreadPool(2, runnable -> {
+    // One thread keeps writes for the same player in submission order, so an older autosave
+    // snapshot can never overwrite a newer write (and two writes never share a .tmp file).
+    private final ExecutorService executor = Executors.newSingleThreadExecutor(runnable -> {
         Thread thread = new Thread(runnable, "MysterriaTitles-IO");
         thread.setDaemon(true);
         return thread;
@@ -122,7 +127,20 @@ public class JsonPlayerDataStore implements PlayerDataStore {
         return dataFolder.resolve(uuid + ".json");
     }
 
+    /**
+     * Stops accepting work and waits for queued writes to finish, so data saved on quit or by the
+     * final flush reaches disk before the plugin is unloaded.
+     */
     public void shutdown() {
         executor.shutdown();
+        try {
+            if (!executor.awaitTermination(SHUTDOWN_TIMEOUT_SECONDS, TimeUnit.SECONDS)) {
+                logger.warning("Player data writes still pending after " + SHUTDOWN_TIMEOUT_SECONDS
+                        + "s at shutdown; they may not reach disk.");
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            logger.warning("Interrupted while waiting for player data writes at shutdown.");
+        }
     }
 }
