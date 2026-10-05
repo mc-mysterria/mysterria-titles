@@ -12,6 +12,7 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,6 +22,10 @@ import java.util.stream.Collectors;
  * making Collectioner the hardest title to obtain (see anniversary event plan).
  */
 public class CollectionerShardService {
+
+    /** Captured as plain values before the stack is changed. */
+    public record ConsumedShards(String material, int amount) {
+    }
 
     private static final NamespacedKey SHARD_KEY = new NamespacedKey("mysterria_titles", "collectioner_shard");
     private static final String COLLECTIONER_TITLE_ID = "collectioner";
@@ -101,9 +106,10 @@ public class CollectionerShardService {
      * Removes exactly {@code amount} shards from across the player's inventory. Only call after
      * confirming {@link #count(Player)} >= amount.
      */
-    public void consume(Player player, int amount) {
+    public List<ConsumedShards> consume(Player player, int amount) {
         PlayerInventory inventory = player.getInventory();
         int remaining = amount;
+        List<ConsumedShards> consumed = new ArrayList<>();
 
         ItemStack[] contents = inventory.getContents();
         for (int slot = 0; slot < contents.length && remaining > 0; slot++) {
@@ -111,6 +117,7 @@ public class CollectionerShardService {
             if (!isShard(stack)) continue;
 
             int take = Math.min(remaining, stack.getAmount());
+            consumed.add(new ConsumedShards(stack.getType().name(), take));
             stack.setAmount(stack.getAmount() - take);
             remaining -= take;
 
@@ -120,5 +127,6 @@ public class CollectionerShardService {
                 inventory.setItem(slot, stack);
             }
         }
+        return consumed;
     }
 }

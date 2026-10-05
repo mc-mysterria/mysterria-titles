@@ -5,6 +5,7 @@ plugins {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
     maven("https://repo.papermc.io/repository/maven-public/")
 
@@ -43,6 +44,7 @@ dependencies {
 
     implementation("dev.rollczi:litecommands-bukkit:3.10.9")
     implementation("dev.triumphteam:triumph-gui-paper:3.1.13-SNAPSHOT")
+    implementation("dev.ua.ikeepcalm.mysterria:audit-client:1.0.2")
 
     compileOnly("dev.ua.ikeepcalm:circle-of-imagination-api:1.4.4-SNAPSHOT")
     compileOnly("me.clip:placeholderapi:2.12.2")
@@ -59,6 +61,10 @@ java {
 tasks {
     build {
         dependsOn(shadowJar)
+    }
+
+    shadowJar {
+        relocate("dev.ua.ikeepcalm.mysterria.audit", "net.mysterria.titles.libs.audit")
     }
 
     runServer {
