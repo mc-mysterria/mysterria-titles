@@ -182,14 +182,10 @@ public class TitlesGui {
         PlayerTitleData data = plugin.getPlayerDataManager().getCached(player.getUniqueId());
         if (data == null) return;
 
-        // Ownership is re-checked at click time without the test-mode override: test mode only
-        // previews titles, and a title revoked since the GUI was opened must not be re-unlocked.
+        // Test mode only previews titles, so ownership is rechecked without its override.
         boolean stored = data.hasUnlocked(title.id());
         if (!stored && !registry.isEffectivelyUnlocked(player, data.getUnlockedTitles(), title)) {
-            boolean testMode = plugin.getTitleTestModeService().isEnabled(player.getUniqueId());
-            player.sendMessage(Component.text(testMode
-                    ? "Test mode only previews this title - you do not own it, so it was not equipped."
-                    : "You no longer have this title.", NamedTextColor.YELLOW));
+            player.sendMessage(Component.text("You do not own this title.", NamedTextColor.YELLOW));
             refresh();
             return;
         }

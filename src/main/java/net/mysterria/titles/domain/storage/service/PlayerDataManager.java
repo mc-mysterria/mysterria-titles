@@ -80,9 +80,7 @@ public class PlayerDataManager {
     }
 
     public void startAutosaveTask(long intervalTicks) {
-        // Snapshots are taken on the main thread, where every mutation and quit-time save happens,
-        // so writes reach the store's single IO thread in snapshot order (the IO itself stays async).
-        // An async snapshot could read data mid-mutation or be queued after a newer write and overwrite it.
+        // Snapshot on the main thread so writes reach the store's IO thread in order.
         autosaveTaskId = Bukkit.getScheduler()
                 .runTaskTimer(plugin, this::flushAll, intervalTicks, intervalTicks)
                 .getTaskId();
