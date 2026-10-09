@@ -21,6 +21,7 @@ import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 public class JsonPlayerDataStore implements PlayerDataStore {
@@ -32,7 +33,8 @@ public class JsonPlayerDataStore implements PlayerDataStore {
     private final Path dataFolder;
     private final Logger logger;
     private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
-    private final ExecutorService executor = Executors.newFixedThreadPool(2, runnable -> {
+    // One thread keeps writes in submission order and stops two writes sharing a .tmp file.
+    private final ExecutorService executor = Executors.newSingleThreadExecutor(runnable -> {
         Thread thread = new Thread(runnable, "MysterriaTitles-IO");
         thread.setDaemon(true);
         return thread;
@@ -124,5 +126,12 @@ public class JsonPlayerDataStore implements PlayerDataStore {
 
     public void shutdown() {
         executor.shutdown();
+        try {
+            if (!executor.awaitTermination(10, TimeUnit.SECONDS)) {
+                logger.warning("Player data writes still pending at shutdown.");
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 }

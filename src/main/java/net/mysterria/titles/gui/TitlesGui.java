@@ -182,7 +182,16 @@ public class TitlesGui {
         PlayerTitleData data = plugin.getPlayerDataManager().getCached(player.getUniqueId());
         if (data == null) return;
 
-        if (!data.hasUnlocked(title.id())) {
+        // Test mode only previews titles, so ownership is rechecked without its override.
+        boolean stored = data.hasUnlocked(title.id());
+        if (!stored && !registry.isEffectivelyUnlocked(player, data.getUnlockedTitles(), title)) {
+            player.sendMessage(Component.text("You do not own this title.", NamedTextColor.YELLOW));
+            refresh();
+            return;
+        }
+
+        // Effectively unlocked but not stored means the player holds the title's permission.
+        if (!stored) {
             data.unlock(title.id());
         }
         if (data.setActiveTitle(title.id())) {
