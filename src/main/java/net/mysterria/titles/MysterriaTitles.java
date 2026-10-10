@@ -2,6 +2,7 @@ package net.mysterria.titles;
 
 import dev.rollczi.litecommands.bukkit.LiteBukkitFactory;
 import lombok.Getter;
+import net.mysterria.titles.audit.TitlesAuditEmitter;
 import net.mysterria.titles.command.TitlesAdminCommand;
 import net.mysterria.titles.command.TitlesCommand;
 import net.mysterria.titles.command.argument.TitleArgument;
@@ -47,10 +48,13 @@ public class MysterriaTitles extends JavaPlugin {
     private AnniversaryTokenService anniversaryTokenService;
     private TitleProgressService titleProgressService;
     private TitleTestModeService titleTestModeService;
+    private TitlesAuditEmitter auditEmitter;
     private boolean coiIntegrationRegistered = false;
 
     @Override
     public void onEnable() {
+        auditEmitter = new TitlesAuditEmitter(this);
+
         configManager = new ConfigManager(this);
         configManager.load();
 
@@ -87,7 +91,7 @@ public class MysterriaTitles extends JavaPlugin {
         titleProgressService = new TitleProgressService(this);
         titleTestModeService = new TitleTestModeService();
 
-        sequenceTitleAutoGrantService = new SequenceTitleAutoGrantService(playerDataManager);
+        sequenceTitleAutoGrantService = new SequenceTitleAutoGrantService(playerDataManager, auditEmitter);
         Bukkit.getPluginManager().registerEvents(new CoiAvailabilityListener(this), this);
         registerCoiIntegration(); // covers the case COI is already enabled by this point
 
@@ -118,18 +122,24 @@ public class MysterriaTitles extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        if (buffManager != null) {
-            buffManager.disableAll();
-        }
-        if (playerDataManager != null) {
-            playerDataManager.stopAutosaveTask();
-            playerDataManager.flushAll().join();
-        }
-        if (playerDataStore != null) {
-            playerDataStore.shutdown();
-        }
-        if (titlesExpansion != null) {
-            titlesExpansion.unregister();
+        try {
+            if (buffManager != null) {
+                buffManager.disableAll();
+            }
+            if (playerDataManager != null) {
+                playerDataManager.stopAutosaveTask();
+                playerDataManager.flushAll().join();
+            }
+            if (playerDataStore != null) {
+                playerDataStore.shutdown();
+            }
+            if (titlesExpansion != null) {
+                titlesExpansion.unregister();
+            }
+        } finally {
+            if (auditEmitter != null) {
+                auditEmitter.close();
+            }
         }
     }
 

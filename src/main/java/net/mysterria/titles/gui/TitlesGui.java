@@ -4,11 +4,14 @@ import dev.triumphteam.gui.builder.item.PaperItemBuilder;
 import dev.triumphteam.gui.guis.Gui;
 import dev.triumphteam.gui.guis.GuiItem;
 import dev.triumphteam.gui.guis.PaginatedGui;
+import dev.ua.ikeepcalm.mysterria.audit.client.api.AuditOutcome;
+import dev.ua.ikeepcalm.mysterria.audit.client.api.AuditRisk;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.mysterria.titles.MysterriaTitles;
+import net.mysterria.titles.audit.AuditRow;
 import net.mysterria.titles.config.PluginSettings;
 import net.mysterria.titles.domain.buff.model.BonusDisplay;
 import net.mysterria.titles.integration.UnlimitedNameTagsHook;
@@ -19,8 +22,11 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.UUID;
 
 public class TitlesGui {
 
@@ -150,11 +156,24 @@ public class TitlesGui {
         PlayerTitleData data = plugin.getPlayerDataManager().getCached(player.getUniqueId());
         if (data == null) return;
 
+        String previousActive = data.getActiveTitle().orElse(null);
         if (data.clearActiveTitle()) {
             player.sendMessage(Component.text("Active title cleared.", NamedTextColor.YELLOW));
             UnlimitedNameTagsHook.refresh(player.getUniqueId());
             refresh();
+            auditClear(previousActive);
         }
+    }
+
+    private void auditClear(String previousActive) {
+        Map<String, Object> metadata = new LinkedHashMap<>();
+        metadata.put("previous_active", previousActive == null ? "" : previousActive);
+        metadata.put("test_mode_enabled", plugin.getTitleTestModeService().isEnabled(player.getUniqueId()));
+
+        UUID playerId = player.getUniqueId();
+        plugin.getAuditEmitter().emit(AuditOutcome.OBSERVED,
+                new AuditRow("titles.title.gui_clear", AuditRisk.NORMAL, UUID.randomUUID(), previousActive,
+                        playerId, playerId, "self_clear", metadata));
     }
 
     private GuiItem filler() {
@@ -191,14 +210,29 @@ public class TitlesGui {
         }
 
         // Effectively unlocked but not stored means the player holds the title's permission.
-        if (!stored) {
-            data.unlock(title.id());
-        }
+        boolean persistedFromPermission = !stored && data.unlock(title.id());
         if (data.setActiveTitle(title.id())) {
             player.sendMessage(Component.text("Active title set to ", NamedTextColor.GREEN).append(title.display()));
             UnlimitedNameTagsHook.refresh(player.getUniqueId());
             refresh();
         }
+        if (persistedFromPermission) {
+            auditPermissionUnlock(title);
+        }
+    }
+
+    private void auditPermissionUnlock(Title title) {
+        Map<String, Object> metadata = new LinkedHashMap<>();
+        metadata.put("title_id", title.id());
+        metadata.put("reason", "permission");
+        metadata.put("permission", title.permission());
+        metadata.put("unlock_method", title.unlockMethod().name());
+        metadata.put("test_mode_enabled", plugin.getTitleTestModeService().isEnabled(player.getUniqueId()));
+
+        UUID playerId = player.getUniqueId();
+        plugin.getAuditEmitter().emit(AuditOutcome.OBSERVED,
+                new AuditRow("titles.title.gui_persist_unlock", AuditRisk.NORMAL, UUID.randomUUID(), title.id(),
+                        playerId, playerId, "permission", metadata));
     }
 
     private void refresh() {

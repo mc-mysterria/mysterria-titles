@@ -22,6 +22,8 @@ public class CoiTitleListener implements Listener {
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onSequenceChange(SequenceChangeEvent event) {
-        autoGrantService.evaluate(event.getPlayer());
+        String pathway = event.getPathwayData() != null ? event.getPathwayData().name() : null;
+        autoGrantService.evaluate(event.getPlayer(), new SequenceTitleAutoGrantService.Trigger(
+                "sequence_change", pathway, event.getOldSequence(), event.getNewSequence()));
     }
 }
