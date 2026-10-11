@@ -1590,6 +1590,57 @@ titles:
       method: PERMISSION
       permission: "mysticalweaponry.title.one_with_every_gun"
 
+  weekly_champion:
+    display: "<gradient:#ffe08a:#e0a030>Weekly Champion</gradient>"
+    description:
+      - "<gray>Top of the board, for one week at least."
+      - "<dark_gray>Win the weekly challenge (/mwweekly)."
+    render-type: STATIC
+    nexo-texture: "%nexo_weekly_champion%"
+    bonus:
+      type: DAMAGE_BOOST
+      value: 0.03
+    gui:
+      material: GOLDEN_HELMET
+      slot: 94
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.weekly_champion"
+
+  weekly_contender:
+    display: "<#d8c08a>The Contender"
+    description:
+      - "<gray>Always somewhere near the top."
+      - "<dark_gray>Finish in the top three of the weekly challenge 3 times."
+    render-type: STATIC
+    nexo-texture: "%nexo_weekly_contender%"
+    bonus:
+      type: EXP_BOOST
+      value: 0.02
+    gui:
+      material: IRON_HELMET
+      slot: 95
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.weekly_contender"
+
+  weekly_dynasty:
+    display: "<gradient:#fff2c0:#e0a030:#8a5a10>The Dynasty</gradient>"
+    description:
+      - "<gray>The board has grown used to their name."
+      - "<dark_gray>Win the weekly challenge 5 times."
+    render-type: STATIC
+    nexo-texture: "%nexo_weekly_dynasty%"
+    bonus:
+      type: DEFENSE_BOOST
+      value: 0.03
+    gui:
+      material: NETHERITE_HELMET
+      slot: 96
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.weekly_dynasty"
+
 # Anniversary event: Collectioner is sold as shards in the festive shop (BrilliantEmporium
 # seasonal shop). Right-clicking while holding >= required-count shards consumes them and
 # unlocks the title above - see CollectionerShardService / CollectionerShardListener.

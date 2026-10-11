@@ -42,6 +42,8 @@ PLAIN = {
     "duelist": ("| THE DUELIST |", "#C24A3A"),
     "bounty_hunter": ("| BOUNTY HUNTER |", "#A6743A"),
     "contract_veteran": ("| CONTRACT VETERAN |", "#7A5A30"),
+    # the weekly challenge
+    "weekly_contender": ("| THE CONTENDER |", "#A6843A"),
 }
 
 FRAMED = {
@@ -70,6 +72,13 @@ FRAMED = {
     "locust_sovereign": dict(
         words=[("| LOCUST SOVEREIGN |", (230, 170, 50))],
         body=(30, 42, 26), body2=(40, 56, 34), rim=(230, 170, 50), shadow=(12, 16, 10)),
+    # the weekly challenge
+    "weekly_champion": dict(
+        words=[("| WEEKLY CHAMPION |", GOLD_TEXT)],
+        body=(70, 46, 14), body2=(84, 56, 18), rim=GOLD_RIM, shadow=(28, 16, 4), band=(255, 236, 170)),
+    "weekly_dynasty": dict(
+        words=[("| THE DYNASTY |", (255, 242, 192))],
+        body=(96, 60, 12), body2=(112, 72, 16), rim=GOLD_RIM, shadow=(36, 20, 4), band=(255, 240, 190)),
     # collection and obsession
     "keeper_of_myths": dict(
         words=[("| KEEPER OF MYTHS |", GOLD_TEXT)],
