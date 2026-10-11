@@ -923,6 +923,672 @@ titles:
       method: COMMAND
       permission: "mysterria.titles.title.prophet_of_the_fool"
 
+  # ------------------------------------------------------------------ Mystical Weaponry gun titles
+  # Unlocked by the mysticalweaponry.title.<id> permission, which Mystical Weaponry gives players while they meet
+  # the goal (its titles.yml; players see their progress with /mwtitles). Banners: utils/generate_gun_titles.py.
+
+  crimson_moon_hunter:
+    display: "<gradient:#e6e2dc:#c8141e:#5a0610>Crimson Moon Hunter</gradient>"
+    description:
+      - "<gray>The moon ran red and the hunt never ended."
+      - "<dark_gray>Raise Crimson Moon Hunt (LeMat Carbine) to stage III."
+    render-type: STATIC
+    nexo-texture: "%nexo_crimson_moon_hunter%"
+    bonus:
+      type: DAMAGE_BOOST
+      value: 0.03
+    gui:
+      material: REDSTONE
+      slot: 55
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.crimson_moon_hunter"
+
+  orrery_keeper:
+    display: "<gradient:#f6d680:#3c4a96:#f6d680>Keeper of the Orrery</gradient>"
+    description:
+      - "<gray>Every star turns at the keeper's word."
+      - "<dark_gray>Raise Celestial Orrery (Steam Rifle) to stage III."
+    render-type: STATIC
+    nexo-texture: "%nexo_orrery_keeper%"
+    bonus:
+      type: EXP_BOOST
+      value: 0.03
+    gui:
+      material: CLOCK
+      slot: 56
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.orrery_keeper"
+
+  long_night_herald:
+    display: "<gradient:#ecf8ff:#78acd6:#dc283c>Herald of the Long Night</gradient>"
+    description:
+      - "<gray>Where they walk, the night does not end."
+      - "<dark_gray>Raise Heart of the Long Night (Winter Is Coming) to stage III."
+    render-type: STATIC
+    nexo-texture: "%nexo_long_night_herald%"
+    bonus:
+      type: DEFENSE_BOOST
+      value: 0.03
+    gui:
+      material: BLUE_ICE
+      slot: 57
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.long_night_herald"
+
+  pale_gate_warden:
+    display: "<gradient:#f0ece0:#b4dce6:#2a2630>Warden of the Pale Gate</gradient>"
+    description:
+      - "<gray>The bell tolls; the pale gate opens."
+      - "<dark_gray>Raise Requiem of the Pale Gate (Deathknell) to stage III."
+    render-type: STATIC
+    nexo-texture: "%nexo_pale_gate_warden%"
+    bonus:
+      type: MAGIC_DEFENSE_BOOST
+      value: 0.03
+    gui:
+      material: BELL
+      slot: 58
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.pale_gate_warden"
+
+  above_the_fog:
+    display: "<gradient:#e6e8f0:#8a8e9a:#deb65c>Above the Gray Fog</gradient>"
+    description:
+      - "<gray>Looks down on the world from above the gray fog."
+      - "<dark_gray>Raise Above the Gray Fog (Klein's Repeater) to stage III."
+    render-type: STATIC
+    nexo-texture: "%nexo_above_the_fog%"
+    bonus:
+      type: MADNESS_REDUCTION
+      value: 0.03
+    gui:
+      material: GRAY_DYE
+      slot: 59
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.above_the_fog"
+
+  higdons_reflection:
+    display: "<gradient:#ffffff:#8fb4e6:#ffffff>Higdon's Reflection</gradient>"
+    description:
+      - "<gray>Saw themselves in Higdon's mirror and did not look away."
+      - "<dark_gray>Raise Mirror of Higdon (Cannon Gun) to stage III."
+    render-type: STATIC
+    nexo-texture: "%nexo_higdons_reflection%"
+    bonus:
+      type: KNOCKBACK_RESISTANCE_BOOST
+      value: 0.03
+    gui:
+      material: GLASS_PANE
+      slot: 60
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.higdons_reflection"
+
+  higdons_inevitability:
+    display: "<gradient:#e6ffd2:#6a8a5a:#e6ffd2>Higdon's Inevitability</gradient>"
+    description:
+      - "<gray>What the mirror shows will come to pass."
+      - "<dark_gray>Raise Mirror of Higdon (Inevitable Gun) to stage III."
+    render-type: STATIC
+    nexo-texture: "%nexo_higdons_inevitability%"
+    bonus:
+      type: MAGIC_DAMAGE_BOOST
+      value: 0.03
+    gui:
+      material: TINTED_GLASS
+      slot: 61
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.higdons_inevitability"
+
+  locust_sovereign:
+    display: "<gradient:#e6aa32:#2e4028:#141a12>Locust Sovereign</gradient>"
+    description:
+      - "<gray>The swarm answers to one voice."
+      - "<dark_gray>Raise Black Locust Swarm (Mystical Shotgun) to stage III."
+    render-type: STATIC
+    nexo-texture: "%nexo_locust_sovereign%"
+    bonus:
+      type: MOB_LOOT_BOOST
+      value: 0.03
+    gui:
+      material: HONEYCOMB
+      slot: 62
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.locust_sovereign"
+
+  repeater_virtuoso:
+    display: "<#c9ccd6>Repeater Virtuoso"
+    description:
+      - "<gray>Six shots, one song."
+      - "<dark_gray>Reach the highest mastery with Klein's Repeater."
+    render-type: STATIC
+    nexo-texture: "%nexo_repeater_virtuoso%"
+    bonus:
+      type: DAMAGE_BOOST
+      value: 0.02
+    gui:
+      material: IRON_INGOT
+      slot: 63
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.repeater_virtuoso"
+
+  bell_ringer:
+    display: "<#b4dce6>The Bell-Ringer"
+    description:
+      - "<gray>Every shot a toll of the bell."
+      - "<dark_gray>Reach the highest mastery with the Deathknell."
+    render-type: STATIC
+    nexo-texture: "%nexo_bell_ringer%"
+    bonus:
+      type: MAGIC_DEFENSE_BOOST
+      value: 0.02
+    gui:
+      material: BELL
+      slot: 64
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.bell_ringer"
+
+  steam_marksman:
+    display: "<#d9a85b>Steam Marksman"
+    description:
+      - "<gray>Patience, pressure and a steady hand."
+      - "<dark_gray>Reach the highest mastery with the Steam Rifle."
+    render-type: STATIC
+    nexo-texture: "%nexo_steam_marksman%"
+    bonus:
+      type: EXP_BOOST
+      value: 0.02
+    gui:
+      material: SPYGLASS
+      slot: 65
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.steam_marksman"
+
+  scattershot:
+    display: "<#8fbf5a>Scattershot"
+    description:
+      - "<gray>Aims at nothing, hits everything."
+      - "<dark_gray>Reach the highest mastery with the Mystical Shotgun."
+    render-type: STATIC
+    nexo-texture: "%nexo_scattershot%"
+    bonus:
+      type: MOB_LOOT_BOOST
+      value: 0.02
+    gui:
+      material: GUNPOWDER
+      slot: 66
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.scattershot"
+
+  lever_and_buckshot:
+    display: "<#f6d068>Lever and Buckshot"
+    description:
+      - "<gray>A lever, a cylinder and buckshot to spare."
+      - "<dark_gray>Reach the highest mastery with the LeMat Carbine."
+    render-type: STATIC
+    nexo-texture: "%nexo_lever_and_buckshot%"
+    bonus:
+      type: DEFENSE_BOOST
+      value: 0.02
+    gui:
+      material: GOLD_INGOT
+      slot: 67
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.lever_and_buckshot"
+
+  winterborn:
+    display: "<#78acd6>Winterborn"
+    description:
+      - "<gray>Born to the cold, at home in it."
+      - "<dark_gray>Reach the highest mastery with Winter Is Coming."
+    render-type: STATIC
+    nexo-texture: "%nexo_winterborn%"
+    bonus:
+      type: HUNGER_DRAIN_REDUCTION
+      value: 0.02
+    gui:
+      material: SNOWBALL
+      slot: 68
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.winterborn"
+
+  master_gunner:
+    display: "<#8c96a8>Master Gunner"
+    description:
+      - "<gray>Fears no recoil."
+      - "<dark_gray>Reach the highest mastery with the Cannon Gun."
+    render-type: STATIC
+    nexo-texture: "%nexo_master_gunner%"
+    bonus:
+      type: KNOCKBACK_RESISTANCE_BOOST
+      value: 0.02
+    gui:
+      material: FIRE_CHARGE
+      slot: 69
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.master_gunner"
+
+  the_inevitable:
+    display: "<#9fdc6a>The Inevitable"
+    description:
+      - "<gray>There was never another way it could end."
+      - "<dark_gray>Reach the highest mastery with the Inevitable Gun."
+    render-type: STATIC
+    nexo-texture: "%nexo_the_inevitable%"
+    bonus:
+      type: MAGIC_DAMAGE_BOOST
+      value: 0.02
+    gui:
+      material: ENDER_EYE
+      slot: 70
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.the_inevitable"
+
+  gun_collector:
+    display: "<#d9b77a>Gun Collector"
+    description:
+      - "<gray>A gun for every occasion."
+      - "<dark_gray>Own 5 weapon skins."
+    render-type: STATIC
+    nexo-texture: "%nexo_gun_collector%"
+    bonus:
+      type: EXP_BOOST
+      value: 0.02
+    gui:
+      material: ITEM_FRAME
+      slot: 71
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.gun_collector"
+
+  curator_of_arms:
+    display: "<#e6c88c>Curator of Arms"
+    description:
+      - "<gray>The armory is a museum, and they are its curator."
+      - "<dark_gray>Own 15 weapon skins."
+    render-type: STATIC
+    nexo-texture: "%nexo_curator_of_arms%"
+    bonus:
+      type: MOB_LOOT_BOOST
+      value: 0.02
+    gui:
+      material: GLOW_ITEM_FRAME
+      slot: 72
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.curator_of_arms"
+
+  armory_archivist:
+    display: "<#c9a96e>Armory Archivist"
+    description:
+      - "<gray>Has earned every standard skin there is."
+      - "<dark_gray>Own all 8 standard weapon skins."
+    render-type: STATIC
+    nexo-texture: "%nexo_armory_archivist%"
+    bonus:
+      type: DURABILITY_WEAR_REDUCTION
+      value: 0.03
+    gui:
+      material: BOOKSHELF
+      slot: 73
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.armory_archivist"
+
+  connoisseur:
+    display: "<gradient:#c8a2ff:#7a4fd6>The Connoisseur</gradient>"
+    description:
+      - "<gray>Only the finest finishes will do."
+      - "<dark_gray>Own all 8 elite weapon skins."
+    render-type: STATIC
+    nexo-texture: "%nexo_connoisseur%"
+    bonus:
+      type: SATURATION_BOOST
+      value: 0.03
+    gui:
+      material: AMETHYST_SHARD
+      slot: 74
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.connoisseur"
+
+  keeper_of_myths:
+    display: "<gradient:#ffe9a8:#d6a24f:#ffe9a8>Keeper of Myths</gradient>"
+    description:
+      - "<gray>Every myth of the armory answers to them."
+      - "<dark_gray>Own all 8 mythic weapon skins."
+    render-type: STATIC
+    nexo-texture: "%nexo_keeper_of_myths%"
+    bonus:
+      type: POTION_DURATION_BOOST
+      value: 0.03
+    gui:
+      material: NETHER_STAR
+      slot: 75
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.keeper_of_myths"
+
+  well_rounded:
+    display: "<#9fc4e6>Well-Rounded"
+    description:
+      - "<gray>Comfortable with whatever is in hand."
+      - "<dark_gray>Reach mastery level 5 with 5 guns."
+    render-type: STATIC
+    nexo-texture: "%nexo_well_rounded%"
+    bonus:
+      type: EXP_BOOST
+      value: 0.02
+    gui:
+      material: COMPASS
+      slot: 76
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.well_rounded"
+
+  arsenal_master:
+    display: "<gradient:#f2d27a:#b8862c>Master of the Arsenal</gradient>"
+    description:
+      - "<gray>Five guns, each one mastered."
+      - "<dark_gray>Reach the highest mastery with 5 guns."
+    render-type: STATIC
+    nexo-texture: "%nexo_arsenal_master%"
+    bonus:
+      type: DAMAGE_BOOST
+      value: 0.03
+    gui:
+      material: NETHERITE_INGOT
+      slot: 77
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.arsenal_master"
+
+  sharpshooter:
+    display: "<#e0e0e0>Sharpshooter"
+    description:
+      - "<gray>Never aims for the body."
+      - "<dark_gray>Make 500 headshot kills."
+    render-type: STATIC
+    nexo-texture: "%nexo_sharpshooter%"
+    bonus:
+      type: DAMAGE_BOOST
+      value: 0.02
+    gui:
+      material: TARGET
+      slot: 78
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.sharpshooter"
+
+  gunhand:
+    display: "<#d0b48c>Gunhand"
+    description:
+      - "<gray>Knows which end the bullet comes out of."
+      - "<dark_gray>Make 1,000 kills with guns."
+    render-type: STATIC
+    nexo-texture: "%nexo_gunhand%"
+    bonus:
+      type: DEFENSE_BOOST
+      value: 0.02
+    gui:
+      material: IRON_NUGGET
+      slot: 79
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.gunhand"
+
+  veteran_shooter:
+    display: "<#b89a6a>Veteran Shooter"
+    description:
+      - "<gray>Has seen a great many fights."
+      - "<dark_gray>Make 10,000 kills with guns."
+    render-type: STATIC
+    nexo-texture: "%nexo_veteran_shooter%"
+    bonus:
+      type: HEALING_BOOST
+      value: 0.02
+    gui:
+      material: SHIELD
+      slot: 80
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.veteran_shooter"
+
+  long_arm_of_the_law:
+    display: "<#a8c8e0>Long Arm of the Law"
+    description:
+      - "<gray>No distance is safe."
+      - "<dark_gray>Make 500 kills from 40 or more blocks away."
+    render-type: STATIC
+    nexo-texture: "%nexo_long_arm_of_the_law%"
+    bonus:
+      type: FALL_DAMAGE_REDUCTION
+      value: 0.02
+    gui:
+      material: SPYGLASS
+      slot: 81
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.long_arm_of_the_law"
+
+  beyonder_hunter:
+    display: "<#b07ce0>Beyonder Hunter"
+    description:
+      - "<gray>Mortal steel against the beyond."
+      - "<dark_gray>Kill 500 Beyonders with guns."
+    render-type: STATIC
+    nexo-texture: "%nexo_beyonder_hunter%"
+    bonus:
+      type: MAGIC_DAMAGE_BOOST
+      value: 0.02
+    gui:
+      material: AMETHYST_CLUSTER
+      slot: 82
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.beyonder_hunter"
+
+  duelist:
+    display: "<#e07c6a>The Duelist"
+    description:
+      - "<gray>Draws first, walks away last."
+      - "<dark_gray>Kill 100 players with guns."
+    render-type: STATIC
+    nexo-texture: "%nexo_duelist%"
+    bonus:
+      type: KNOCKBACK_RESISTANCE_BOOST
+      value: 0.02
+    gui:
+      material: CROSSBOW
+      slot: 83
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.duelist"
+
+  bounty_hunter:
+    display: "<#c8a064>Bounty Hunter"
+    description:
+      - "<gray>There's always another notice on the board."
+      - "<dark_gray>Claim 100 bounties."
+    render-type: STATIC
+    nexo-texture: "%nexo_bounty_hunter%"
+    bonus:
+      type: FISHING_LUCK_BOOST
+      value: 0.02
+    gui:
+      material: PAPER
+      slot: 84
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.bounty_hunter"
+
+  contract_veteran:
+    display: "<#a07a48>Contract Veteran"
+    description:
+      - "<gray>Takes the long contracts, and finishes them."
+      - "<dark_gray>Claim 50 weekly bounties."
+    render-type: STATIC
+    nexo-texture: "%nexo_contract_veteran%"
+    bonus:
+      type: HUNGER_DRAIN_REDUCTION
+      value: 0.02
+    gui:
+      material: WRITABLE_BOOK
+      slot: 85
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.contract_veteran"
+
+  gun_mad:
+    display: "<gradient:#ff8a5c:#b8281a>Mad for Guns</gradient>"
+    description:
+      - "<gray>Dreams in gunpowder and wakes reaching for the trigger."
+      - "<dark_gray>Make 50,000 kills with guns."
+    render-type: STATIC
+    nexo-texture: "%nexo_gun_mad%"
+    bonus:
+      type: DAMAGE_BOOST
+      value: 0.03
+    gui:
+      material: TNT
+      slot: 86
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.gun_mad"
+
+  the_unblinking:
+    display: "<gradient:#ffffff:#9aa0aa>The Unblinking</gradient>"
+    description:
+      - "<gray>Has not blinked in years."
+      - "<dark_gray>Make 10,000 headshot kills."
+    render-type: STATIC
+    nexo-texture: "%nexo_the_unblinking%"
+    bonus:
+      type: MAGIC_DEFENSE_BOOST
+      value: 0.03
+    gui:
+      material: ENDER_PEARL
+      slot: 87
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.the_unblinking"
+
+  horizon_reaper:
+    display: "<gradient:#cfe4ff:#4a6a9a>Horizon Reaper</gradient>"
+    description:
+      - "<gray>Whatever reaches the horizon falls."
+      - "<dark_gray>Make 2,500 kills from 80 or more blocks away."
+    render-type: STATIC
+    nexo-texture: "%nexo_horizon_reaper%"
+    bonus:
+      type: FALL_DAMAGE_REDUCTION
+      value: 0.03
+    gui:
+      material: END_ROD
+      slot: 88
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.horizon_reaper"
+
+  bane_of_beyonders:
+    display: "<gradient:#e0b0ff:#5a1a8a>Bane of Beyonders</gradient>"
+    description:
+      - "<gray>The beyond has learned to fear the gunshot."
+      - "<dark_gray>Kill 5,000 Beyonders with guns."
+    render-type: STATIC
+    nexo-texture: "%nexo_bane_of_beyonders%"
+    bonus:
+      type: MADNESS_REDUCTION
+      value: 0.03
+    gui:
+      material: DRAGON_BREATH
+      slot: 89
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.bane_of_beyonders"
+
+  man_hunter:
+    display: "<gradient:#ff9a8a:#7a0a10>The Manhunter</gradient>"
+    description:
+      - "<gray>The most dangerous game."
+      - "<dark_gray>Kill 1,000 players with guns."
+    render-type: STATIC
+    nexo-texture: "%nexo_man_hunter%"
+    bonus:
+      type: DEFENSE_BOOST
+      value: 0.03
+    gui:
+      material: WITHER_SKELETON_SKULL
+      slot: 90
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.man_hunter"
+
+  bounty_obsessed:
+    display: "<gradient:#f2d27a:#7a4a18>Lives for the Board</gradient>"
+    description:
+      - "<gray>Checks the board before breakfast."
+      - "<dark_gray>Claim 1,000 bounties."
+    render-type: STATIC
+    nexo-texture: "%nexo_bounty_obsessed%"
+    bonus:
+      type: MOB_LOOT_BOOST
+      value: 0.03
+    gui:
+      material: LECTERN
+      slot: 91
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.bounty_obsessed"
+
+  undying_myth:
+    display: "<gradient:#fff2c8:#d6a24f:#7a3a10>Undying Myth</gradient>"
+    description:
+      - "<gray>The myth does not die with its bearer."
+      - "<dark_gray>Raise mythic skins to stage III 100 times."
+    render-type: STATIC
+    nexo-texture: "%nexo_undying_myth%"
+    bonus:
+      type: HEALING_BOOST
+      value: 0.03
+    gui:
+      material: TOTEM_OF_UNDYING
+      slot: 92
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.undying_myth"
+
+  one_with_every_gun:
+    display: "<gradient:#ffffff:#f2d27a:#ffffff>One With Every Gun</gradient>"
+    description:
+      - "<gray>Every gun ever made fits their hand."
+      - "<dark_gray>Reach the highest mastery with all 8 guns."
+    render-type: STATIC
+    nexo-texture: "%nexo_one_with_every_gun%"
+    bonus:
+      type: DAMAGE_BOOST
+      value: 0.03
+    gui:
+      material: BEACON
+      slot: 93
+    unlock:
+      method: PERMISSION
+      permission: "mysticalweaponry.title.one_with_every_gun"
 
 # Anniversary event: Collectioner is sold as shards in the festive shop (BrilliantEmporium
 # seasonal shop). Right-clicking while holding >= required-count shards consumes them and
