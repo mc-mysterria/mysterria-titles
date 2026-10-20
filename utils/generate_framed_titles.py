@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Generator for the framed event titles (The Ragnarok, Welt, Watcher of Light and
-Darkness). Same font, size, frame count and shimmer timing as generate_titles.py, but with a
+Darkness, King of a Kingless World). Same font, size, frame count and shimmer timing as generate_titles.py, but with a
 checkered body, a 1px rim with corner knobs, coloured lettering with a dark shadow, and a
 fixed 1px gap between glyphs so long words do not drift apart.
 
@@ -24,6 +24,8 @@ GOLD_TEXT = (242, 199, 68)
 WHITE = (244, 240, 255)
 YELLOW = (255, 230, 64)
 PURPLE = (178, 102, 255)
+RED = (255, 32, 32)
+DIM_RED = (200, 40, 40)
 
 
 def glyph(ch):
@@ -97,6 +99,10 @@ TITLES = {
     "prophet_of_the_fool": dict(
         words=[("| PROPHET OF THE FOOL |", GOLD_TEXT)],
         body=(74, 28, 120), body2=(88, 34, 140), rim=GOLD_RIM, shadow=(30, 8, 50)),
+    "king_of_a_kingless_world": dict(
+        words=[("[KING", RED), ("OF A", DIM_RED), ("KINGLESS", RED), ("WORLD]", RED)],
+        body=(0, 0, 0), body2=(16, 16, 16), rim=(150, 0, 0), shadow=(60, 0, 0),
+        band=(255, 60, 60)),
 }
 
 if __name__ == "__main__":

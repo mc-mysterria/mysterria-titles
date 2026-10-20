@@ -181,3 +181,6 @@ permissions:
   mysterria.titles.title.prophet_of_the_fool:
     description: Marks that a player holds the Prophet of the Fool title
     default: false
+  mysterria.titles.title.king_of_a_kingless_world:
+    description: Marks that a player holds the King of a Kingless World title
+    default: false
