@@ -923,6 +923,22 @@ titles:
       method: COMMAND
       permission: "mysterria.titles.title.prophet_of_the_fool"
 
+  king_of_a_kingless_world:
+    display: "<#FF2020>[King </#FF2020><#C82828>of a</#C82828><#FF2020> Kingless World]</#FF2020>"
+    description:
+      - "<gray>Custom reward granted for winning a Mysterria event."
+    render-type: STATIC
+    nexo-texture: "%nexo_king_of_a_kingless_world%"
+    bonus:
+      type: MADNESS_REDUCTION
+      value: 0.01
+    gui:
+      material: GOLDEN_HELMET
+      slot: 55
+    unlock:
+      method: COMMAND
+      permission: "mysterria.titles.title.king_of_a_kingless_world"
+
 
 # Anniversary event: Collectioner is sold as shards in the festive shop (BrilliantEmporium
 # seasonal shop). Right-clicking while holding >= required-count shards consumes them and
