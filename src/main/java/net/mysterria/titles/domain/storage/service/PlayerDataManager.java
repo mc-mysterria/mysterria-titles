@@ -80,8 +80,9 @@ public class PlayerDataManager {
     }
 
     public void startAutosaveTask(long intervalTicks) {
+        // Snapshot on the main thread so writes reach the store's IO thread in order.
         autosaveTaskId = Bukkit.getScheduler()
-                .runTaskTimerAsynchronously(plugin, this::flushAll, intervalTicks, intervalTicks)
+                .runTaskTimer(plugin, this::flushAll, intervalTicks, intervalTicks)
                 .getTaskId();
     }
 
