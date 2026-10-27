@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Generator for the framed event titles (The Ragnarok, Welt, Watcher of Light and
-Darkness, King of a Kingless World, Thursday's Thunder). Same font, size, frame count and shimmer timing as generate_titles.py, but with a
+Darkness, King of a Kingless World). Same font, size, frame count and shimmer timing as generate_titles.py, but with a
 checkered body, a 1px rim with corner knobs, coloured lettering with a dark shadow, and a
 fixed 1px gap between glyphs so long words do not drift apart.
 
@@ -35,24 +35,16 @@ def glyph(ch):
     return im.crop(bb)
 
 
-def gradient(text, start, end):
-    """One colour per character, blended evenly from start to end. Spaces take a step too,
-    so the result matches a per-letter &#RRGGBB gradient from a chat colour tool."""
-    n = max(len(text) - 1, 1)
-    return [g.lerp(start, end, i / n) for i in range(len(text))]
-
-
 def layout(words):
-    """words: list of (text, colour), where colour is one RGB or a per-character list
-    (see gradient). Returns [(x, glyph, colour)], total width."""
+    """words: list of (text, colour). Returns [(x, glyph, colour)], total width."""
     parts, x = [], 0
     for wi, (word, colour) in enumerate(words):
-        for ci, ch in enumerate(word):
+        for ch in word:
             if ch == " ":
                 x += SPACE
                 continue
             gl = glyph(ch)
-            parts.append((x, gl, colour[ci] if isinstance(colour, list) else colour))
+            parts.append((x, gl, colour))
             x += gl.width + GAP
         if wi < len(words) - 1:
             x += SPACE - GAP
@@ -111,10 +103,6 @@ TITLES = {
         words=[("[KING", RED), ("OF A", DIM_RED), ("KINGLESS", RED), ("WORLD]", RED)],
         body=(0, 0, 0), body2=(16, 16, 16), rim=(150, 0, 0), shadow=(60, 0, 0),
         band=(255, 60, 60)),
-    "thursdays_thunder": dict(
-        words=[("THURSDAY'S THUNDER", gradient("THURSDAY'S THUNDER", (55, 93, 255), (255, 204, 71)))],
-        body=(30, 41, 57), body2=(36, 48, 66), rim=GOLD_RIM, shadow=(10, 14, 24),
-        band=(150, 175, 255)),
 }
 
 if __name__ == "__main__":

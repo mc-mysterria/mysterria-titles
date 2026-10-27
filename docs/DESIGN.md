@@ -40,9 +40,6 @@ The reasoning that used to live in javadoc.
 - `EntityPotionEffectEvent` cannot change the new effect, so the potion buff cancels it and re-applies
   a longer one, guarded against re-entering itself.
 - Saturation is applied after `PlayerItemConsumeEvent`, so the delta is read a tick later.
-- Storm lightning is told apart by tagging `WEATHER` strikes on `LightningStrikeEvent`. CoI spells and
-  artifact drawbacks strike real lightning bolts, so checking only the `LIGHTNING` damage cause would
-  also soften magic in PvP.
 
 ## Nametags
 
