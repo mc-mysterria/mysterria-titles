@@ -25,7 +25,8 @@ public class BonusDisplay {
             Map.entry("MAGIC_DEFENSE_BOOST", new BonusDisplay("Less Magic Damage Taken", BonusKind.REDUCTION)),
             Map.entry("MADNESS_REDUCTION", new BonusDisplay("Less Madness Gained", BonusKind.REDUCTION)),
             Map.entry("WATER_BREATHING_BOOST", new BonusDisplay("Longer Breath Underwater", BonusKind.BOOST)),
-            Map.entry("DURABILITY_WEAR_REDUCTION", new BonusDisplay("Slower Tool and Armor Wear", BonusKind.REDUCTION))
+            Map.entry("DURABILITY_WEAR_REDUCTION", new BonusDisplay("Slower Tool and Armor Wear", BonusKind.REDUCTION)),
+            Map.entry("STORM_LIGHTNING_REDUCTION", new BonusDisplay("Less Storm Lightning Damage", BonusKind.REDUCTION))
     );
 
     private final String label;
