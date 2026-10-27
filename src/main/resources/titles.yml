@@ -883,6 +883,21 @@ titles:
       method: COMMAND
       permission: "mysterria.titles.title.king_of_a_kingless_world"
 
+  thursdays_thunder:
+    display: "<gradient:#375DFF:#FFCC47>Thursday's Thunder</gradient>"
+    description:
+      - "<gray>Custom reward granted for winning a Mysterria event."
+    render-type: STATIC
+    nexo-texture: "%nexo_thursdays_thunder%"
+    bonus:
+      type: STORM_LIGHTNING_REDUCTION
+      value: 1.0
+    gui:
+      material: LIGHTNING_ROD
+    unlock:
+      method: COMMAND
+      permission: "mysterria.titles.title.thursdays_thunder"
+
 
 # Anniversary event: Collectioner is sold as shards in the festive shop (BrilliantEmporium
 # seasonal shop). Right-clicking while holding >= required-count shards consumes them and
