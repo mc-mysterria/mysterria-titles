@@ -1,10 +1,11 @@
 package net.mysterria.titles.domain.title.service;
 
+import lombok.RequiredArgsConstructor;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-import net.mysterria.titles.domain.title.model.source.RenderType;
 import net.mysterria.titles.domain.title.model.Title;
 import net.mysterria.titles.domain.title.model.TitleBonus;
+import net.mysterria.titles.domain.title.model.source.RenderType;
 import net.mysterria.titles.domain.title.model.source.UnlockMethod;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
@@ -22,14 +23,11 @@ import java.util.Set;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
+@RequiredArgsConstructor
 public class TitleRegistry {
 
     private final Logger logger;
     private final Map<String, Title> titles = new LinkedHashMap<>();
-
-    public TitleRegistry(Logger logger) {
-        this.logger = logger;
-    }
 
     public void load(FileConfiguration titlesConfig) {
         titles.clear();
@@ -48,7 +46,7 @@ public class TitleRegistry {
 
             try {
                 Title title = parse(id, section, miniMessage);
-                titles.put(title.id(), title);
+                titles.put(title.getId(), title);
             } catch (IllegalArgumentException ex) {
                 logger.warning("Skipping invalid title '" + id + "': " + ex.getMessage());
             }
@@ -111,13 +109,11 @@ public class TitleRegistry {
         }
         TitleBonus bonus = new TitleBonus(bonusType, bonusValue);
 
-        ConfigurationSection guiSection = section.getConfigurationSection("gui");
-        Material guiMaterial = Material.PAPER;
-        int guiSlot = 0;
-        if (guiSection != null) {
-            Material parsed = Material.matchMaterial(guiSection.getString("material", "PAPER"));
-            guiMaterial = parsed != null ? parsed : Material.PAPER;
-            guiSlot = guiSection.getInt("slot", 0);
+        String materialName = section.getString("gui.material", "PAPER");
+        Material guiMaterial = Material.matchMaterial(materialName);
+        if (guiMaterial == null || !guiMaterial.isItem()) {
+            logger.warning("Title '" + id + "' has unknown gui.material '" + materialName + "', showing it as PAPER.");
+            guiMaterial = Material.PAPER;
         }
 
         ConfigurationSection unlockSection = section.getConfigurationSection("unlock");
@@ -140,7 +136,7 @@ public class TitleRegistry {
 
         return new Title(id, display, description, renderType, nexoTexture,
                 animationFrameBase, animationFrameCount, animationFrameDurationMs,
-                bonus, guiMaterial, guiSlot, unlockMethod, permission, progressRequired);
+                bonus, guiMaterial, unlockMethod, permission, progressRequired);
     }
 
     public Optional<Title> get(String id) {
@@ -151,23 +147,10 @@ public class TitleRegistry {
         return Collections.unmodifiableCollection(titles.values());
     }
 
-    public boolean exists(String id) {
-        return titles.containsKey(id);
-    }
-
-    public int size() {
-        return titles.size();
-    }
-
-    /**
-     * Effective unlock per §7.1: stored unlocked ∪ {PERMISSION titles held}. COMMAND and AUTO
-     * both rely purely on the stored set - AUTO only differs in the locked-item lore hint shown
-     * while a player hasn't met its (externally-granted) condition yet.
-     */
     public boolean isEffectivelyUnlocked(Player player, Set<String> storedUnlocked, Title title) {
-        if (storedUnlocked.contains(title.id())) return true;
-        if (title.unlockMethod() == UnlockMethod.PERMISSION) {
-            return !title.permission().isEmpty() && player.hasPermission(title.permission());
+        if (storedUnlocked.contains(title.getId())) return true;
+        if (title.getUnlockMethod() == UnlockMethod.PERMISSION) {
+            return !title.getPermission().isEmpty() && player.hasPermission(title.getPermission());
         }
         return false;
     }

@@ -6,17 +6,15 @@ import dev.rollczi.litecommands.argument.resolver.ArgumentResolver;
 import dev.rollczi.litecommands.invocation.Invocation;
 import dev.rollczi.litecommands.suggestion.SuggestionContext;
 import dev.rollczi.litecommands.suggestion.SuggestionResult;
+import lombok.RequiredArgsConstructor;
 import net.mysterria.titles.domain.title.model.Title;
 import net.mysterria.titles.domain.title.service.TitleRegistry;
 import org.bukkit.command.CommandSender;
 
+@RequiredArgsConstructor
 public class TitleArgument extends ArgumentResolver<CommandSender, Title> {
 
     private final TitleRegistry registry;
-
-    public TitleArgument(TitleRegistry registry) {
-        this.registry = registry;
-    }
 
     @Override
     protected ParseResult<Title> parse(Invocation<CommandSender> invocation, Argument<Title> argument, String value) {
@@ -28,7 +26,7 @@ public class TitleArgument extends ArgumentResolver<CommandSender, Title> {
     @Override
     public SuggestionResult suggest(Invocation<CommandSender> invocation, Argument<Title> argument, SuggestionContext context) {
         return registry.all().stream()
-                .map(Title::id)
+                .map(Title::getId)
                 .collect(SuggestionResult.collector());
     }
 }

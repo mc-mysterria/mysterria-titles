@@ -1,52 +1,43 @@
 package net.mysterria.titles.domain.buff.model;
 
+import lombok.Data;
+import net.mysterria.titles.domain.buff.model.source.BonusKind;
+
 import java.util.Locale;
 import java.util.Map;
 
-public record BonusDisplay(String label, Kind kind) {
-
-    public enum Kind {
-        BOOST,
-        REDUCTION
-    }
+@Data
+public class BonusDisplay {
 
     private static final Map<String, BonusDisplay> REGISTRY = Map.ofEntries(
-            Map.entry("EXP_BOOST", new BonusDisplay("More Experience", Kind.BOOST)),
-            Map.entry("SATURATION_BOOST", new BonusDisplay("More Saturation from Food", Kind.BOOST)),
-            Map.entry("DAMAGE_BOOST", new BonusDisplay("More Damage Dealt", Kind.BOOST)),
-            Map.entry("DEFENSE_BOOST", new BonusDisplay("Less Damage Taken", Kind.REDUCTION)),
-            Map.entry("POTION_DURATION_BOOST", new BonusDisplay("Longer Potion Effects", Kind.BOOST)),
-            Map.entry("FALL_DAMAGE_REDUCTION", new BonusDisplay("Less Fall Damage", Kind.REDUCTION)),
-            Map.entry("HUNGER_DRAIN_REDUCTION", new BonusDisplay("Slower Hunger Drain", Kind.REDUCTION)),
-            Map.entry("MOB_LOOT_BOOST", new BonusDisplay("More Mob Drops", Kind.BOOST)),
-            Map.entry("FISHING_LUCK_BOOST", new BonusDisplay("Better Fishing Catches", Kind.BOOST)),
-            Map.entry("KNOCKBACK_RESISTANCE_BOOST", new BonusDisplay("Less Knockback Taken", Kind.REDUCTION)),
-            Map.entry("HEALING_BOOST", new BonusDisplay("More Healing Received", Kind.BOOST)),
-            Map.entry("MAGIC_DAMAGE_BOOST", new BonusDisplay("More Magic Damage", Kind.BOOST)),
-            Map.entry("MAGIC_DEFENSE_BOOST", new BonusDisplay("Less Magic Damage Taken", Kind.REDUCTION)),
-            Map.entry("MADNESS_REDUCTION", new BonusDisplay("Less Madness Gained", Kind.REDUCTION)),
-            Map.entry("WATER_BREATHING_BOOST", new BonusDisplay("Longer Breath Underwater", Kind.BOOST)),
-            Map.entry("DURABILITY_WEAR_REDUCTION", new BonusDisplay("Slower Tool and Armor Wear", Kind.REDUCTION))
+            Map.entry("EXP_BOOST", new BonusDisplay("More Experience", BonusKind.BOOST)),
+            Map.entry("SATURATION_BOOST", new BonusDisplay("More Saturation from Food", BonusKind.BOOST)),
+            Map.entry("DAMAGE_BOOST", new BonusDisplay("More Damage Dealt", BonusKind.BOOST)),
+            Map.entry("DEFENSE_BOOST", new BonusDisplay("Less Damage Taken", BonusKind.REDUCTION)),
+            Map.entry("POTION_DURATION_BOOST", new BonusDisplay("Longer Potion Effects", BonusKind.BOOST)),
+            Map.entry("FALL_DAMAGE_REDUCTION", new BonusDisplay("Less Fall Damage", BonusKind.REDUCTION)),
+            Map.entry("HUNGER_DRAIN_REDUCTION", new BonusDisplay("Slower Hunger Drain", BonusKind.REDUCTION)),
+            Map.entry("MOB_LOOT_BOOST", new BonusDisplay("More Mob Drops", BonusKind.BOOST)),
+            Map.entry("FISHING_LUCK_BOOST", new BonusDisplay("Better Fishing Catches", BonusKind.BOOST)),
+            Map.entry("KNOCKBACK_RESISTANCE_BOOST", new BonusDisplay("Less Knockback Taken", BonusKind.REDUCTION)),
+            Map.entry("HEALING_BOOST", new BonusDisplay("More Healing Received", BonusKind.BOOST)),
+            Map.entry("MAGIC_DAMAGE_BOOST", new BonusDisplay("More Magic Damage", BonusKind.BOOST)),
+            Map.entry("MAGIC_DEFENSE_BOOST", new BonusDisplay("Less Magic Damage Taken", BonusKind.REDUCTION)),
+            Map.entry("MADNESS_REDUCTION", new BonusDisplay("Less Madness Gained", BonusKind.REDUCTION)),
+            Map.entry("WATER_BREATHING_BOOST", new BonusDisplay("Longer Breath Underwater", BonusKind.BOOST)),
+            Map.entry("DURABILITY_WEAR_REDUCTION", new BonusDisplay("Slower Tool and Armor Wear", BonusKind.REDUCTION))
     );
+
+    private final String label;
+    private final BonusKind kind;
 
     public static BonusDisplay of(String buffId) {
         BonusDisplay known = REGISTRY.get(buffId);
-        return known != null ? known : new BonusDisplay(humanize(buffId), Kind.BOOST);
+        return known != null ? known : new BonusDisplay(humanize(buffId), BonusKind.BOOST);
     }
 
-    /**
-     * Reduction buffs are applied as damage/amount ÷ (1 + value), so the percentage
-     * actually felt by the player is (1 - 1/(1+value)), not the raw configured value.
-     */
-    public int percent(double value) {
-        return switch (kind) {
-            case BOOST -> (int) Math.round(value * 100);
-            case REDUCTION -> (int) Math.round((1 - 1 / (1 + value)) * 100);
-        };
-    }
-
-    public String sign() {
-        return kind == Kind.REDUCTION ? "-" : "+";
+    public String describe(double value) {
+        return kind.getSign() + kind.percent(value) + "% " + label;
     }
 
     private static String humanize(String id) {

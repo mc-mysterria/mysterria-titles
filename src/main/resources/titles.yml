@@ -10,7 +10,6 @@ titles:
       value: 0.03
     gui:
       material: SUNFLOWER
-      slot: 11
     unlock:
       method: COMMAND
       permission: "mysterria.titles.title.august_born"
@@ -26,7 +25,6 @@ titles:
       value: 0.03
     gui:
       material: HONEYCOMB
-      slot: 13
     unlock:
       method: COMMAND
       permission: "mysterria.titles.title.the_generous"
@@ -43,7 +41,6 @@ titles:
       value: 0.03
     gui:
       material: DIAMOND
-      slot: 15
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.the_loyalist"
@@ -64,7 +61,6 @@ titles:
       value: 0.02
     gui:
       material: ENDER_EYE
-      slot: 20
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.beyonder"
@@ -81,7 +77,6 @@ titles:
       value: 0.03
     gui:
       material: GOLDEN_APPLE
-      slot: 22
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.demigod"
@@ -98,7 +93,6 @@ titles:
       value: 0.03
     gui:
       material: WHITE_CANDLE
-      slot: 24
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.saint"
@@ -115,7 +109,6 @@ titles:
       value: 0.03
     gui:
       material: FEATHER
-      slot: 29
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.angel"
@@ -132,7 +125,6 @@ titles:
       value: 0.04
     gui:
       material: ELYTRA
-      slot: 31
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.archangel"
@@ -149,7 +141,6 @@ titles:
       value: 0.05
     gui:
       material: NETHER_STAR
-      slot: 33
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.deity"
@@ -165,7 +156,6 @@ titles:
       value: 0.04
     gui:
       material: EMERALD_BLOCK
-      slot: 38
     unlock:
       method: COMMAND
       permission: "mysterria.titles.title.apex_patron"
@@ -182,7 +172,6 @@ titles:
       value: 0.03
     gui:
       material: DRAGON_EGG
-      slot: 40
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.unique"
@@ -198,7 +187,6 @@ titles:
       value: 0.04
     gui:
       material: CHEST
-      slot: 42
     unlock:
       method: COMMAND
       permission: "mysterria.titles.title.collectioner"
@@ -214,7 +202,6 @@ titles:
       value: 0.05
     gui:
       material: SEA_LANTERN
-      slot: 0
     unlock:
       method: PERMISSION
       permission: "mysterria.titles.title.radiant"
@@ -230,7 +217,6 @@ titles:
       value: 0.04
     gui:
       material: BELL
-      slot: 1
     unlock:
       method: PERMISSION
       permission: "mysterria.titles.title.shepherd"
@@ -246,7 +232,6 @@ titles:
       value: 0.04
     gui:
       material: BEACON
-      slot: 2
     unlock:
       method: PERMISSION
       permission: "mysterria.titles.title.leader"
@@ -262,7 +247,6 @@ titles:
       value: 0.04
     gui:
       material: COMMAND_BLOCK
-      slot: 3
     unlock:
       method: PERMISSION
       permission: "mysterria.titles.title.developer"
@@ -278,7 +262,6 @@ titles:
       value: 0.05
     gui:
       material: NETHERITE_BLOCK
-      slot: 4
     unlock:
       method: PERMISSION
       permission: "mysterria.titles.title.owner"
@@ -294,7 +277,6 @@ titles:
       value: 0.02
     gui:
       material: NAME_TAG
-      slot: 5
     unlock:
       method: PERMISSION
       permission: "mysterria.titles.title.verified"
@@ -311,7 +293,6 @@ titles:
       value: 0.04
     gui:
       material: IRON_DOOR
-      slot: 6
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.door"
@@ -328,7 +309,6 @@ titles:
       value: 0.04
     gui:
       material: GLOWSTONE
-      slot: 7
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.sun"
@@ -345,7 +325,6 @@ titles:
       value: 0.05
     gui:
       material: NETHERITE_AXE
-      slot: 8
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.tyrant"
@@ -362,7 +341,6 @@ titles:
       value: 0.04
     gui:
       material: RABBIT_FOOT
-      slot: 9
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.fool"
@@ -379,7 +357,6 @@ titles:
       value: 0.04
     gui:
       material: BOOK
-      slot: 10
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.priest"
@@ -396,7 +373,6 @@ titles:
       value: 0.04
     gui:
       material: WITHER_ROSE
-      slot: 12
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.demoness"
@@ -413,7 +389,6 @@ titles:
       value: 0.03
     gui:
       material: STRUCTURE_VOID
-      slot: 14
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.error"
@@ -430,7 +405,6 @@ titles:
       value: 0.04
     gui:
       material: SPYGLASS
-      slot: 16
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.visionary"
@@ -447,7 +421,6 @@ titles:
       value: 0.04
     gui:
       material: EMERALD
-      slot: 17
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.fortune"
@@ -463,8 +436,7 @@ titles:
       type: HUNGER_DRAIN_REDUCTION
       value: 0.04
     gui:
-      material: CHAIN
-      slot: 18
+      material: IRON_CHAIN
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.hanged"
@@ -481,7 +453,6 @@ titles:
       value: 0.04
     gui:
       material: COAL_BLOCK
-      slot: 19
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.darkness"
@@ -498,7 +469,6 @@ titles:
       value: 0.04
     gui:
       material: DIAMOND_SWORD
-      slot: 21
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.paragon"
@@ -515,7 +485,6 @@ titles:
       value: 0.03
     gui:
       material: QUARTZ
-      slot: 23
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.sublunary"
@@ -532,7 +501,6 @@ titles:
       value: 0.03
     gui:
       material: BREWING_STAND
-      slot: 25
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.condenser"
@@ -549,7 +517,6 @@ titles:
       value: 0.03
     gui:
       material: WRITTEN_BOOK
-      slot: 26
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.edict"
@@ -566,7 +533,6 @@ titles:
       value: 0.03
     gui:
       material: TNT
-      slot: 27
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.chaos"
@@ -583,7 +549,6 @@ titles:
       value: 0.03
     gui:
       material: GRAY_DYE
-      slot: 28
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.chaosmist"
@@ -600,7 +565,6 @@ titles:
       value: 0.04
     gui:
       material: TOTEM_OF_UNDYING
-      slot: 30
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.patriarch"
@@ -617,7 +581,6 @@ titles:
       value: 0.05
     gui:
       material: WITHER_SKELETON_SKULL
-      slot: 32
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.death"
@@ -634,7 +597,6 @@ titles:
       value: 0.04
     gui:
       material: GOLD_BLOCK
-      slot: 34
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.emperor"
@@ -651,7 +613,6 @@ titles:
       value: 0.03
     gui:
       material: ENDER_PEARL
-      slot: 35
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.moon"
@@ -668,7 +629,6 @@ titles:
       value: 0.04
     gui:
       material: SHIELD
-      slot: 36
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.justiciar"
@@ -685,7 +645,6 @@ titles:
       value: 0.05
     gui:
       material: HEART_OF_THE_SEA
-      slot: 37
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.abyss"
@@ -702,7 +661,6 @@ titles:
       value: 0.05
     gui:
       material: ANVIL
-      slot: 39
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.giant"
@@ -719,7 +677,6 @@ titles:
       value: 0.04
     gui:
       material: CAKE
-      slot: 41
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.mother"
@@ -736,7 +693,6 @@ titles:
       value: 0.05
     gui:
       material: LANTERN
-      slot: 43
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.hermit"
@@ -753,7 +709,6 @@ titles:
       value: 0.04
     gui:
       material: IRON_BARS
-      slot: 44
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.chained"
@@ -770,7 +725,6 @@ titles:
       value: 0.05
     gui:
       material: MAGMA_BLOCK
-      slot: 45
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.devouring"
@@ -787,7 +741,6 @@ titles:
       value: 0.05
     gui:
       material: LIGHTNING_ROD
-      slot: 46
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.tower"
@@ -804,7 +757,6 @@ titles:
       value: 0.04
     gui:
       material: CLOCK
-      slot: 47
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.aeon"
@@ -821,7 +773,6 @@ titles:
       value: 0.05
     gui:
       material: COMPARATOR
-      slot: 48
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.secondlaw"
@@ -838,7 +789,6 @@ titles:
       value: 0.05
     gui:
       material: END_CRYSTAL
-      slot: 50
     unlock:
       method: AUTO
       permission: "mysterria.titles.title.everlasting"
@@ -854,7 +804,6 @@ titles:
       value: 0.01
     gui:
       material: NETHERITE_AXE
-      slot: 49
     unlock:
       method: COMMAND
       permission: "mysterria.titles.title.the_ragnarok"
@@ -870,7 +819,6 @@ titles:
       value: 0.05
     gui:
       material: PURPUR_BLOCK
-      slot: 51
     unlock:
       method: COMMAND
       permission: "mysterria.titles.title.dragoness"
@@ -886,7 +834,6 @@ titles:
       value: 0.3333
     gui:
       material: BRICK
-      slot: 52
     unlock:
       method: COMMAND
       permission: "mysterria.titles.title.welt"
@@ -902,7 +849,6 @@ titles:
       value: 0.01
     gui:
       material: SPYGLASS
-      slot: 53
     unlock:
       method: COMMAND
       permission: "mysterria.titles.title.watcher_of_light_and_darkness"
@@ -918,7 +864,6 @@ titles:
       value: 0.03
     gui:
       material: RABBIT_FOOT
-      slot: 54
     unlock:
       method: COMMAND
       permission: "mysterria.titles.title.prophet_of_the_fool"
@@ -934,7 +879,6 @@ titles:
       value: 0.01
     gui:
       material: GOLDEN_HELMET
-      slot: 55
     unlock:
       method: COMMAND
       permission: "mysterria.titles.title.king_of_a_kingless_world"

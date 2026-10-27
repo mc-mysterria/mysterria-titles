@@ -1,18 +1,16 @@
 package net.mysterria.titles.domain.papi;
 
+import lombok.RequiredArgsConstructor;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import net.mysterria.titles.MysterriaTitles;
 import net.mysterria.titles.domain.title.model.PlayerTitleData;
 import net.mysterria.titles.domain.title.model.Title;
 import org.bukkit.OfflinePlayer;
 
+@RequiredArgsConstructor
 public class TitlesExpansion extends PlaceholderExpansion {
 
     private final MysterriaTitles plugin;
-
-    public TitlesExpansion(MysterriaTitles plugin) {
-        this.plugin = plugin;
-    }
 
     @Override
     public String getIdentifier() {

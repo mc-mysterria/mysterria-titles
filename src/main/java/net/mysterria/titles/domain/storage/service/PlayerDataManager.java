@@ -1,6 +1,6 @@
 package net.mysterria.titles.domain.storage.service;
 
-import net.mysterria.titles.domain.storage.model.PlayerDataStore;
+import lombok.RequiredArgsConstructor;
 import net.mysterria.titles.domain.title.model.PlayerTitleData;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
@@ -11,17 +11,13 @@ import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 
+@RequiredArgsConstructor
 public class PlayerDataManager {
 
     private final Plugin plugin;
-    private final PlayerDataStore store;
+    private final JsonPlayerDataStore store;
     private final Map<UUID, PlayerTitleData> cache = new ConcurrentHashMap<>();
     private int autosaveTaskId = -1;
-
-    public PlayerDataManager(Plugin plugin, PlayerDataStore store) {
-        this.plugin = plugin;
-        this.store = store;
-    }
 
     public CompletableFuture<PlayerTitleData> load(UUID uuid) {
         PlayerTitleData cached = cache.get(uuid);
@@ -38,31 +34,12 @@ public class PlayerDataManager {
         return cache.get(uuid);
     }
 
-    public boolean isLoaded(UUID uuid) {
-        return cache.containsKey(uuid);
-    }
-
     public void unload(UUID uuid, boolean flush) {
         PlayerTitleData data = cache.remove(uuid);
         if (flush && data != null && data.isDirty()) {
             store.write(data.snapshot());
             data.clearDirty();
         }
-    }
-
-    public void markDirty(UUID uuid) {
-        PlayerTitleData data = cache.get(uuid);
-        if (data != null) data.markDirty();
-    }
-
-    public CompletableFuture<Void> flush(UUID uuid) {
-        PlayerTitleData data = cache.get(uuid);
-        if (data == null || !data.isDirty()) {
-            return CompletableFuture.completedFuture(null);
-        }
-        PlayerTitleData snapshot = data.snapshot();
-        data.clearDirty();
-        return store.write(snapshot);
     }
 
     public CompletableFuture<Void> flushAll() {

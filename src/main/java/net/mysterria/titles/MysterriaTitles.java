@@ -2,34 +2,39 @@ package net.mysterria.titles;
 
 import dev.rollczi.litecommands.bukkit.LiteBukkitFactory;
 import lombok.Getter;
-import net.mysterria.titles.command.TitlesAdminCommand;
-import net.mysterria.titles.command.TitlesCommand;
+import net.mysterria.titles.command.admin.TitlesAdminCommand;
 import net.mysterria.titles.command.argument.TitleArgument;
 import net.mysterria.titles.command.exception.InvalidUsageHandler;
 import net.mysterria.titles.command.exception.PermissionsHandler;
+import net.mysterria.titles.command.player.TitlesCommand;
 import net.mysterria.titles.config.ConfigManager;
+import net.mysterria.titles.domain.buff.listener.BuffRegistryValidationListener;
 import net.mysterria.titles.domain.buff.service.TitleBonusService;
 import net.mysterria.titles.domain.buff.service.TitleBuffManager;
-import net.mysterria.titles.domain.buff.types.*;
+import net.mysterria.titles.domain.buff.type.*;
 import net.mysterria.titles.domain.papi.TitlesExpansion;
-import net.mysterria.titles.domain.shard.AnniversaryTokenService;
-import net.mysterria.titles.domain.shard.CollectionerShardService;
-import net.mysterria.titles.domain.storage.model.JsonPlayerDataStore;
+import net.mysterria.titles.domain.shard.listener.CollectionerShardListener;
+import net.mysterria.titles.domain.shard.service.AnniversaryTokenService;
+import net.mysterria.titles.domain.shard.service.CollectionerShardService;
+import net.mysterria.titles.domain.storage.listener.PlayerLifecycleListener;
+import net.mysterria.titles.domain.storage.service.JsonPlayerDataStore;
 import net.mysterria.titles.domain.storage.service.PlayerDataManager;
+import net.mysterria.titles.domain.title.listener.CoiAvailabilityListener;
+import net.mysterria.titles.domain.title.listener.CoiTitleListener;
 import net.mysterria.titles.domain.title.model.Title;
 import net.mysterria.titles.domain.title.service.SequenceTitleAutoGrantService;
 import net.mysterria.titles.domain.title.service.TitleProgressService;
 import net.mysterria.titles.domain.title.service.TitleRegistry;
 import net.mysterria.titles.domain.title.service.TitleTestModeService;
 import net.mysterria.titles.integration.CircleOfImaginationHook;
-import net.mysterria.titles.listener.BuffRegistryValidationListener;
-import net.mysterria.titles.listener.CoiAvailabilityListener;
-import net.mysterria.titles.listener.CoiTitleListener;
-import net.mysterria.titles.listener.CollectionerShardListener;
-import net.mysterria.titles.listener.PlayerLifecycleListener;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+import xyz.xenondevs.invui.InvUI;
+import xyz.xenondevs.invui.window.Window;
+import xyz.xenondevs.invui.window.WindowManager;
+
+import java.util.List;
 
 @Getter
 public class MysterriaTitles extends JavaPlugin {
@@ -51,6 +56,9 @@ public class MysterriaTitles extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        InvUI.getInstance().setPlugin(this);
+        WindowManager.getInstance();
+
         configManager = new ConfigManager(this);
         configManager.load();
 
@@ -89,11 +97,8 @@ public class MysterriaTitles extends JavaPlugin {
 
         sequenceTitleAutoGrantService = new SequenceTitleAutoGrantService(playerDataManager);
         Bukkit.getPluginManager().registerEvents(new CoiAvailabilityListener(this), this);
-        registerCoiIntegration(); // covers the case COI is already enabled by this point
+        registerCoiIntegration();
 
-        // Deferred to ServerLoadEvent rather than run here: COI (a paper-plugin.yml plugin)
-        // always finishes enabling after us, so validating synchronously at this point would
-        // always misreport its buffs as missing even though they get wired up moments later.
         Bukkit.getPluginManager().registerEvents(new BuffRegistryValidationListener(this), this);
 
         LiteBukkitFactory.builder("titles", this)
@@ -118,6 +123,7 @@ public class MysterriaTitles extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        List.copyOf(WindowManager.getInstance().getWindows()).forEach(Window::close);
         if (buffManager != null) {
             buffManager.disableAll();
         }
@@ -138,35 +144,25 @@ public class MysterriaTitles extends JavaPlugin {
         titleRegistry.load(configManager.getTitlesConfig());
         collectionerShardService.load();
         anniversaryTokenService.load();
-        registerCoiIntegration(); // retries in case COI came up after us and PluginEnableEvent was missed somehow
+        registerCoiIntegration();
         buffManager.validateAgainstRegistry(titleRegistry);
     }
 
-    /**
-     * Adds the Circle-of-Imagination-only buffs and the sequence/uniqueness auto-grant listener.
-     * Safe to call multiple times (idempotent) and safe to call before COI is actually up (no-op
-     * until it is) - called once inline in onEnable() for the common case, and again from
-     * CoiAvailabilityListener whenever COI enables after us instead.
-     */
     public void registerCoiIntegration() {
         if (coiIntegrationRegistered) return;
         if (!CircleOfImaginationHook.isPresent()) return;
         coiIntegrationRegistered = true;
 
+        // these take CoI event types; registering them without CoI throws NoClassDefFoundError
         buffManager.registerAndEnable(new MagicDamageBoostBuff(this));
         buffManager.registerAndEnable(new MagicDefenseBoostBuff(this));
         buffManager.registerAndEnable(new MadnessReductionBuff(this));
-        getLogger().info("Circle of Imagination detected - magic-related title bonuses (MAGIC_DAMAGE_BOOST, MAGIC_DEFENSE_BOOST, MADNESS_REDUCTION) are now active.");
+        getLogger().info("Circle of Imagination found, magic title bonuses enabled.");
 
         Bukkit.getPluginManager().registerEvents(new CoiTitleListener(sequenceTitleAutoGrantService), this);
         startSequenceTitleRecheckTask();
     }
 
-    /**
-     * No dedicated COI event covers uniqueness-trait changes, so this is the safety net for that
-     * plus anything else missed between SequenceChangeEvent firings (e.g. state changed while
-     * the player was offline).
-     */
     private void startSequenceTitleRecheckTask() {
         Bukkit.getScheduler().runTaskTimer(this, () -> {
             for (Player player : Bukkit.getOnlinePlayers()) {

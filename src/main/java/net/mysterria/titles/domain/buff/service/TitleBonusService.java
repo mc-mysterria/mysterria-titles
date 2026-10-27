@@ -1,22 +1,19 @@
 package net.mysterria.titles.domain.buff.service;
 
+import lombok.RequiredArgsConstructor;
+import net.mysterria.titles.domain.storage.service.PlayerDataManager;
 import net.mysterria.titles.domain.title.model.PlayerTitleData;
 import net.mysterria.titles.domain.title.model.Title;
 import net.mysterria.titles.domain.title.service.TitleRegistry;
-import net.mysterria.titles.domain.storage.service.PlayerDataManager;
 
 import java.util.Optional;
 import java.util.UUID;
 
+@RequiredArgsConstructor
 public class TitleBonusService {
 
     private final PlayerDataManager playerDataManager;
     private final TitleRegistry titleRegistry;
-
-    public TitleBonusService(PlayerDataManager playerDataManager, TitleRegistry titleRegistry) {
-        this.playerDataManager = playerDataManager;
-        this.titleRegistry = titleRegistry;
-    }
 
     public Optional<Title> getActiveTitle(UUID uuid) {
         PlayerTitleData data = playerDataManager.getCached(uuid);
@@ -26,8 +23,8 @@ public class TitleBonusService {
 
     public double getMultiplier(UUID uuid, String buffId) {
         return getActiveTitle(uuid)
-                .filter(title -> title.bonus().type().equals(buffId))
-                .map(title -> 1.0 + title.bonus().value())
+                .filter(title -> title.getBonus().getType().equals(buffId))
+                .map(title -> 1.0 + title.getBonus().getValue())
                 .orElse(1.0);
     }
 

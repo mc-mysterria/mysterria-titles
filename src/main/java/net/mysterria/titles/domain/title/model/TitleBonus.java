@@ -1,4 +1,10 @@
 package net.mysterria.titles.domain.title.model;
 
-public record TitleBonus(String type, double value) {
+import lombok.Data;
+
+@Data
+public class TitleBonus {
+
+    private final String type;
+    private final double value;
 }
