@@ -1,6 +1,7 @@
 package net.mysterria.titles.domain.title.service;
 
-import dev.ua.ikeepcalm.coi.api.CircleOfImaginationAPI;
+import dev.ua.ikeepcalm.coi.api.CircleOfImaginationApi;
+import dev.ua.ikeepcalm.coi.api.model.BeyonderView;
 import lombok.RequiredArgsConstructor;
 import net.mysterria.titles.domain.storage.service.PlayerDataManager;
 import net.mysterria.titles.domain.title.model.PlayerTitleData;
@@ -10,6 +11,7 @@ import org.bukkit.entity.Player;
 
 import java.util.Map;
 import java.util.Locale;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -41,26 +43,25 @@ public class SequenceTitleAutoGrantService {
         CircleOfImaginationHook.api().ifPresent(api -> evaluate(player, api));
     }
 
-    private void evaluate(Player player, CircleOfImaginationAPI api) {
+    private void evaluate(Player player, CircleOfImaginationApi api) {
         PlayerTitleData data = playerDataManager.getCached(player.getUniqueId());
         if (data == null) return;
 
-        boolean isBeyonder = api.isBeyonder(player);
-        int lowestSequence = isBeyonder ? api.getLowestSequence(player) : Integer.MAX_VALUE;
+        Optional<BeyonderView> beyonder = api.beyonders().find(player.getUniqueId());
+        boolean isBeyonder = beyonder.isPresent();
+        int lowestSequence = beyonder.map(BeyonderView::getLowestSequence).orElse(Integer.MAX_VALUE);
 
         boolean changed = apply(data, BEYONDER_TITLE_ID, isBeyonder);
         for (Map.Entry<String, Integer> threshold : SEQUENCE_THRESHOLDS.entrySet()) {
             changed |= apply(data, threshold.getKey(), isBeyonder && lowestSequence <= threshold.getValue());
         }
 
-        boolean uniqueEligible = api.getUniquenessActingMultiplier(player) != 1.0;
-        changed |= apply(data, UNIQUE_TITLE_ID, uniqueEligible);
+        // shortcut: CoI API 1.6.1 dropped the uniqueness multiplier, so the unique title is left as-is (not granted, not revoked); restore once the API exposes it again.
 
-        Set<String> heldPathways = isBeyonder
-                ? api.getPathwayData(player).stream()
-                        .map(pathway -> pathway.name().toLowerCase(Locale.ROOT))
-                        .collect(Collectors.toSet())
-                : Set.of();
+        Set<String> heldPathways = beyonder.map(view -> view.getOwnedPathways().stream()
+                        .map(pathway -> pathway.getKey().toLowerCase(Locale.ROOT))
+                        .collect(Collectors.toSet()))
+                .orElse(Set.of());
         for (String pathwayId : PATHWAY_TITLE_IDS) {
             changed |= apply(data, pathwayId, heldPathways.contains(pathwayId));
         }

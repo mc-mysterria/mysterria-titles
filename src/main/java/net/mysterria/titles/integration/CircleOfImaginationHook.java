@@ -1,6 +1,6 @@
 package net.mysterria.titles.integration;
 
-import dev.ua.ikeepcalm.coi.api.CircleOfImaginationAPI;
+import dev.ua.ikeepcalm.coi.api.CircleOfImaginationApi;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 
@@ -17,10 +17,10 @@ public class CircleOfImaginationHook {
         return Bukkit.getPluginManager().isPluginEnabled(PLUGIN_NAME);
     }
 
-    public static Optional<CircleOfImaginationAPI> api() {
+    public static Optional<CircleOfImaginationApi> api() {
         if (!isPresent()) return Optional.empty();
 
-        RegisteredServiceProvider<CircleOfImaginationAPI> provider = Bukkit.getServicesManager().getRegistration(CircleOfImaginationAPI.class);
+        RegisteredServiceProvider<CircleOfImaginationApi> provider = Bukkit.getServicesManager().getRegistration(CircleOfImaginationApi.class);
         return provider != null ? Optional.of(provider.getProvider()) : Optional.empty();
     }
 }

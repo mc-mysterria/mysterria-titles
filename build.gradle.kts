@@ -44,7 +44,7 @@ dependencies {
     implementation("dev.rollczi:litecommands-bukkit:3.10.9")
     implementation("xyz.xenondevs.invui:invui:2.5.1")
 
-    compileOnly("dev.ua.ikeepcalm:circle-of-imagination-api:1.5.2-SNAPSHOT")
+    compileOnly("dev.ua.ikeepcalm:circle-of-imagination-api:1.6.1-SNAPSHOT")
     compileOnly("me.clip:placeholderapi:2.12.2")
     compileOnly("com.google.code.gson:gson:2.13.2")
     compileOnly("io.github.alexdev03:unlimitednametags-api:2.0.0")
