@@ -2,6 +2,8 @@ package net.mysterria.titles;
 
 import dev.rollczi.litecommands.bukkit.LiteBukkitFactory;
 import lombok.Getter;
+import net.mysterria.titles.api.BukkitTitlesService;
+import net.mysterria.titles.api.TitlesService;
 import net.mysterria.titles.command.admin.TitlesAdminCommand;
 import net.mysterria.titles.command.argument.TitleArgument;
 import net.mysterria.titles.command.exception.InvalidUsageHandler;
@@ -29,6 +31,7 @@ import net.mysterria.titles.domain.title.service.TitleTestModeService;
 import net.mysterria.titles.integration.CircleOfImaginationHook;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.xenondevs.invui.InvUI;
 import xyz.xenondevs.invui.window.Window;
@@ -95,6 +98,8 @@ public class MysterriaTitles extends JavaPlugin {
         anniversaryTokenService = new AnniversaryTokenService(this);
         titleProgressService = new TitleProgressService(this);
         titleTestModeService = new TitleTestModeService();
+        getServer().getServicesManager().register(TitlesService.class,
+                new BukkitTitlesService(this), this, ServicePriority.Normal);
 
         sequenceTitleAutoGrantService = new SequenceTitleAutoGrantService(playerDataManager);
         Bukkit.getPluginManager().registerEvents(new CoiAvailabilityListener(this), this);

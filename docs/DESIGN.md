@@ -30,6 +30,29 @@ The reasoning that used to live in javadoc.
   shop's payment item (BrilliantEmporium `seasonal-shops/anniversary_2026.yml`).
 - Test mode is in-memory only and cleared on quit; it never writes to the player's data.
 
+## Public hook for other plugins
+
+`net.mysterria.titles.api.TitlesService` is registered with Bukkit's ServicesManager while this
+plugin is enabled. Call its methods on the main thread:
+
+```java
+TitlesService titles = Bukkit.getServicesManager().load(TitlesService.class);
+boolean granted = titles.grant(player.getUniqueId(), "the_loyalist", "factions-quest");
+```
+
+- `grant(uuid, titleId, source)` uses the normal unlock path, so the data is saved by the usual
+  autosave task and name tags refresh as usual. It sends no chat message. It returns `false` for an
+  unknown title id, an offline player, or a title already held. Offline players are never changed.
+- `has(uuid, titleId)` reads stored unlocks. Offline players return `false`.
+- `titleIds()` returns an immutable snapshot of every id defined in `titles.yml`.
+
+`net.mysterria.titles.api.event.TitleGrantedEvent` fires on the main thread after any successful
+grant, from the service or from the plugin's own routes. Its getters are `getPlayer()` and
+`getPlayerUuid()` (both the player UUID), `getTitleId()` and `getSource()`. The built-in sources are
+`admin-grant`, `admin-set`, `progress`, `sequence`, `shard` and `gui`; service calls use the caller's
+source, or `api` when it is blank. Plugins without a compile dependency can register a listener by
+class name and read the getters reflectively.
+
 ## Bonuses
 
 - Only the equipped title's bonus is active. Boosts multiply by `1 + value`; reductions divide by

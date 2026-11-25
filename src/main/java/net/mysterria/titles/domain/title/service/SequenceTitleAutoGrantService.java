@@ -3,6 +3,7 @@ package net.mysterria.titles.domain.title.service;
 import dev.ua.ikeepcalm.coi.api.CircleOfImaginationApi;
 import dev.ua.ikeepcalm.coi.api.model.BeyonderView;
 import lombok.RequiredArgsConstructor;
+import net.mysterria.titles.api.event.TitleGrantedEvent;
 import net.mysterria.titles.domain.storage.service.PlayerDataManager;
 import net.mysterria.titles.domain.title.model.PlayerTitleData;
 import net.mysterria.titles.integration.CircleOfImaginationHook;
@@ -72,6 +73,12 @@ public class SequenceTitleAutoGrantService {
     }
 
     private boolean apply(PlayerTitleData data, String titleId, boolean eligible) {
-        return eligible ? data.unlock(titleId) : data.revoke(titleId);
+        if (!eligible) return data.revoke(titleId);
+
+        boolean granted = data.unlock(titleId);
+        if (granted) {
+            TitleGrantedEvent.fire(data.getUuid(), titleId, "sequence");
+        }
+        return granted;
     }
 }

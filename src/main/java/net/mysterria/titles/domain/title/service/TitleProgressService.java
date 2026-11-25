@@ -2,6 +2,7 @@ package net.mysterria.titles.domain.title.service;
 
 import lombok.RequiredArgsConstructor;
 import net.mysterria.titles.MysterriaTitles;
+import net.mysterria.titles.api.event.TitleGrantedEvent;
 import net.mysterria.titles.domain.title.model.PlayerTitleData;
 import net.mysterria.titles.domain.title.model.Title;
 import net.mysterria.titles.integration.UnlimitedNameTagsHook;
@@ -23,6 +24,7 @@ public class TitleProgressService {
             if (title != null && title.getProgressRequired() > 0 && total >= title.getProgressRequired()) {
                 data.unlock(titleId);
                 UnlimitedNameTagsHook.refresh(player.getUniqueId());
+                TitleGrantedEvent.fire(player.getUniqueId(), titleId, "progress");
             }
         }
 
