@@ -898,6 +898,69 @@ titles:
       method: COMMAND
       permission: "mysterria.titles.title.thursdays_thunder"
 
+  keeper_of_the_vigil:
+    display: "<#7A5CC8>Keeper of the Vigil</#7A5CC8>"
+    description:
+      - "<gray>Kept watch until the dead could rest."
+      - "<dark_gray>Granted by Factions for finishing every quest of the church event."
+    render-type: STATIC
+    nexo-texture: "%nexo_keeper_of_the_vigil%"
+    bonus:
+      type: MADNESS_REDUCTION
+      value: 0.02
+    gui:
+      material: CANDLE
+    unlock:
+      method: COMMAND
+      permission: "mysterria.titles.title.keeper_of_the_vigil"
+
+  blessed_by_the_tide:
+    display: "<#3E7FC8>Blessed by the Tide</#3E7FC8>"
+    description:
+      - "<gray>The sea gave its blessing, this once."
+      - "<dark_gray>Granted by Factions for finishing every quest of the church event."
+    render-type: STATIC
+    nexo-texture: "%nexo_blessed_by_the_tide%"
+    bonus:
+      type: KNOCKBACK_RESISTANCE_BOOST
+      value: 0.02
+    gui:
+      material: TRIDENT
+    unlock:
+      method: COMMAND
+      permission: "mysterria.titles.title.blessed_by_the_tide"
+
+  reader_of_open_shelves:
+    display: "<#C9B07A>Reader of Open Shelves</#C9B07A>"
+    description:
+      - "<gray>Read what was left open for one night."
+      - "<dark_gray>Granted by Factions for finishing every quest of the church event."
+    render-type: STATIC
+    nexo-texture: "%nexo_reader_of_open_shelves%"
+    bonus:
+      type: EXP_BOOST
+      value: 0.02
+    gui:
+      material: BOOK
+    unlock:
+      method: COMMAND
+      permission: "mysterria.titles.title.reader_of_open_shelves"
+
+  harvest_hand:
+    display: "<#6FA34A>Harvest Hand</#6FA34A>"
+    description:
+      - "<gray>Gave back to the earth what it gave."
+      - "<dark_gray>Granted by Factions for finishing every quest of the church event."
+    render-type: STATIC
+    nexo-texture: "%nexo_harvest_hand%"
+    bonus:
+      type: SATURATION_BOOST
+      value: 0.02
+    gui:
+      material: WHEAT
+    unlock:
+      method: COMMAND
+      permission: "mysterria.titles.title.harvest_hand"
 
 # Anniversary event: Collectioner is sold as shards in the festive shop (BrilliantEmporium
 # seasonal shop). Right-clicking while holding >= required-count shards consumes them and
