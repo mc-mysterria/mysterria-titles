@@ -30,23 +30,19 @@ The reasoning that used to live in javadoc.
   shop's payment item (BrilliantEmporium `seasonal-shops/anniversary_2026.yml`).
 - Test mode is in-memory only and cleared on quit; it never writes to the player's data.
 
-## Bonuses
+## Public hook for other plugins
 
-- Only the equipped title's bonus is active. Boosts multiply by `1 + value`; reductions divide by
-  `1 + value`, so the felt reduction is `1 - 1/(1 + value)` and that is what the menu shows.
-- Durability wear and underwater air are mostly lost one point at a time, so the saved fraction is
-  carried per player until it adds up to a whole point. Unbreaking has already rolled when the item
-  damage event fires.
-- `EntityPotionEffectEvent` cannot change the new effect, so the potion buff cancels it and re-applies
-  a longer one, guarded against re-entering itself.
-- Saturation is applied after `PlayerItemConsumeEvent`, so the delta is read a tick later.
+`net.mysterria.titles.api.TitlesService` is registered with Bukkit's ServicesManager. On the main thread, `grant(uuid, titleId, source)` unlocks a title through the normal path (no chat message; false for an unknown id, an offline player or a title already held), and `has(uuid, titleId)` reads stored unlocks.
 
-## Nametags
+`net.mysterria.titles.api.event.TitleGrantedEvent` fires on the main thread after any successful grant, with `getPlayerUuid()`, `getTitleId()` and `getSource()`.
 
-UnlimitedNameTags polls placeholders on its own interval, which lags behind a title change, so every
-change forces a refresh.
+## Factions church event titles
 
-## Animated titles
+`keeper_of_the_vigil`, `blessed_by_the_tide`, `reader_of_open_shelves` and `harvest_hand` are granted by Factions for finishing a church event. Their art is in `titles/<id>.png`; the Nexo glyph entries:
 
-ANIMATED titles pick their frame from wall-clock time, so every client shows the same frame without
-per-player animation state.
+```yaml
+keeper_of_the_vigil:    { texture: minecraft:titles/keeper_of_the_vigil.png,    ascent: 11, height: 13, offset: -116 }
+blessed_by_the_tide:    { texture: minecraft:titles/blessed_by_the_tide.png,    ascent: 11, height: 13, offset: -121 }
+reader_of_open_shelves: { texture: minecraft:titles/reader_of_open_shelves.png, ascent: 11, height: 13, offset: -144 }
+harvest_hand:           { texture: minecraft:titles/harvest_hand.png,           ascent: 11, height: 13, offset: -90 }
+```

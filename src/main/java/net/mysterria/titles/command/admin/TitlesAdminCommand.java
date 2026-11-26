@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.mysterria.titles.MysterriaTitles;
+import net.mysterria.titles.api.event.TitleGrantedEvent;
 import net.mysterria.titles.domain.title.model.PlayerTitleData;
 import net.mysterria.titles.domain.title.model.Title;
 import net.mysterria.titles.integration.UnlimitedNameTagsHook;
@@ -30,6 +31,7 @@ public class TitlesAdminCommand {
         if (data == null) return;
 
         if (data.unlock(title.getId())) {
+            TitleGrantedEvent.fire(target.getUniqueId(), title.getId(), "admin-grant");
             sender.sendMessage(Component.text("Granted '" + title.getId() + "' to " + target.getName() + ".", NamedTextColor.GREEN));
         } else {
             sender.sendMessage(Component.text(target.getName() + " already has '" + title.getId() + "'.", NamedTextColor.YELLOW));
@@ -56,6 +58,7 @@ public class TitlesAdminCommand {
 
         if (!data.hasUnlocked(title.getId())) {
             data.unlock(title.getId());
+            TitleGrantedEvent.fire(target.getUniqueId(), title.getId(), "admin-set");
         }
         if (data.setActiveTitle(title.getId())) {
             sender.sendMessage(Component.text("Set " + target.getName() + "'s active title to '" + title.getId() + "'.", NamedTextColor.GREEN));

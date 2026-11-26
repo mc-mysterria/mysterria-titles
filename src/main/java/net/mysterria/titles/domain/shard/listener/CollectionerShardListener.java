@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.mysterria.titles.MysterriaTitles;
+import net.mysterria.titles.api.event.TitleGrantedEvent;
 import net.mysterria.titles.domain.shard.service.CollectionerShardService;
 import net.mysterria.titles.domain.title.model.PlayerTitleData;
 import net.mysterria.titles.integration.UnlimitedNameTagsHook;
@@ -53,6 +54,7 @@ public class CollectionerShardListener implements Listener {
         shardService.consume(player, required);
         data.unlock(titleId);
         UnlimitedNameTagsHook.refresh(player.getUniqueId());
+        TitleGrantedEvent.fire(player.getUniqueId(), titleId, "shard");
 
         player.sendMessage(Component.text("✓ ", NamedTextColor.GREEN)
                 .append(Component.text("You assembled the full set and unlocked the Collectioner title!", NamedTextColor.GREEN)));

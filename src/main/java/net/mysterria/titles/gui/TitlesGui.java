@@ -7,6 +7,7 @@ import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.mysterria.titles.MysterriaTitles;
+import net.mysterria.titles.api.event.TitleGrantedEvent;
 import net.mysterria.titles.domain.buff.model.BonusDisplay;
 import net.mysterria.titles.domain.title.model.PlayerTitleData;
 import net.mysterria.titles.domain.title.model.Title;
@@ -187,7 +188,9 @@ public class TitlesGui {
             player.sendActionBar(line("Test mode only previews this title; grant it to wear it", NamedTextColor.YELLOW));
             return;
         }
-        data.unlock(title.getId());
+        if (data.unlock(title.getId())) {
+            TitleGrantedEvent.fire(player.getUniqueId(), title.getId(), "gui");
+        }
         data.setActiveTitle(title.getId());
         Menu.success(player);
         player.sendActionBar(line("Equipped ", NamedTextColor.GREEN).append(title.getDisplay()));
