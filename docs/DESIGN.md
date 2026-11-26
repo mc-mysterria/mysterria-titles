@@ -73,3 +73,20 @@ change forces a refresh.
 
 ANIMATED titles pick their frame from wall-clock time, so every client shows the same frame without
 per-player animation state.
+
+## Factions church event titles
+
+`keeper_of_the_vigil`, `blessed_by_the_tide`, `reader_of_open_shelves` and `harvest_hand` are granted by Factions
+through `TitlesService` for finishing every quest of a church event. They have their own look, not the gold event
+banners: the website's accent tag (church colour text on a tint of it over the dark card, a thin outline, rounded
+corners), Minecraft's pixel font, and the church's pathway sigil from the website. The art is static PNG at 4x
+(`titles/<id>.png`), made by `utils/generate_faction_titles.py`, which also prints the Nexo glyph entries:
+
+```yaml
+keeper_of_the_vigil:    { texture: minecraft:titles/keeper_of_the_vigil.png,    ascent: 11, height: 13, offset: -116 }
+blessed_by_the_tide:    { texture: minecraft:titles/blessed_by_the_tide.png,    ascent: 11, height: 13, offset: -121 }
+reader_of_open_shelves: { texture: minecraft:titles/reader_of_open_shelves.png, ascent: 11, height: 13, offset: -144 }
+harvest_hand:           { texture: minecraft:titles/harvest_hand.png,           ascent: 11, height: 13, offset: -90 }
+```
+
+They are 2 GUI pixels taller than the event banners so the sigil fits; check the height above the name tag in game.
