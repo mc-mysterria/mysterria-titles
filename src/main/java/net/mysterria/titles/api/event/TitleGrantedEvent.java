@@ -25,11 +25,6 @@ public class TitleGrantedEvent extends Event {
     }
 
     /** The id of the player who received the title. */
-    public UUID getPlayer() {
-        return player;
-    }
-
-    /** Alias of {@link #getPlayer()} with an explicit name. */
     public UUID getPlayerUuid() {
         return player;
     }

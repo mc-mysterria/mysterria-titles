@@ -7,8 +7,6 @@ import net.mysterria.titles.domain.title.model.Title;
 import net.mysterria.titles.integration.UnlimitedNameTagsHook;
 import org.bukkit.Bukkit;
 
-import java.util.Collections;
-import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.UUID;
 
@@ -41,14 +39,6 @@ public final class BukkitTitlesService implements TitlesService {
         return data != null && data.hasUnlocked(titleId);
     }
 
-    @Override
-    public Set<String> titleIds() {
-        Set<String> ids = new LinkedHashSet<>();
-        for (Title title : plugin.getTitleRegistry().all()) {
-            ids.add(title.getId());
-        }
-        return Collections.unmodifiableSet(ids);
-    }
 
     private PlayerTitleData loaded(UUID player) {
         PlayerTitleData data = plugin.getPlayerDataManager().getCached(player);

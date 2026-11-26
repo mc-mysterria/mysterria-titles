@@ -1,6 +1,5 @@
 package net.mysterria.titles.api;
 
-import java.util.Set;
 import java.util.UUID;
 
 /**
@@ -39,10 +38,4 @@ public interface TitlesService {
      */
     boolean has(UUID player, String titleId);
 
-    /**
-     * All title ids currently defined in titles.yml, including those no player holds.
-     *
-     * @return an immutable snapshot of the defined ids
-     */
-    Set<String> titleIds();
 }
